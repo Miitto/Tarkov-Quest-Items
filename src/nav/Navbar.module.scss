@@ -1,0 +1,25 @@
+nav {
+    display: flex;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--bg-color-alt);
+    .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #333;
+    }
+    .nav-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 30%;
+        .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                color: #f1356d;
+            }
+        }
+    }
+}
