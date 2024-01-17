@@ -1,12 +1,19 @@
+@use "/src/lib/scss/vars.scss" as *;
+
 nav {
     display: flex;
+    flex-direction: column;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: var(--bg-color-alt);
+    font-size: 1.25rem;
+    max-height: 100%;
+
     .logo {
         font-size: 1.5rem;
         font-weight: 700;
         color: #333;
     }
+
     .nav-links {
         display: flex;
         justify-content: space-between;
@@ -19,6 +26,110 @@ nav {
             transition: all 0.3s ease-in-out;
             &:hover {
                 color: #f1356d;
+            }
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow-x: hidden;
+        overflow-y: auto;
+        max-height: 100%;
+
+        li {
+            button {
+                padding: 0.5rem 1rem;
+                background-color: transparent;
+                border: none;
+                font-size: 1em;
+                color: $tarkov-text;
+                background-color: $tarkov-tan;
+                width: 100%;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+                &:hover {
+                    background-color: $tarkov-tan-darker;
+                }
+
+                &:active {
+                    background-color: $tarkov-tan-lighter;
+                    outline: $tarkov-text solid 1px;
+                    position: relative;
+                }
+
+                &.active {
+                    background-color: $tarkov-tan-darker;
+                }
+            }
+
+            ul {
+                max-height: 0;
+                transition: max-height 0.3s ease-in-out;
+                overflow: hidden;
+
+                &.show {
+                    max-height: unset;
+                }
+            }
+        }
+    }
+
+    > span {
+        display: flex;
+        button {
+            border: none;
+            font-size: 1.5em;
+            margin: 0;
+            &:first-child {
+                background-color: $tarkov-tan;
+                color: $tarkov-text;
+
+                &:hover {
+                    background-color: $tarkov-tan-darker;
+                }
+
+                &:active {
+                    background-color: $tarkov-tan-lighter;
+                    outline: $tarkov-text solid 1px;
+                    position: relative;
+                }
+            }
+
+            &:last-child {
+                background-color: red;
+                color: $tarkov-tan;
+
+                &:hover {
+                    filter: brightness(0.75);
+                }
+
+                &:active {
+                    filter: brightness(1.1);
+                    outline: $tarkov-text solid 1px;
+                    position: relative;
+                }
+            }
+        }
+    }
+
+    dialog {
+        padding: 0;
+        background-color: var(--bg-color-alt);
+        color: var(--color);
+        > form {
+            padding: 1rem;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            height: fit-content;
+            display: flex;
+            gap: 1rem;
+
+            button {
+                border: 1px solid $tarkov-text !important;
+                padding: 0.5rem 1rem;
             }
         }
     }
