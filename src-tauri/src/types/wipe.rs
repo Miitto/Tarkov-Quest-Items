@@ -1,13 +1,19 @@
-use super::getDb;
-use super::types::Wipe;
+use crate::getDb;
 use rusqlite::Connection;
+use serde::{Deserialize, Serialize};
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Wipe {
+    pub id: i64,
+    pub name: String,
+}
 
 impl Wipe {
     pub fn all() -> Vec<Self> {
         let db = getDb!();
 
         let mut all: Vec<Self> = db
-            .prepare("SELECT id, name FROM wipe")
+            .prepare("SELECT id, name FROM wipes")
             .unwrap()
             .query_map([], |row| {
                 Ok(Wipe {
@@ -25,10 +31,17 @@ impl Wipe {
     pub fn create(name: String) -> Self {
         let db = getDb!();
 
-        let mut stmt = db.prepare("INSERT INTO wipe (name) VALUES (?)").unwrap();
+        let mut stmt = db.prepare("INSERT INTO wipes (name) VALUES (?)").unwrap();
         stmt.execute([&name]).unwrap();
 
         let id = db.last_insert_rowid();
         Wipe { id, name }
+    }
+
+    pub fn delete(wipe_id: i64) {
+        let db = getDb!();
+
+        let mut stmt = db.prepare("DELETE FROM wipes WHERE id = ?").unwrap();
+        stmt.execute([&wipe_id]).unwrap();
     }
 }

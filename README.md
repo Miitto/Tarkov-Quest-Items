@@ -1,6 +1,6 @@
-# Tarkov Quest Items
+# Tarkov Task Items
 
-A simple application created using Rust, Tauri and React to track the quest items required over the course of a wipe in Escape From Tarkov.
+A simple application created using Rust, Tauri and React to track the task items required over the course of a wipe in Escape From Tarkov.
 
 Primarily used as a project to learn react as a starter project
 

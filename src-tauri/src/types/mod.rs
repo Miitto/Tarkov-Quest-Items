@@ -1,12 +1,18 @@
-use serde::{Deserialize, Serialize};
+pub mod item;
+pub mod objective;
+pub mod task;
+pub mod wipe;
 
-// create the error type that represents all errors possible in our program
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
     #[error(transparent)]
     Io(#[from] std::io::Error),
     #[error(transparent)]
     Rusqlite(#[from] rusqlite::Error),
+    #[error(transparent)]
+    Reqwest(#[from] reqwest::Error),
+    #[error(transparent)]
+    Serde(#[from] serde_json::Error),
 }
 
 impl serde::Serialize for Error {
@@ -16,18 +22,4 @@ impl serde::Serialize for Error {
     {
         serializer.serialize_str(self.to_string().as_ref())
     }
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Wipe {
-    pub id: i64,
-    pub name: String,
-}
-
-#[derive(Debug, Clone, Serialize, Deserialize)]
-pub struct Item {
-    pub id: i64,
-    pub name: String,
-    pub image: String,
-    pub needed: i64,
 }
