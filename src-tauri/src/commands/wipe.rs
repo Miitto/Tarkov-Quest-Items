@@ -1,19 +1,29 @@
 use crate::types::{wipe::Wipe, Error};
+use rusqlite::Connection;
+use std::sync::Arc;
+use std::sync::Mutex;
+use tauri::State;
 
 #[tauri::command]
-pub fn get_all_wipes() -> Result<Vec<Wipe>, Error> {
-    let wipes = Wipe::all();
+pub async fn get_all_wipes(db_lock: State<'_, Arc<Mutex<Connection>>>) -> Result<Vec<Wipe>, Error> {
+    let wipes = Wipe::all(db_lock.inner().clone()).await;
     Ok(wipes)
 }
 
 #[tauri::command]
-pub fn create_wipe(name: String) -> Result<Wipe, Error> {
-    let wipe = Wipe::create(name);
+pub async fn create_wipe(
+    name: String,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<Wipe, Error> {
+    let wipe = Wipe::create(name, db_lock.inner().clone()).await;
     Ok(wipe)
 }
 
 #[tauri::command]
-pub fn delete_wipe(wipe_id: i64) -> Result<(), Error> {
-    Wipe::delete(wipe_id);
+pub async fn delete_wipe(
+    wipe_id: i64,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<(), Error> {
+    Wipe::delete(wipe_id, db_lock.inner().clone());
     Ok(())
 }

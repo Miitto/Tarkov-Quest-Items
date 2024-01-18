@@ -9,10 +9,20 @@ function App() {
         <main className={styles.main}>
             <ul>
                 <li>
-                    <button onClick={() => setActivePanel(0)}>Items</button>
+                    <button
+                        className={activePanel == 0 ? styles.active : ""}
+                        onClick={() => setActivePanel(0)}
+                    >
+                        Items
+                    </button>
                 </li>
                 <li>
-                    <button onClick={() => setActivePanel(1)}>Tasks</button>
+                    <button
+                        className={activePanel == 1 ? styles.active : ""}
+                        onClick={() => setActivePanel(1)}
+                    >
+                        Tasks
+                    </button>
                 </li>
             </ul>
 

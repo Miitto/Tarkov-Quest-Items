@@ -1,7 +1,8 @@
-use crate::getDb;
 use rusqlite::Connection;
 use serde::{Deserialize, Serialize};
-
+use std::sync::Arc;
+use std::sync::Mutex;
+use tauri::State;
 #[derive(Debug, Clone, Serialize, Deserialize)]
 
 pub struct Task {
@@ -13,8 +14,8 @@ pub struct Task {
 }
 
 impl Task {
-    pub fn all() -> Vec<Self> {
-        let db = getDb!();
+    pub async fn all(db_lock: Arc<Mutex<Connection>>) -> Vec<Self> {
+        let db = db_lock.lock().unwrap();
 
         let mut all: Vec<Self> = db
             .prepare("SELECT id, name, vendor, min_level, wipe FROM tasks")
@@ -35,16 +36,23 @@ impl Task {
         all
     }
 
-    pub fn create(id: String, name: String, vendor: String, min_level: i64, wipe_id: i64) -> Self {
+    pub fn create(
+        id: String,
+        name: String,
+        vendor: String,
+        min_level: i64,
+        wipe_id: i64,
+        db_lock: Arc<Mutex<Connection>>,
+    ) -> Self {
         let id2 = id.clone();
         let name2 = name.clone();
         let vendor2 = vendor.clone();
 
         tokio::spawn(async move {
-            let db = getDb!();
+            let db = db_lock.lock().unwrap();
             let mut stmt = db
                 .prepare(
-                    "INSERT INTO tasks (id, name, vendor, min_level, wipe) VALUES (?, ?, ?, ?, ?)",
+                    "INSERT OR IGNORE INTO tasks (id, name, vendor, min_level, wipe) VALUES (?, ?, ?, ?, ?)",
                 )
                 .unwrap();
             let res = stmt.execute([
@@ -69,10 +77,12 @@ impl Task {
         }
     }
 
-    pub fn delete(task_id: String) {
-        let db = getDb!();
+    pub fn delete(task_id: String, db_lock: Arc<Mutex<Connection>>) {
+        tokio::spawn(async move {
+            let db = db_lock.lock().unwrap();
 
-        let mut stmt = db.prepare("DELETE FROM tasks WHERE id = ?").unwrap();
-        stmt.execute([&task_id]).unwrap();
+            let mut stmt = db.prepare("DELETE FROM tasks WHERE id = ?").unwrap();
+            stmt.execute([&task_id]).unwrap();
+        });
     }
 }

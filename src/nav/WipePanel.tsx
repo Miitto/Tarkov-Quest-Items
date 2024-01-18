@@ -79,16 +79,18 @@ export function WipePanel() {
             task.objectives.forEach((objective: any) => {
                 if (!objective.hasOwnProperty("count")) objective.count = 0;
                 if (!objective.hasOwnProperty("item")) objective.item = null;
+                else {
+                    objective.item.image = objective.item.iconLink;
+                    delete objective.item.iconLink;
+                    items.push(objective.item);
+                }
                 if (!objective.hasOwnProperty("foundInRaid"))
                     objective.foundInRaid = false;
                 objective.found_in_raid = objective.foundInRaid;
                 delete objective.foundInRaid;
                 objective.task = task.id;
-                items.push(objective.item);
             });
         });
-
-        console.log(items);
 
         invoke<Wipe>("create_wipe", {
             name: (event.target as any).elements[0].value,

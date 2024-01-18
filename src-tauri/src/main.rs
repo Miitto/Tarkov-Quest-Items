@@ -4,13 +4,13 @@
 use rusqlite::Connection;
 
 mod commands;
-use commands::items::create_items;
+use commands::items::*;
 use commands::objectives::create_objectives;
 use commands::tasks::create_tasks;
 use commands::wipe::{create_wipe, delete_wipe, get_all_wipes};
 mod types;
-mod util;
 
+use std::sync::{Arc, Mutex};
 use types::Error;
 
 #[tokio::main]
@@ -69,13 +69,15 @@ async fn main() -> Result<(), Error> {
     )?;
 
     tauri::Builder::default()
+        .manage(Arc::new(Mutex::new(db)))
         .invoke_handler(tauri::generate_handler![
             get_all_wipes,
             create_wipe,
             create_tasks,
             create_items,
             create_objectives,
-            delete_wipe
+            delete_wipe,
+            get_all_items
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

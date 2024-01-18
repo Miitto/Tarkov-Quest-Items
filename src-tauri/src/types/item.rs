@@ -1,6 +1,8 @@
-use crate::getDb;
 use rusqlite::Connection;
 use serde::{Deserialize, Serialize};
+use std::sync::Arc;
+use std::sync::Mutex;
+use tauri::State;
 
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Item {
@@ -10,8 +12,8 @@ pub struct Item {
 }
 
 impl Item {
-    pub fn all() -> Vec<Self> {
-        let db = getDb!();
+    pub async fn all(db_lock: Arc<Mutex<Connection>>) -> Vec<Self> {
+        let db = db_lock.lock().unwrap();
 
         let mut all: Vec<Self> = db
             .prepare("SELECT id, name, image FROM items")
@@ -30,15 +32,20 @@ impl Item {
         all
     }
 
-    pub fn create(id: String, name: String, image: String) -> Self {
+    pub fn create(
+        id: String,
+        name: String,
+        image: String,
+        db_lock: Arc<Mutex<Connection>>,
+    ) -> Self {
         let id2 = id.clone();
         let name2 = name.clone();
         let image2 = image.clone();
 
         tokio::spawn(async move {
-            let db = getDb!();
+            let db = db_lock.lock().unwrap();
             let mut stmt = db
-                .prepare("INSERT INTO items (id, name, image) VALUES (?, ?, ?, ?, ?)")
+                .prepare("INSERT OR IGNORE INTO items (id, name, image) VALUES (?, ?, ?)")
                 .unwrap();
             let res = stmt.execute([&id.to_string(), &name.to_string(), &image.to_string()]);
 
@@ -54,8 +61,8 @@ impl Item {
         }
     }
 
-    pub fn delete(item_id: String) {
-        let db = getDb!();
+    pub async fn delete(item_id: String, db_lock: Arc<Mutex<Connection>>) {
+        let db = db_lock.lock().unwrap();
 
         let mut stmt = db.prepare("DELETE FROM items WHERE id = ?").unwrap();
         stmt.execute([&item_id]).unwrap();

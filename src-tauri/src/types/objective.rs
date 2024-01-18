@@ -1,5 +1,6 @@
-use crate::getDb;
 use rusqlite::Connection;
+use std::sync::Arc;
+use std::sync::Mutex;
 
 use serde::{Deserialize, Serialize};
 
@@ -17,8 +18,8 @@ pub struct Objective {
 }
 
 impl Objective {
-    pub fn all() -> Vec<Self> {
-        let db = getDb!();
+    pub async fn all(db_lock: Arc<Mutex<Connection>>) -> Vec<Self> {
+        let db = db_lock.lock().unwrap();
 
         let mut all: Vec<Self> = db
             .prepare("SELECT id, description, optional, count, found_in_raid, item, task FROM objectives")
@@ -49,6 +50,7 @@ impl Objective {
         found_in_raid: bool,
         item: Option<String>,
         task_id: String,
+        db_lock: Arc<Mutex<Connection>>,
     ) -> Self {
         let id2 = id.clone();
         let description2 = description.clone();
@@ -56,10 +58,10 @@ impl Objective {
         let task_id2 = task_id.clone();
 
         tokio::spawn(async move {
-            let db = getDb!();
+            let db = db_lock.lock().unwrap();
             let mut stmt = db
                 .prepare(
-                    "INSERT INTO objectives id, description, optional, count, found_in_raid, item, task) VALUES (?, ?, ?, ?, ?)",
+                    "INSERT INTO objectives (id, description, optional, count, found_in_raid, item, task) VALUES (?, ?, ?, ?, ?, ?, ?)",
                 )
                 .unwrap();
             let item_text = if let Some(value) = item {
@@ -98,8 +100,8 @@ impl Objective {
         }
     }
 
-    pub fn delete(objective_id: String) {
-        let db = getDb!();
+    pub async fn delete(objective_id: String, db_lock: Arc<Mutex<Connection>>) {
+        let db = db_lock.lock().unwrap();
 
         let mut stmt = db.prepare("DELETE FROM objectives WHERE id = ?").unwrap();
         stmt.execute([&objective_id]).unwrap();

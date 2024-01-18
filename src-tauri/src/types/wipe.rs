@@ -1,7 +1,8 @@
-use crate::getDb;
 use rusqlite::Connection;
 use serde::{Deserialize, Serialize};
-
+use std::sync::Arc;
+use std::sync::Mutex;
+use tauri::State;
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Wipe {
     pub id: i64,
@@ -9,9 +10,8 @@ pub struct Wipe {
 }
 
 impl Wipe {
-    pub fn all() -> Vec<Self> {
-        let db = getDb!();
-
+    pub async fn all(db_lock: Arc<Mutex<Connection>>) -> Vec<Self> {
+        let db = db_lock.lock().unwrap();
         let mut all: Vec<Self> = db
             .prepare("SELECT id, name FROM wipes")
             .unwrap()
@@ -28,8 +28,8 @@ impl Wipe {
         all
     }
 
-    pub fn create(name: String) -> Self {
-        let db = getDb!();
+    pub async fn create(name: String, db_lock: Arc<Mutex<Connection>>) -> Self {
+        let db = db_lock.lock().unwrap();
 
         let mut stmt = db.prepare("INSERT INTO wipes (name) VALUES (?)").unwrap();
         stmt.execute([&name]).unwrap();
@@ -38,10 +38,12 @@ impl Wipe {
         Wipe { id, name }
     }
 
-    pub fn delete(wipe_id: i64) {
-        let db = getDb!();
+    pub fn delete(wipe_id: i64, db_lock: Arc<Mutex<Connection>>) {
+        tokio::spawn(async move {
+            let db = db_lock.lock().unwrap();
 
-        let mut stmt = db.prepare("DELETE FROM wipes WHERE id = ?").unwrap();
-        stmt.execute([&wipe_id]).unwrap();
+            let mut stmt = db.prepare("DELETE FROM wipes WHERE id = ?").unwrap();
+            stmt.execute([&wipe_id]).unwrap();
+        });
     }
 }

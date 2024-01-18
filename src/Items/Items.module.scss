@@ -1,0 +1,26 @@
+@use "../lib/scss/vars.scss" as *;
+
+.header {
+    display: flex;
+    width: 100%;
+
+    > li {
+        flex: 1 0 0;
+
+        > button {
+            border: none;
+            background-color: var(--bg-color-alt);
+            width: 100%;
+            font-size: 1.5em;
+
+            &.active {
+                background-color: $tarkov-text;
+                color: $tarkov-tan;
+            }
+
+            &:hover:not(.active) {
+                filter: brightness(1.2);
+            }
+        }
+    }
+}
