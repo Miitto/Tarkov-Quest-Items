@@ -6,16 +6,15 @@ use tauri::State;
 
 #[tauri::command]
 pub fn create_tasks(tasks: Vec<Task>, db_lock: State<Arc<Mutex<Connection>>>) -> Result<(), Error> {
-    for task in tasks {
-        Task::create(
-            task.id,
-            task.name,
-            task.vendor,
-            task.min_level,
-            task.wipe,
-            db_lock.inner().clone(),
-        );
-    }
+    Task::bulk_create(tasks, db_lock.inner().clone());
 
     Ok(())
+}
+
+#[tauri::command]
+pub async fn get_task(
+    task_id: String,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<Task, Error> {
+    Task::get(task_id, db_lock.inner().clone()).await
 }

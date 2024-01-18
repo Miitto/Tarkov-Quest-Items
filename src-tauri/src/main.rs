@@ -5,9 +5,9 @@ use rusqlite::Connection;
 
 mod commands;
 use commands::items::*;
-use commands::objectives::create_objectives;
-use commands::tasks::create_tasks;
-use commands::wipe::{create_wipe, delete_wipe, get_all_wipes};
+use commands::objectives::*;
+use commands::tasks::*;
+use commands::wipe::*;
 mod types;
 
 use std::sync::{Arc, Mutex};
@@ -47,9 +47,9 @@ async fn main() -> Result<(), Error> {
 
     db.execute(
         "CREATE TABLE IF NOT EXISTS objectives (
-            id integer primary key,
-            item text not null references items(id) on delete cascade,
-            task text not null references task(id) on delete cascade,
+            id text primary key,
+            item text references items(id) on delete cascade,
+            task text references tasks(id) on delete cascade,
             count integer not null,
             found_in_raid integer not null,
             optional integer not null,
@@ -77,7 +77,9 @@ async fn main() -> Result<(), Error> {
             create_items,
             create_objectives,
             delete_wipe,
-            get_all_items
+            get_all_items,
+            get_all_objectives,
+            get_task
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

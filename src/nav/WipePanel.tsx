@@ -107,8 +107,18 @@ export function WipePanel() {
                 tasks: data.tasks,
             });
 
+            let objectives = data.tasks.flatMap((task: any) =>
+                task.objectives.map((objective: any) => {
+                    objective.item = objective.item?.id;
+                    return objective;
+                })
+            );
             await invoke("create_items", {
                 items: items,
+            });
+
+            await invoke("create_objectives", {
+                objectives: objectives,
             });
         });
     }

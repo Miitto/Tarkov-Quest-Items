@@ -8,10 +8,7 @@ use tauri::State;
 
 #[tauri::command]
 pub fn create_items(items: Vec<Item>, db_lock: State<Arc<Mutex<Connection>>>) -> Result<(), Error> {
-    let db = db_lock.inner().clone();
-    for item in items {
-        Item::create(item.id, item.name, item.image, db.clone());
-    }
+    Item::bulk_create(items, db_lock.inner().clone());
 
     Ok(())
 }
