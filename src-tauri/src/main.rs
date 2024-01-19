@@ -36,24 +36,30 @@ async fn main() -> Result<(), Error> {
 
     db.execute(
         "CREATE TABLE IF NOT EXISTS tasks (
-            id text primary key,
-            name text not null unique,
+            id text,
+            name text not null,
             vendor text not null,
             min_level integer,
-            wipe integer not null references wipes(id) on delete cascade
+            wipe integer not null references wipes(id) on delete cascade,
+            image text,
+            PRIMARY KEY (id, wipe)
         )",
         (),
     )?;
 
     db.execute(
         "CREATE TABLE IF NOT EXISTS objectives (
-            id text primary key,
+            id text,
             item text references items(id) on delete cascade,
-            task text references tasks(id) on delete cascade,
+            task text not null,
+            wipe integer not null,
             count integer not null,
             found_in_raid integer not null,
             optional integer not null,
-            description text not null
+            description text not null,
+            completed integer not null default 0,
+            PRIMARY KEY (id, wipe),
+            FOREIGN KEY (task, wipe) REFERENCES tasks(id, wipe) on delete cascade
         )",
         (),
     )?;
@@ -63,6 +69,7 @@ async fn main() -> Result<(), Error> {
         quantity integer not null,
         item integer not null references items(id) on delete cascade,
         wipe integer not null references wipes(id) on delete cascade,
+        found_in_raid integer not null,
         PRIMARY KEY (item, wipe)
     )",
         (),
@@ -70,6 +77,7 @@ async fn main() -> Result<(), Error> {
 
     tauri::Builder::default()
         .manage(Arc::new(Mutex::new(db)))
+        .manage(Mutex::new(None as Option<i64>))
         .invoke_handler(tauri::generate_handler![
             get_all_wipes,
             create_wipe,
@@ -79,7 +87,16 @@ async fn main() -> Result<(), Error> {
             delete_wipe,
             get_all_items,
             get_all_objectives,
-            get_task
+            get_task,
+            get_task_objectives,
+            update_task,
+            get_all_tasks,
+            update_objective,
+            collect_item,
+            remove_item,
+            pick_wipe,
+            get_current_wipe,
+            get_item_quantity
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

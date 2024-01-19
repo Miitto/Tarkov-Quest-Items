@@ -18,3 +18,31 @@ pub async fn get_task(
 ) -> Result<Task, Error> {
     Task::get(task_id, db_lock.inner().clone()).await
 }
+
+#[tauri::command]
+pub async fn update_task(
+    id: String,
+    name: Option<String>,
+    vendor: Option<String>,
+    min_level: Option<i64>,
+    wipe: Option<i64>,
+    image: Option<String>,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<Task, Error> {
+    Task::update(
+        id,
+        name,
+        vendor,
+        min_level,
+        wipe,
+        image,
+        db_lock.inner().clone(),
+    )
+    .await
+}
+
+#[tauri::command]
+pub async fn get_all_tasks(db_lock: State<'_, Arc<Mutex<Connection>>>) -> Result<Vec<Task>, Error> {
+    let wipes = Task::all(db_lock.inner().clone()).await;
+    Ok(wipes)
+}

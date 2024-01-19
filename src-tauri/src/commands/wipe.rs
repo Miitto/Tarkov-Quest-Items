@@ -27,3 +27,19 @@ pub async fn delete_wipe(
     Wipe::delete(wipe_id, db_lock.inner().clone());
     Ok(())
 }
+
+#[tauri::command]
+pub async fn pick_wipe(
+    wipe_id: i64,
+    wipe_state: State<'_, Mutex<Option<i64>>>,
+) -> Result<i64, Error> {
+    wipe_state.lock().unwrap().replace(wipe_id);
+    Ok(wipe_id)
+}
+
+#[tauri::command]
+pub async fn get_current_wipe(
+    wipe_id: State<'_, Mutex<Option<i64>>>,
+) -> Result<Option<i64>, Error> {
+    Ok(*wipe_id.lock().unwrap())
+}

@@ -18,6 +18,8 @@ pub enum Error {
     Tauri(#[from] tauri::Error),
     #[error("Not found: {message}")]
     NotFound { message: String },
+    #[error("{message}")]
+    Other { message: String },
 }
 
 impl serde::Serialize for Error {

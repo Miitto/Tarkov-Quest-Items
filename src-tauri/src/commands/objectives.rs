@@ -1,4 +1,4 @@
-use crate::types::{objective::Objective, objective::ObjectiveParams, Error};
+use crate::types::{objective::Objective, Error};
 use rusqlite::Connection;
 use std::sync::Arc;
 use std::sync::Mutex;
@@ -16,8 +16,68 @@ pub fn create_objectives(
 
 #[tauri::command]
 pub async fn get_all_objectives(
+    wipe_state: State<'_, Mutex<Option<i64>>>,
     db_lock: State<'_, Arc<Mutex<Connection>>>,
-) -> Result<Vec<Objective>, String> {
-    let obj = Objective::all(db_lock.inner().clone()).await;
+) -> Result<Vec<Objective>, Error> {
+    let wipe_id = *wipe_state.lock().unwrap();
+    if wipe_id.is_none() {
+        return Err(Error::Other {
+            message: "No wipe selected".to_string(),
+        });
+    }
+
+    let obj = Objective::all(wipe_id.unwrap(), db_lock.inner().clone()).await;
     Ok(obj)
+}
+
+#[tauri::command]
+pub async fn get_task_objectives(
+    id: String,
+    wipe_state: State<'_, Mutex<Option<i64>>>,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<Vec<Objective>, Error> {
+    let wipe_id = *wipe_state.lock().unwrap();
+    if wipe_id.is_none() {
+        return Err(Error::Other {
+            message: "No wipe selected".to_string(),
+        });
+    }
+
+    let objs = Objective::task_get(id, wipe_id.unwrap(), db_lock.inner().clone()).await;
+    Ok(objs)
+}
+
+#[tauri::command]
+pub async fn update_objective(
+    id: String,
+    description: Option<String>,
+    optional: Option<bool>,
+    count: Option<i64>,
+    found_in_raid: Option<bool>,
+    item: Option<String>,
+    task: Option<String>,
+    completed: Option<bool>,
+    wipe_state: State<'_, Mutex<Option<i64>>>,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<Objective, Error> {
+    let wipe_id = *wipe_state.lock().unwrap();
+    if wipe_id.is_none() {
+        return Err(Error::Other {
+            message: "No wipe selected".to_string(),
+        });
+    }
+
+    Objective::update(
+        id,
+        wipe_id.unwrap(),
+        description,
+        optional,
+        count,
+        found_in_raid,
+        item,
+        task,
+        completed,
+        db_lock.inner().clone(),
+    )
+    .await
 }

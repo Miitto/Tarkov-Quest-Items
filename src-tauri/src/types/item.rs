@@ -3,6 +3,8 @@ use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use std::sync::Mutex;
 
+use super::Error;
+
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Item {
     pub id: String,
@@ -30,41 +32,8 @@ impl Item {
         if query.is_err() {
             println!("Error querying items");
         }
-        let mut all: Vec<Self> = query.unwrap().map(|x| x.unwrap()).collect();
-        all.reverse();
+        let all: Vec<Self> = query.unwrap().map(|x| x.unwrap()).collect();
         all
-    }
-
-    pub fn create(
-        id: String,
-        name: String,
-        image: String,
-        db_lock: Arc<Mutex<Connection>>,
-    ) -> Self {
-        let id2 = id.clone();
-        let name2 = name.clone();
-        let image2 = image.clone();
-
-        tokio::spawn(async move {
-            let db = db_lock.lock().unwrap();
-            let res = db.prepare("INSERT OR IGNORE INTO items (id, name, image) VALUES (?, ?, ?)");
-            if res.is_err() {
-                println!("Error preparing statement: {:?}", res.unwrap_err());
-                return;
-            }
-            let mut stmt = res.unwrap();
-            let res = stmt.execute([&id.to_string(), &name.to_string(), &image.to_string()]);
-
-            if res.is_err() {
-                println!("Error inserting item: {:?} | {}", res.unwrap_err(), name);
-            }
-        });
-
-        Item {
-            id: id2,
-            name: name2,
-            image: image2,
-        }
     }
 
     pub fn bulk_create(items: Vec<Item>, db_lock: Arc<Mutex<Connection>>) {
@@ -108,18 +77,171 @@ impl Item {
         println!("Created {} items", items.len());
     }
 
-    pub async fn delete(item_id: String, db_lock: Arc<Mutex<Connection>>) {
+    pub async fn collect(
+        item_id: String,
+        fir: bool,
+        quantity: i64,
+        db_lock: Arc<Mutex<Connection>>,
+        wipe: i64,
+    ) -> Result<i64, Error> {
         let db = db_lock.lock().unwrap();
 
-        let res = db.prepare("DELETE FROM items WHERE id = ?");
+        let res =
+            db.prepare("INSERT OR IGNORE INTO found_items (quantity, item, wipe, found_in_raid) VALUES (?, ?, ?, ?)");
         if res.is_err() {
             println!("Error preparing statement: {:?}", res.unwrap_err());
-            return;
+            return Err(Error::Other {
+                message: "Error Preparing Statement".to_string(),
+            });
+        }
+
+        let fir_text = if fir { "1" } else { "0" };
+
+        let mut stmt = res.unwrap();
+        let exec = stmt.execute([
+            &quantity.to_string(),
+            &item_id,
+            &wipe.to_string(),
+            &fir_text.to_string(),
+        ]);
+        if exec.is_err() {
+            println!("Error collecting item: {:?}", exec.unwrap_err());
+        }
+
+        let res = db.prepare("UPDATE found_items SET quantity = quantity + ? WHERE item = ? AND found_in_raid = ? AND wipe = ?");
+        if res.is_err() {
+            println!("Error preparing statement: {:?}", res.unwrap_err());
+            return Err(Error::Other {
+                message: "Error Preparing Statement".to_string(),
+            });
         }
         let mut stmt = res.unwrap();
-        let exec = stmt.execute([&item_id]);
+        let exec = stmt.execute([
+            &quantity.to_string(),
+            &item_id,
+            &fir_text.to_string(),
+            &wipe.to_string(),
+        ]);
         if exec.is_err() {
-            println!("Error deleting item: {:?}", exec.unwrap_err());
+            println!("Error collecting item: {:?}", exec.unwrap_err());
         }
+
+        let res = db.prepare("SELECT quantity FROM found_items WHERE item = ?");
+        if res.is_err() {
+            println!("Error preparing statement: {:?}", res.unwrap_err());
+            return Err(Error::Other {
+                message: "Error Preparing Statement".to_string(),
+            });
+        }
+        let mut stmt = res.unwrap();
+        let query = stmt.query_map([&item_id], |row| Ok(row.get::<usize, i64>(0).unwrap()));
+        if query.is_err() {
+            return Err(Error::Other {
+                message: "Error Querying Item".to_string(),
+            });
+        }
+        let mut quantity: i64 = 0;
+        for q in query.unwrap() {
+            quantity = q.unwrap();
+        }
+        Ok(quantity)
+    }
+
+    pub async fn remove(
+        item_id: String,
+        fir: bool,
+        quantity: i64,
+        db_lock: Arc<Mutex<Connection>>,
+        wipe: i64,
+    ) -> Result<i64, Error> {
+        let db = db_lock.lock().unwrap();
+
+        let res = db.prepare("UPDATE found_items SET quantity = quantity - ? WHERE item = ? AND quantity > 0 AND found_in_raid = ? AND wipe = ?");
+        if res.is_err() {
+            println!("Error preparing statement: {:?}", res.unwrap_err());
+            return Err(Error::Other {
+                message: "Error Preparing Statement".to_string(),
+            });
+        }
+
+        let fir_text = if fir { "1" } else { "0" };
+
+        let mut stmt = res.unwrap();
+        let exec = stmt.execute([
+            &quantity.to_string(),
+            &item_id,
+            &fir_text.to_string(),
+            &wipe.to_string(),
+        ]);
+        if exec.is_err() {
+            println!("Error removing item: {:?}", exec.unwrap_err());
+        }
+
+        let res = db.prepare(
+            "SELECT quantity FROM found_items WHERE item = ? AND found_in_raid = ? AND wipe = ?",
+        );
+        if res.is_err() {
+            println!("Error preparing statement: {:?}", res.unwrap_err());
+            return Err(Error::Other {
+                message: "Error Preparing Statement".to_string(),
+            });
+        }
+        let mut stmt = res.unwrap();
+        let query = stmt.query_map(
+            [&item_id, &fir_text.to_string(), &wipe.to_string()],
+            |row| Ok(row.get::<usize, i64>(0).unwrap()),
+        );
+        if query.is_err() {
+            return Err(Error::Other {
+                message: "Error Querying Item".to_string(),
+            });
+        }
+        let mut quantity: i64 = 0;
+        for q in query.unwrap() {
+            quantity = q.unwrap();
+        }
+        Ok(quantity)
+    }
+
+    pub async fn get_quantity(
+        item_id: String,
+        fir: bool,
+        db_lock: Arc<Mutex<Connection>>,
+        wipe: i64,
+    ) -> Result<i64, Error> {
+        let db = db_lock.lock().unwrap();
+
+        let res = db.prepare(
+            "SELECT quantity FROM found_items WHERE item = ? AND found_in_raid = ? AND wipe = ?",
+        );
+        if res.is_err() {
+            println!("Error preparing statement: {:?}", res.unwrap_err());
+            return Err(Error::Other {
+                message: "Error Preparing Statement".to_string(),
+            });
+        }
+        let mut stmt = res.unwrap();
+
+        let fir_text = if fir { "1" } else { "0" };
+
+        let query = stmt.query([&item_id, &fir_text.to_string(), &wipe.to_string()]);
+        if query.is_err() {
+            return Err(Error::Other {
+                message: "Error Querying Item".to_string(),
+            });
+        }
+        let mut q = query.unwrap();
+        let g = q.next();
+        if g.is_err() {
+            return Err(Error::Other {
+                message: "Error Getting Item".to_string(),
+            });
+        }
+        let opt = g.unwrap();
+        if opt.is_none() {
+            return Ok(0);
+        }
+
+        Ok(opt.unwrap().get(0).unwrap())
     }
 }
