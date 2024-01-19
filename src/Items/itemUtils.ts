@@ -13,28 +13,24 @@ export async function getItems() {
                 (objective: any) =>
                     objective.item == item.id && objective.found_in_raid
             );
-            await Promise.all(
-                objectiveFirs.map(async (objective) => {
-                    let i = items.find(
-                        (i) =>
-                            i.id == item.id &&
-                            i.foundInRaid &&
-                            i.dogtag_level == objective.dogtag_level &&
-                            i.min_durability == objective.min_durability &&
-                            i.max_durability == objective.max_durability
-                    );
-                    if (!i) {
-                        i = JSON.parse(JSON.stringify(item)) as CollatedItem;
+            for (let objective of objectiveFirs) {
+                let i = items.find(
+                    (i) =>
+                        i.id == item.id &&
+                        i.foundInRaid &&
+                        i.dogtag_level == objective.dogtag_level &&
+                        i.min_durability == objective.min_durability &&
+                        i.max_durability == objective.max_durability
+                );
+                if (!i) {
+                    i = JSON.parse(JSON.stringify(item)) as CollatedItem;
 
-                        i.foundInRaid = true;
-                        i.collected = 0;
-                        i.totalCount = 0;
-                        i.dogtag_level = objective.dogtag_level;
-                        i.min_durability = objective.min_durability;
-                        i.max_durability = objective.max_durability;
-                        items.push(i);
-                    }
-
+                    i.foundInRaid = true;
+                    i.collected = 0;
+                    i.totalCount = 0;
+                    i.dogtag_level = objective.dogtag_level;
+                    i.min_durability = objective.min_durability;
+                    i.max_durability = objective.max_durability;
                     let quantity = await invoke<number>(
                         "get_collected_quantity",
                         {
@@ -44,46 +40,40 @@ export async function getItems() {
                     );
 
                     i.collected += quantity;
+                    items.push(i);
+                }
 
-                    if (!objective.completed) {
-                        i.totalCount += objective.count - objective.collected;
-                    }
-
-                    return i;
-                })
-            );
+                if (!objective.completed) {
+                    i.totalCount += objective.count - objective.collected;
+                }
+            }
             let objectiveNotFirs = objectives.filter(
                 (objective: any) =>
                     objective.item == item.id && !objective.found_in_raid
             );
-            await Promise.all(
-                objectiveNotFirs.map(async (objective) => {
-                    if (
-                        objective.description
-                            .toLowerCase()
-                            .startsWith("hand over")
-                    ) {
-                        return;
-                    }
-                    let i = items.find(
-                        (i) =>
-                            i.id == item.id &&
-                            !i.foundInRaid &&
-                            i.dogtag_level == objective.dogtag_level &&
-                            i.min_durability == objective.min_durability &&
-                            i.max_durability == objective.max_durability
-                    );
-                    if (!i) {
-                        i = JSON.parse(JSON.stringify(item)) as CollatedItem;
+            for (let objective of objectiveNotFirs) {
+                if (
+                    objective.description.toLowerCase().startsWith("hand over")
+                ) {
+                    return;
+                }
+                let i = items.find(
+                    (i) =>
+                        i.id == item.id &&
+                        !i.foundInRaid &&
+                        i.dogtag_level == objective.dogtag_level &&
+                        i.min_durability == objective.min_durability &&
+                        i.max_durability == objective.max_durability
+                );
+                if (!i) {
+                    i = JSON.parse(JSON.stringify(item)) as CollatedItem;
 
-                        i.foundInRaid = false;
-                        i.collected = 0;
-                        i.totalCount = 0;
-                        i.dogtag_level = objective.dogtag_level;
-                        i.min_durability = objective.min_durability;
-                        i.max_durability = objective.max_durability;
-                        items.push(i);
-                    }
+                    i.foundInRaid = false;
+                    i.collected = 0;
+                    i.totalCount = 0;
+                    i.dogtag_level = objective.dogtag_level;
+                    i.min_durability = objective.min_durability;
+                    i.max_durability = objective.max_durability;
 
                     let quantity = await invoke<number>(
                         "get_collected_quantity",
@@ -94,13 +84,14 @@ export async function getItems() {
                     );
 
                     i.collected += quantity;
+                    items.push(i);
+                }
 
-                    if (!objective.completed) {
-                        i.totalCount += objective.count - objective.collected;
-                    }
-                    return i;
-                })
-            );
+                if (!objective.completed) {
+                    i.totalCount += objective.count - objective.collected;
+                }
+                return i;
+            }
             return item;
         })
     );

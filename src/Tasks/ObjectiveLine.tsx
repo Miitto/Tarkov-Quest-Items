@@ -260,7 +260,7 @@ export function ObjectiveLine({
         <span className={`${objectiveState.completed ? styles.completed : ""}`}>
             <p>{objectiveState.description}</p>
             {objectiveState.item && (
-                <>
+                <div>
                     <img src={objectiveState.itemImage} />
                     <button
                         onClick={unassignItem}
@@ -282,7 +282,7 @@ export function ObjectiveLine({
                         {formatK(objectiveState.count)}
                     </p>
                     <p>({objectiveState.in_stash})</p>
-                </>
+                </div>
             )}
             <input
                 type="checkbox"

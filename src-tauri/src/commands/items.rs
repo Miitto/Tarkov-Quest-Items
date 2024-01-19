@@ -114,7 +114,7 @@ pub fn uncollect(
 }
 
 #[tauri::command]
-pub async fn get_collected_quantity(
+pub fn get_collected_quantity(
     id: String,
     fir: bool,
     dogtag_level: Option<i64>,
@@ -141,7 +141,6 @@ pub async fn get_collected_quantity(
         db_lock.inner().clone(),
         wipe_id.unwrap(),
     )
-    .await
 }
 
 #[tauri::command]

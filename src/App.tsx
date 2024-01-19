@@ -13,6 +13,7 @@ function App() {
 
     useEffect(() => {
         (async () => {
+            setItems([]);
             let items = await getItems();
             setItems(items);
         })();

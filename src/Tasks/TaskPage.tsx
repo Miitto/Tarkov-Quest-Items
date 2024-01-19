@@ -1,7 +1,6 @@
 import React, { RefObject } from "react";
 import { VariableSizeList as List } from "react-window";
 
-import styles from "./Tasks.module.scss";
 import { TaskLine } from "./TaskLine";
 import { CollatedTask } from "../types";
 
@@ -16,7 +15,12 @@ const Row = ({ index, style, setSize, tasks, setMainDialog }: any) => (
     </div>
 );
 
-export class TaskPage extends React.Component {
+interface Props {
+    tasks: CollatedTask[];
+    setMainDialog: (dialog: JSX.Element) => void;
+}
+
+export class TaskPage extends React.Component<Props> {
     state = {
         rowSizes: new Array(1000).fill(true).reduce((acc, _, i) => {
             acc[i] = 34;
@@ -26,7 +30,6 @@ export class TaskPage extends React.Component {
 
     constructor(props: any) {
         super(props);
-        console.log("Props", props);
     }
 
     listRef: RefObject<List<any>> = React.createRef();

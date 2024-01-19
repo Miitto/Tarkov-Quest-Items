@@ -138,25 +138,33 @@
     }
 
     > span {
-        display: flex;
+        display: grid;
         align-items: center;
         gap: 0.5rem;
         padding: 0.5rem 0.5rem 0.5rem 1rem;
         background-color: var(--bg-color-alt);
         height: 64px;
+        grid-template-columns: 1fr auto auto;
 
-        button {
-            background-color: var(--bg-color-alt);
-            border: none;
-            padding: 0.5rem;
-            font-size: 1.2em;
+        > div {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
 
-            &:hover {
-                filter: brightness(1.2);
-            }
+            button {
+                background-color: var(--bg-color-alt);
+                border: none;
+                padding: 0.5rem;
+                font-size: 1.2em;
+                height: fit-content;
 
-            &:active {
-                filter: brightness(0.1);
+                &:hover {
+                    filter: brightness(1.2);
+                }
+
+                &:active {
+                    filter: brightness(0.75);
+                }
             }
         }
 
@@ -171,6 +179,24 @@
 
         img {
             height: 3rem;
+        }
+
+        &.completed {
+            > div button {
+                background-color: $tarkov-tan-darker !important;
+                color: $tarkov-text !important;
+
+                &:hover:not(:active) {
+                    background-color: $tarkov-tan-darker !important;
+                    filter: brightness(0.75) !important;
+                }
+
+                &:active {
+                    background-color: $tarkov-tan-lighter !important;
+                    filter: brightness(1);
+                    outline: $tarkov-text solid 1px;
+                }
+            }
         }
     }
 }
