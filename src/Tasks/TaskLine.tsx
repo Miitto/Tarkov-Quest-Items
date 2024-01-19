@@ -5,12 +5,12 @@ import { ObjectiveLine } from "./ObjectiveLine";
 
 export function TaskLine({
     tasks,
-    setMainDialog,
+    setTaskDialog,
     setSize,
     index,
 }: {
     tasks: CollatedTask[];
-    setMainDialog: (dialog: JSX.Element) => void;
+    setTaskDialog: (dialog: JSX.Element) => void;
     setSize: (idx: number, size: number) => void;
     index: number;
 }) {
@@ -57,7 +57,7 @@ export function TaskLine({
                             objective={objective}
                             taskState={taskState}
                             taskStateSetter={setTaskState}
-                            setMainDialog={setMainDialog}
+                            setTaskDialog={setTaskDialog}
                         />
                     );
                 })}

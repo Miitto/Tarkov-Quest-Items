@@ -4,11 +4,11 @@ import { VariableSizeList as List } from "react-window";
 import { TaskLine } from "./TaskLine";
 import { CollatedTask } from "../types";
 
-const Row = ({ index, style, setSize, tasks, setMainDialog }: any) => (
+const Row = ({ index, style, setSize, tasks, setTaskDialog }: any) => (
     <div style={style}>
         <TaskLine
             tasks={tasks}
-            setMainDialog={setMainDialog}
+            setTaskDialog={setTaskDialog}
             setSize={setSize}
             index={index}
         />
@@ -17,7 +17,7 @@ const Row = ({ index, style, setSize, tasks, setMainDialog }: any) => (
 
 interface Props {
     tasks: CollatedTask[];
-    setMainDialog: (dialog: JSX.Element) => void;
+    setTaskDialog: (dialog: JSX.Element) => void;
 }
 
 export class TaskPage extends React.Component<Props> {
@@ -48,7 +48,7 @@ export class TaskPage extends React.Component<Props> {
                     <Row
                         {...props}
                         tasks={this.props.tasks}
-                        setMainDialog={this.props.setMainDialog}
+                        setTaskDialog={this.props.setTaskDialog}
                         setSize={this.setSize}
                     />
                 )}

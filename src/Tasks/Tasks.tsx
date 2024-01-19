@@ -9,7 +9,7 @@ export function TasksPanel({ activeWipe }: { activeWipe: number }) {
     const [tasks, setTasks] = useState<CollatedTask[]>([]);
     const [filterName, setFilterName] = useState("");
     const [sort, setSort] = useState("lvl");
-    const [MainDialog, setMainDialog] = useState(<DefaultDialog />);
+    const [TaskDialog, setTaskDialog] = useState(<DefaultDialog />);
 
     const filteredTasks = useMemo(() => {
         return tasks
@@ -82,10 +82,10 @@ export function TasksPanel({ activeWipe }: { activeWipe: number }) {
                 />
                 <TaskPage
                     tasks={filteredTasks as any}
-                    setMainDialog={setMainDialog as any}
+                    setTaskDialog={setTaskDialog as any}
                 />
             </ul>
-            {MainDialog}
+            {TaskDialog}
         </>
     );
 }

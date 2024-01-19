@@ -174,7 +174,6 @@ impl Item {
         wipe: i64,
     ) -> Result<i64, Error> {
         let db = db_lock.lock().unwrap();
-        println!("Uncollecting {} from {} x{}", item_id, wipe, quantity);
 
         let mut fnd_item_stmt = db.prepare(
             "SELECT quantity FROM found_items WHERE item = ? AND found_in_raid = ? AND wipe = ? AND dogtag_level = ? AND min_durability = ? AND max_durability = ?",

@@ -9,12 +9,12 @@ export function ObjectiveLine({
     objective,
     taskState,
     taskStateSetter,
-    setMainDialog,
+    setTaskDialog,
 }: {
     objective: Objective;
     taskState: CollatedTask;
     taskStateSetter: (task: CollatedTask) => void;
-    setMainDialog: (dialog: JSX.Element) => void;
+    setTaskDialog: (dialog: JSX.Element) => void;
 }) {
     const [objectiveState, setObjectiveState] = useState<CollatedObjective>(
         (() => {
@@ -88,7 +88,7 @@ export function ObjectiveLine({
                     console.log(e);
                 });
         } else {
-            setMainDialog(<AddItemDialog />);
+            setTaskDialog(<AddItemDialog />);
         }
     }
 
@@ -108,7 +108,7 @@ export function ObjectiveLine({
                     console.log(e);
                 });
         } else {
-            setMainDialog(<RemoveItemDialog />);
+            setTaskDialog(<RemoveItemDialog />);
         }
     }
 
@@ -140,7 +140,7 @@ export function ObjectiveLine({
         return (
             <dialog
                 ref={addItemDialog}
-                className={styles.mainDialog}
+                className={styles.taskDialog}
                 onClick={(e) => {
                     if (e.target === addItemDialog.current) {
                         addItemDialog.current?.close();
@@ -210,7 +210,7 @@ export function ObjectiveLine({
         return (
             <dialog
                 ref={removeItemDialog}
-                className={styles.mainDialog}
+                className={styles.taskDialog}
                 onClick={(e) => {
                     if (e.target === removeItemDialog.current) {
                         removeItemDialog.current?.close();
