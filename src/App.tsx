@@ -11,9 +11,14 @@ function App() {
     const [activeWipe, setActiveWipe] = useState(-1);
     const [items, setItems] = useState<CollatedItem[]>([]);
 
+    function setActiveWipePersist(idx: number) {
+        setActiveWipe(idx);
+        localStorage.setItem("activeWipe", idx.toString());
+    }
+
     useEffect(() => {
         (async () => {
-            setItems([]);
+            setItems([]); // Clear Items while loading
             let items = await getItems();
             setItems(items);
         })();
@@ -23,7 +28,7 @@ function App() {
         <>
             <WipePanel
                 activeWipe={activeWipe}
-                setActiveWipe={setActiveWipe}
+                setActiveWipe={setActiveWipePersist}
             />
             <main className={styles.main}>
                 <ul>

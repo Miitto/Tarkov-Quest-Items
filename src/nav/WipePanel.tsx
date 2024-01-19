@@ -26,12 +26,11 @@ export function WipePanel({
 
     useEffect(() => {
         invoke<Wipe[]>("get_all_wipes").then((wipes): void => {
+            let activeWipe = parseInt(
+                localStorage.getItem("activeWipe") ?? wipes[0].id.toString()
+            );
             setWipes(wipes as Wipe[]);
-            if (wipes.length > 0) pickWipe(wipes[0].id);
-            if (wipes.length > 0)
-                invoke("pick_wipe", {
-                    wipeId: wipes[0].id,
-                });
+            if (wipes.length > 0) pickWipe(activeWipe);
         });
     }, []);
 
