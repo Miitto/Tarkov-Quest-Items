@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { CollatedTask, Objective, Task } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Tasks.module.scss";
-import { TaskLine } from "./TaskLine";
+import { TaskPage } from "./TaskPage";
 
 export function TasksPanel({ activeWipe }: { activeWipe: number }) {
     const [tasks, setTasks] = useState<CollatedTask[]>([]);
@@ -81,8 +81,8 @@ export function TasksPanel({ activeWipe }: { activeWipe: number }) {
                     setSort={setSort}
                 />
                 <TaskPage
-                    tasks={filteredTasks}
-                    setMainDialog={setMainDialog}
+                    tasks={filteredTasks as any}
+                    setMainDialog={setMainDialog as any}
                 />
             </ul>
             {MainDialog}
@@ -192,28 +192,6 @@ function TitleBar({
                 )}
             </button>
         </div>
-    );
-}
-
-function TaskPage({
-    tasks,
-    setMainDialog,
-}: {
-    tasks: CollatedTask[];
-    setMainDialog: (dialog: JSX.Element) => void;
-}) {
-    return (
-        <>
-            {tasks.map((task: CollatedTask) => {
-                return (
-                    <TaskLine
-                        key={`${task.id}${task.completed}`}
-                        task={task}
-                        setMainDialog={setMainDialog}
-                    />
-                );
-            })}
-        </>
     );
 }
 

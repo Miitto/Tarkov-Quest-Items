@@ -6,7 +6,7 @@
         "distDir": "../dist"
     },
     "package": {
-        "productName": ".",
+        "productName": "Tarkov Task Items",
         "version": "0.0.0"
     },
     "tauri": {

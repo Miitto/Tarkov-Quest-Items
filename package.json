@@ -14,8 +14,11 @@
         "@fortawesome/free-solid-svg-icons": "^6.5.1",
         "@fortawesome/react-fontawesome": "^0.2.0",
         "@tauri-apps/api": "^1.5.1",
+        "@types/react-window": "^1.8.8",
+        "memoize-one": "^6.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
+        "react-window": "^1.8.10",
         "sass": "^1.69.7"
     },
     "devDependencies": {

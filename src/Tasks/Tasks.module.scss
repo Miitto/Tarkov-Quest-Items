@@ -26,20 +26,40 @@
 }
 
 .taskList {
-    overflow-y: auto;
     max-height: 100%;
     display: grid;
     grid-template-columns: auto 1fr auto auto;
+    flex-grow: 1;
+    grid-template-rows: 2rem 1fr;
+
+    > div:last-child {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: subgrid;
+        height: 100% !important;
+
+        > div {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: subgrid;
+
+            > div {
+                grid-column: 1 / -1;
+                display: grid;
+                grid-template-columns: subgrid;
+            }
+        }
+    }
 }
 
 .taskLine {
     display: grid;
-    grid-template-columns: subgrid;
-    align-items: center;
+    grid-template-columns: auto 1fr auto auto;
     grid-column: 1 / -1;
+    overflow: hidden;
 
     &:has(.show) {
-        box-shadow: 0 0 2px 1px $tarkov-tan;
+        box-shadow: 0 0 2px 1px $tarkov-tan-darker;
 
         &:first-of-type {
             margin-top: 2px;
@@ -52,6 +72,7 @@
         display: grid;
         grid-template-columns: subgrid;
         font-size: 1rem;
+        padding-right: 15px;
 
         background-color: transparent;
         border: none;
@@ -61,6 +82,7 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            min-width: 65px;
 
             &:not(:nth-child(2)) {
                 justify-content: center;
@@ -106,7 +128,6 @@
 }
 
 .objList {
-    max-height: 0;
     overflow: hidden;
     grid-column: 1 / -1;
     box-shadow: 0 0 2px black;
@@ -122,6 +143,7 @@
         gap: 0.5rem;
         padding: 0.5rem 0.5rem 0.5rem 1rem;
         background-color: var(--bg-color-alt);
+        height: 64px;
 
         button {
             background-color: var(--bg-color-alt);
@@ -202,11 +224,11 @@
     grid-template-columns: subgrid;
     grid-column: 1 / -1;
     align-items: center;
-    min-height: 2rem;
     position: sticky;
     top: 0;
     left: 0;
     z-index: 6;
+    flex-grow: 0 0 2rem;
 
     button {
         margin: 0;
@@ -215,9 +237,15 @@
         box-shadow: 0 0 2px black;
         height: 100%;
         position: relative;
+        min-width: 65px;
 
         &:hover {
             filter: brightness(1.2);
+        }
+
+        &:last-child {
+            padding-right: 15px;
+            min-width: calc(65px + 15px);
         }
     }
 }
