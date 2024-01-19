@@ -4,6 +4,8 @@ export let tmp = {
             {
                 id: "657315df034d76585f032e01",
                 name: "Shooting Cans",
+                taskImageLink:
+                    "https://assets.tarkov.dev/657315df034d76585f032e01.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -34,6 +36,8 @@ export let tmp = {
             {
                 id: "657315e270bb0b8dba00cc48",
                 name: "Burning Rubber",
+                taskImageLink:
+                    "https://assets.tarkov.dev/657315e270bb0b8dba00cc48.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -51,6 +55,7 @@ export let tmp = {
             {
                 id: "657315e4a6af4ab4b50f3459",
                 name: "Saving the Mole",
+                taskImageLink: "https://assets.tarkov.dev/unknown-task.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -93,6 +98,8 @@ export let tmp = {
             {
                 id: "657315ddab5a49b71f098853",
                 name: "First in Line",
+                taskImageLink:
+                    "https://assets.tarkov.dev/657315ddab5a49b71f098853.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -112,6 +119,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c695186f7741e566b64a2",
                             name: "Augmentin antibiotic pills",
@@ -124,6 +135,8 @@ export let tmp = {
             {
                 id: "5936d90786f7742b1420ba5b",
                 name: "Debut",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5936d90786f7742b1420ba5b.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -144,6 +157,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "54491c4f4bdc2db1078b4568",
                             name: "MP-133 12ga pump-action shotgun",
@@ -156,6 +173,8 @@ export let tmp = {
             {
                 id: "5967733e86f774602332fc84",
                 name: "Shortage",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5967733e86f774602332fc84.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -168,6 +187,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "544fb45d4bdc2dee738b4568",
                             name: "Salewa first aid kit",
@@ -182,6 +205,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "544fb45d4bdc2dee738b4568",
                             name: "Salewa first aid kit",
@@ -194,6 +221,7 @@ export let tmp = {
             {
                 id: "657315e1dccd301f1301416a",
                 name: "Luxurious Life",
+                taskImageLink: "https://assets.tarkov.dev/unknown-task.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -223,6 +251,8 @@ export let tmp = {
             {
                 id: "5ac23c6186f7741247042bad",
                 name: "Gunsmith - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac23c6186f7741247042bad.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -240,6 +270,8 @@ export let tmp = {
             {
                 id: "5936da9e86f7742d65037edf",
                 name: "Background Check",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5936da9e86f7742d65037edf.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -265,6 +297,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5937ee6486f77408994ba448",
                             name: "Machinery key",
@@ -277,6 +313,8 @@ export let tmp = {
             {
                 id: "5d25bfd086f77442734d3007",
                 name: "The Survivalist Path - Zhivchik",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25bfd086f77442734d3007.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -300,6 +338,8 @@ export let tmp = {
             {
                 id: "5eaaaa7c93afa0558f3b5a1c",
                 name: "The Survivalist Path - Junkie",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5eaaaa7c93afa0558f3b5a1c.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -317,6 +357,8 @@ export let tmp = {
             {
                 id: "5d25e2c386f77443e7549029",
                 name: "The Huntsman Path - Trophy",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e2c386f77443e7549029.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -335,6 +377,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b3b713c5acfc4330140bd8d",
                             name: "TT-33 7.62x25 TT pistol (Golden)",
@@ -349,6 +395,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b3b713c5acfc4330140bd8d",
                             name: "TT-33 7.62x25 TT pistol (Golden)",
@@ -361,6 +411,8 @@ export let tmp = {
             {
                 id: "5d25aed386f77442734d25d2",
                 name: "The Survivalist Path - Unprotected but Dangerous",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25aed386f77442734d25d2.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -378,6 +430,8 @@ export let tmp = {
             {
                 id: "5d25e29d86f7740a22516326",
                 name: "The Survivalist Path - Eagle-Owl",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e29d86f7740a22516326.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -395,6 +449,8 @@ export let tmp = {
             {
                 id: "5d25d2c186f77443e35162e5",
                 name: "The Survivalist Path - Cold Blooded",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25d2c186f77443e35162e5.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -412,6 +468,8 @@ export let tmp = {
             {
                 id: "5d24b81486f77439c92d6ba8",
                 name: "Acquaintance",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d24b81486f77439c92d6ba8.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -425,6 +483,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c5d4b86f774784e1b9c45",
                             name: "Iskra ration pack",
@@ -440,6 +502,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "656df4fec921ad01000481a2",
                             name: "Pack of instant noodles",
@@ -455,6 +521,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57347da92459774491567cf5",
                             name: "Can of beef stew (Large)",
@@ -467,6 +537,8 @@ export let tmp = {
             {
                 id: "5d25e2cc86f77443e47ae019",
                 name: "The Huntsman Path - Forest Cleaning",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e2cc86f77443e47ae019.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -484,6 +556,8 @@ export let tmp = {
             {
                 id: "5d2495a886f77425cd51e403",
                 name: "Introduction",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d2495a886f77425cd51e403.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -513,6 +587,8 @@ export let tmp = {
             {
                 id: "5d25c81b86f77443e625dd71",
                 name: "The Survivalist Path - Wounded Beast",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25c81b86f77443e625dd71.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -530,6 +606,8 @@ export let tmp = {
             {
                 id: "5d25cf2686f77443e75488d4",
                 name: "The Survivalist Path - Tough Guy",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25cf2686f77443e75488d4.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -547,6 +625,8 @@ export let tmp = {
             {
                 id: "5d25e44386f77409453bce7b",
                 name: "The Huntsman Path - Evil Watchman",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e44386f77409453bce7b.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -564,6 +644,8 @@ export let tmp = {
             {
                 id: "5d25e43786f7740a212217fa",
                 name: "The Huntsman Path - Justice",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e43786f7740a212217fa.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -581,6 +663,8 @@ export let tmp = {
             {
                 id: "5d25b6be86f77444001e1b89",
                 name: "The Survivalist Path - Thrifty",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25b6be86f77444001e1b89.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -594,6 +678,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c5d4b86f774784e1b9c45",
                             name: "Iskra ration pack",
@@ -609,6 +697,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5448fee04bdc2dbc018b4567",
                             name: "Bottle of water (0.6L)",
@@ -624,6 +716,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c5d4b86f774784e1b9c45",
                             name: "Iskra ration pack",
@@ -639,6 +735,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5448fee04bdc2dbc018b4567",
                             name: "Bottle of water (0.6L)",
@@ -651,6 +751,8 @@ export let tmp = {
             {
                 id: "5d25e2a986f77409dd5cdf2a",
                 name: "The Survivalist Path - Combat Medic",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e2a986f77409dd5cdf2a.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -667,6 +769,8 @@ export let tmp = {
             {
                 id: "5d25e2d886f77442734d335e",
                 name: "The Huntsman Path - Controller",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e2d886f77442734d335e.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -684,6 +788,8 @@ export let tmp = {
             {
                 id: "5bc4776586f774512d07cf05",
                 name: "The Tarkov Shooter - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5bc4776586f774512d07cf05.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -701,6 +807,8 @@ export let tmp = {
             {
                 id: "5bc480a686f7741af0342e29",
                 name: "The Tarkov Shooter - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5bc480a686f7741af0342e29.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -718,6 +826,8 @@ export let tmp = {
             {
                 id: "5bc479e586f7747f376c7da3",
                 name: "The Tarkov Shooter - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5bc479e586f7747f376c7da3.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -742,6 +852,8 @@ export let tmp = {
             {
                 id: "5bc4826c86f774106d22d88b",
                 name: "The Tarkov Shooter - Part 5",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5bc4826c86f774106d22d88b.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -759,6 +871,8 @@ export let tmp = {
             {
                 id: "5bc47dbf86f7741ee74e93b9",
                 name: "The Tarkov Shooter - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5bc47dbf86f7741ee74e93b9.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -776,6 +890,8 @@ export let tmp = {
             {
                 id: "5bc4856986f77454c317bea7",
                 name: "The Tarkov Shooter - Part 7",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5bc4856986f77454c317bea7.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -793,6 +909,8 @@ export let tmp = {
             {
                 id: "5bc4893c86f774626f5ebf3e",
                 name: "The Tarkov Shooter - Part 8",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5bc4893c86f774626f5ebf3e.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -810,6 +928,8 @@ export let tmp = {
             {
                 id: "5bc4836986f7740c0152911c",
                 name: "The Tarkov Shooter - Part 6",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5bc4836986f7740c0152911c.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -827,6 +947,8 @@ export let tmp = {
             {
                 id: "5d25e2b486f77409de05bba0",
                 name: "The Huntsman Path - Secured Perimeter",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e2b486f77409de05bba0.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -844,6 +966,8 @@ export let tmp = {
             {
                 id: "59674cd986f7744ab26e32f2",
                 name: "Shootout Picnic",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59674cd986f7744ab26e32f2.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -860,6 +984,8 @@ export let tmp = {
             {
                 id: "59689ee586f7740d1570bbd5",
                 name: "Sanitary Standards - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59689ee586f7740d1570bbd5.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -879,6 +1005,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3efd86f77437d351a25b",
                             name: "Gas analyzer",
@@ -893,6 +1023,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3efd86f77437d351a25b",
                             name: "Gas analyzer",
@@ -905,6 +1039,8 @@ export let tmp = {
             {
                 id: "596b36c586f77450d6045ad2",
                 name: "Supplier",
+                taskImageLink:
+                    "https://assets.tarkov.dev/596b36c586f77450d6045ad2.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -918,6 +1054,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e7635f86f7742cbf2c1095",
                             name: "BNTI Module-3M body armor",
@@ -933,6 +1073,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5a38e6bac4a2826c6e06d79b",
                             name: "TOZ-106 20ga bolt-action shotgun",
@@ -945,6 +1089,8 @@ export let tmp = {
             {
                 id: "5fd9fad9c1ce6b1a3b486d00",
                 name: "Search Mission",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5fd9fad9c1ce6b1a3b486d00.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -973,6 +1119,8 @@ export let tmp = {
             {
                 id: "5ac2426c86f774138762edfe",
                 name: "Gunsmith - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac2426c86f774138762edfe.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -990,6 +1138,8 @@ export let tmp = {
             {
                 id: "59674eb386f774539f14813a",
                 name: "Delivery from the Past",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59674eb386f774539f14813a.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -1020,6 +1170,8 @@ export let tmp = {
             {
                 id: "63a88045abf76d719f42d715",
                 name: "The Delicious Sausage",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63a88045abf76d719f42d715.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -1058,6 +1210,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "635a758bfefc88a93f021b8a",
                             name: "Salty Dog beef sausage",
@@ -1070,6 +1226,8 @@ export let tmp = {
             {
                 id: "59c124d686f774189b3c843f",
                 name: "BP Depot",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59c124d686f774189b3c843f.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -1114,6 +1272,8 @@ export let tmp = {
             {
                 id: "59689fbd86f7740d137ebfc4",
                 name: "Operation Aquarius - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59689fbd86f7740d137ebfc4.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -1137,6 +1297,8 @@ export let tmp = {
             {
                 id: "5967530a86f77462ba22226b",
                 name: "Bad Rep Evidence",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5967530a86f77462ba22226b.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -1156,6 +1318,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5938144586f77473c2087145",
                             name: "Portable bunkhouse key",
@@ -1187,6 +1353,8 @@ export let tmp = {
             {
                 id: "5968eb3186f7741dde183a4d",
                 name: "Operation Aquarius - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5968eb3186f7741dde183a4d.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -1203,6 +1371,8 @@ export let tmp = {
             {
                 id: "5ac2428686f77412450b42bf",
                 name: "Gunsmith - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac2428686f77412450b42bf.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -1220,6 +1390,8 @@ export let tmp = {
             {
                 id: "596b43fb86f77457ca186186",
                 name: "The Extortionist",
+                taskImageLink:
+                    "https://assets.tarkov.dev/596b43fb86f77457ca186186.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -1255,6 +1427,8 @@ export let tmp = {
             {
                 id: "596a204686f774576d4c95de",
                 name: "Sanitary Standards - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/596a204686f774576d4c95de.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -1267,6 +1441,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3efd86f77437d351a25b",
                             name: "Gas analyzer",
@@ -1281,6 +1459,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3efd86f77437d351a25b",
                             name: "Gas analyzer",
@@ -1293,6 +1475,8 @@ export let tmp = {
             {
                 id: "596b455186f77457cb50eccb",
                 name: "Stirrup",
+                taskImageLink:
+                    "https://assets.tarkov.dev/596b455186f77457cb50eccb.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -1310,6 +1494,8 @@ export let tmp = {
             {
                 id: "5979ed3886f77431307dc512",
                 name: "What’s on the Flash Drive?",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5979ed3886f77431307dc512.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -1322,6 +1508,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c621186f774138d11ea29",
                             name: "Secure Flash drive",
@@ -1336,6 +1526,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c621186f774138d11ea29",
                             name: "Secure Flash drive",
@@ -1348,6 +1542,8 @@ export let tmp = {
             {
                 id: "5979eee086f774311955e614",
                 name: "Golden Swag",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5979eee086f774311955e614.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -1371,6 +1567,8 @@ export let tmp = {
             {
                 id: "5969f90786f77420d2328015",
                 name: "Painkiller",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5969f90786f77420d2328015.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -1383,6 +1581,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "544fb3f34bdc2d03748b456a",
                             name: "Morphine injector",
@@ -1397,6 +1599,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "544fb3f34bdc2d03748b456a",
                             name: "Morphine injector",
@@ -1409,6 +1615,8 @@ export let tmp = {
             {
                 id: "5a27c99a86f7747d2c6bdd8e",
                 name: "Friend From the West - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27c99a86f7747d2c6bdd8e.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -1427,6 +1635,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 7,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32c3b86f77472a31742f0",
                             name: "Dogtag USEC",
@@ -1441,6 +1653,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 7,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32c3b86f77472a31742f0",
                             name: "Dogtag USEC",
@@ -1453,6 +1669,8 @@ export let tmp = {
             {
                 id: "59675d6c86f7740a842fc482",
                 name: "Ice Cream Cones",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59675d6c86f7740a842fc482.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -1466,6 +1684,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "55d482194bdc2d1d4e8b456b",
                             name: "AK-74 5.45x39 6L31 60-round magazine",
@@ -1480,6 +1702,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "55d482194bdc2d1d4e8b456b",
                             name: "AK-74 5.45x39 6L31 60-round magazine",
@@ -1495,6 +1721,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "591afe0186f77431bd616a11",
                             name: "ZB-014 key",
@@ -1513,6 +1743,8 @@ export let tmp = {
             {
                 id: "5a27d2af86f7744e1115b323",
                 name: "Friend From the West - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27d2af86f7744e1115b323.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -1525,6 +1757,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5000,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5696686a4bdc2da3298b456a",
                             name: "Dollars",
@@ -1537,6 +1773,8 @@ export let tmp = {
             {
                 id: "639872f9decada40426d3447",
                 name: "Gunsmith - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639872f9decada40426d3447.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -1554,6 +1792,8 @@ export let tmp = {
             {
                 id: "5ede55112c95834b583f052a",
                 name: "The Bunker - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ede55112c95834b583f052a.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -1583,6 +1823,8 @@ export let tmp = {
             {
                 id: "639136e84ed9512be67647db",
                 name: "Cease Fire!",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639136e84ed9512be67647db.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -1600,6 +1842,8 @@ export let tmp = {
             {
                 id: "5979f9ba86f7740f6c3fe9f2",
                 name: "Chemical - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5979f9ba86f7740f6c3fe9f2.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -1626,6 +1870,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5780cfa52459777dfb276eb1",
                             name: "Dorm room 220 key",
@@ -1640,6 +1888,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5780cfa52459777dfb276eb1",
                             name: "Dorm room 220 key",
@@ -1659,6 +1911,8 @@ export let tmp = {
             {
                 id: "5969f9e986f7741dde183a50",
                 name: "Pharmacist",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5969f9e986f7741dde183a50.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -1695,6 +1949,8 @@ export let tmp = {
             {
                 id: "5ae3267986f7742a413592fe",
                 name: "Gunsmith - Part 5",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae3267986f7742a413592fe.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -1712,6 +1968,8 @@ export let tmp = {
             {
                 id: "5a27b75b86f7742e97191958",
                 name: "Fishing Gear",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27b75b86f7742e97191958.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -1731,6 +1989,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "55801eed4bdc2d89578b4588",
                             name: "SV-98 7.62x54R bolt-action sniper rifle",
@@ -1745,6 +2007,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "544fb5454bdc2df8738b456a",
                             name: "Leatherman Multitool",
@@ -1763,6 +2029,8 @@ export let tmp = {
             {
                 id: "59675ea386f77414b32bded2",
                 name: "Postman Pat - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59675ea386f77414b32bded2.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -1792,6 +2060,8 @@ export let tmp = {
             {
                 id: "597a0b2986f77426d66c0633",
                 name: "Chemical - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/597a0b2986f77426d66c0633.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -1828,6 +2098,8 @@ export let tmp = {
             {
                 id: "5a27b7a786f774579c3eb376",
                 name: "Tigr Safari",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27b7a786f774579c3eb376.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -1865,6 +2137,8 @@ export let tmp = {
             {
                 id: "5a27b7d686f77460d847e6a6",
                 name: "Scrap Metal",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27b7d686f77460d847e6a6.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -1902,6 +2176,8 @@ export let tmp = {
             {
                 id: "5979f8bb86f7743ec214c7a6",
                 name: "Polikhim Hobo",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5979f8bb86f7743ec214c7a6.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -1918,6 +2194,8 @@ export let tmp = {
             {
                 id: "596760e186f7741e11214d58",
                 name: "Postman Pat - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/596760e186f7741e11214d58.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -1935,6 +2213,8 @@ export let tmp = {
             {
                 id: "596a1e6c86f7741ddc2d3206",
                 name: "General Wares",
+                taskImageLink:
+                    "https://assets.tarkov.dev/596a1e6c86f7741ddc2d3206.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -1947,6 +2227,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 15,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57347d7224597744596b4e72",
                             name: "Can of beef stew (Small)",
@@ -1961,6 +2245,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 15,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57347d7224597744596b4e72",
                             name: "Can of beef stew (Small)",
@@ -1973,6 +2261,8 @@ export let tmp = {
             {
                 id: "596a218586f77420d232807c",
                 name: "Car Repair",
+                taskImageLink:
+                    "https://assets.tarkov.dev/596a218586f77420d232807c.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -1985,6 +2275,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5733279d245977289b77ec24",
                             name: "Car battery",
@@ -1999,6 +2293,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 8,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3c0a86f774385a33c450",
                             name: "Spark plug",
@@ -2013,6 +2311,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5733279d245977289b77ec24",
                             name: "Car battery",
@@ -2027,6 +2329,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 8,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3c0a86f774385a33c450",
                             name: "Spark plug",
@@ -2039,6 +2345,8 @@ export let tmp = {
             {
                 id: "597a0e5786f77426d66c0636",
                 name: "Chemical - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/597a0e5786f77426d66c0636.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -2062,6 +2370,8 @@ export let tmp = {
             {
                 id: "5a27b80086f774429a5d7e20",
                 name: "Eagle Eye",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27b80086f774429a5d7e20.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -2112,6 +2422,8 @@ export let tmp = {
             {
                 id: "597a0f5686f774273b74f676",
                 name: "Chemical - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/597a0f5686f774273b74f676.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -2141,6 +2453,8 @@ export let tmp = {
             {
                 id: "59c93e8e86f7742a406989c4",
                 name: "Loyalty Buyout",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59c93e8e86f7742a406989c4.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -2153,6 +2467,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1000000,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5449016a4bdc2d6f028b456f",
                             name: "Roubles",
@@ -2165,6 +2483,8 @@ export let tmp = {
             {
                 id: "5a27b87686f77460de0252a8",
                 name: "Humanitarian Supplies",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27b87686f77460de0252a8.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -2191,6 +2511,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c5f0d86f77413997acfab",
                             name: "MRE ration pack",
@@ -2205,6 +2529,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c5f0d86f77413997acfab",
                             name: "MRE ration pack",
@@ -2244,6 +2572,8 @@ export let tmp = {
             {
                 id: "59ca1a6286f774509a270942",
                 name: "No Offence",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59ca1a6286f774509a270942.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -2256,6 +2586,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "58d3db5386f77426186285a0",
                             name: "M67 hand grenade",
@@ -2270,6 +2604,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "58d3db5386f77426186285a0",
                             name: "M67 hand grenade",
@@ -2282,6 +2620,8 @@ export let tmp = {
             {
                 id: "597a171586f77405ba6887d3",
                 name: "Big Customer",
+                taskImageLink:
+                    "https://assets.tarkov.dev/597a171586f77405ba6887d3.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -2311,6 +2651,8 @@ export let tmp = {
             {
                 id: "597a160786f77477531d39d2",
                 name: "Out of Curiosity",
+                taskImageLink:
+                    "https://assets.tarkov.dev/597a160786f77477531d39d2.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -2340,6 +2682,8 @@ export let tmp = {
             {
                 id: "59c9392986f7742f6923add2",
                 name: "Trust Regain",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59c9392986f7742f6923add2.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -2352,6 +2696,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "593aa4be86f77457f56379f8",
                             name: "Dorm room 303 key",
@@ -2366,6 +2714,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "591afe0186f77431bd616a11",
                             name: "ZB-014 key",
@@ -2380,6 +2732,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5913915886f774123603c392",
                             name: "Military checkpoint key",
@@ -2394,6 +2750,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5913877a86f774432f15d444",
                             name: "Gas station storage room key",
@@ -2408,6 +2768,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "593aa4be86f77457f56379f8",
                             name: "Dorm room 303 key",
@@ -2422,6 +2786,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "591afe0186f77431bd616a11",
                             name: "ZB-014 key",
@@ -2436,6 +2804,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5913915886f774123603c392",
                             name: "Military checkpoint key",
@@ -2451,6 +2823,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5913877a86f774432f15d444",
                             name: "Gas station storage room key",
@@ -2463,6 +2839,8 @@ export let tmp = {
             {
                 id: "5ac345dc86f774288030817f",
                 name: "Farming - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac345dc86f774288030817f.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -2476,6 +2854,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c2e1186f77425357b6124",
                             name: "Toolset",
@@ -2491,6 +2873,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c2e1186f77425357b6124",
                             name: "Toolset",
@@ -2509,6 +2895,8 @@ export let tmp = {
             {
                 id: "5ac3467986f7741d6224abc2",
                 name: "Signal - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac3467986f7741d6224abc2.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -2539,6 +2927,8 @@ export let tmp = {
             {
                 id: "639135d89444fb141f4e6eea",
                 name: "Population Census",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135d89444fb141f4e6eea.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -2562,6 +2952,8 @@ export let tmp = {
             {
                 id: "5a03153686f77442d90e2171",
                 name: "Spa Tour - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a03153686f77442d90e2171.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -2579,6 +2971,8 @@ export let tmp = {
             {
                 id: "5a27b9de86f77464e5044585",
                 name: "The Cult - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27b9de86f77464e5044585.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -2602,6 +2996,8 @@ export let tmp = {
             {
                 id: "5ac3460c86f7742880308185",
                 name: "Farming - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac3460c86f7742880308185.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -2614,6 +3010,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e36c6f86f774176c10a2a7",
                             name: "Power cord",
@@ -2628,6 +3028,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e36c6f86f774176c10a2a7",
                             name: "Power cord",
@@ -2642,6 +3046,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57347cd0245977445a2d6ff1",
                             name: "T-Shaped plug",
@@ -2656,6 +3064,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57347cd0245977445a2d6ff1",
                             name: "T-Shaped plug",
@@ -2670,6 +3082,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3b0486f7743954552bdb",
                             name: "Printed circuit board",
@@ -2684,6 +3100,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3b0486f7743954552bdb",
                             name: "Printed circuit board",
@@ -2696,6 +3116,8 @@ export let tmp = {
             {
                 id: "5ac3477486f7741d651d6885",
                 name: "Scout",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac3477486f7741d651d6885.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -2736,6 +3158,8 @@ export let tmp = {
             {
                 id: "5ac3475486f7741d6224abd3",
                 name: "Bad Habit",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac3475486f7741d6224abd3.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -2748,6 +3172,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "573476d324597737da2adc13",
                             name: "Malboro Cigarettes",
@@ -2762,6 +3190,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "573476d324597737da2adc13",
                             name: "Malboro Cigarettes",
@@ -2776,6 +3208,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5734770f24597738025ee254",
                             name: "Strike Cigarettes",
@@ -2790,6 +3226,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5734770f24597738025ee254",
                             name: "Strike Cigarettes",
@@ -2804,6 +3244,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "573476f124597737e04bf328",
                             name: "Wilston cigarettes",
@@ -2818,6 +3262,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "573476f124597737e04bf328",
                             name: "Wilston cigarettes",
@@ -2830,6 +3278,8 @@ export let tmp = {
             {
                 id: "5ac346a886f7744e1b083d67",
                 name: "Signal - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac346a886f7744e1b083d67.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -2842,6 +3292,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "573477e124597737dd42e191",
                             name: "PC CPU",
@@ -2856,6 +3310,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "573477e124597737dd42e191",
                             name: "PC CPU",
@@ -2870,6 +3328,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a358486f77429692b2790",
                             name: "Rechargeable battery",
@@ -2884,6 +3346,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a358486f77429692b2790",
                             name: "Rechargeable battery",
@@ -2898,6 +3364,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3b0486f7743954552bdb",
                             name: "Printed circuit board",
@@ -2912,6 +3382,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3b0486f7743954552bdb",
                             name: "Printed circuit board",
@@ -2926,6 +3400,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "56742c324bdc2d150f8b456d",
                             name: "Broken GPhone smartphone",
@@ -2940,6 +3418,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "56742c324bdc2d150f8b456d",
                             name: "Broken GPhone smartphone",
@@ -2952,6 +3434,8 @@ export let tmp = {
             {
                 id: "626bd75e47ea7f506e5493c5",
                 name: "Broadcast - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/626bd75e47ea7f506e5493c5.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -2971,6 +3455,19 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: [
+                            [
+                                {
+                                    id: "62987da96188c076bc0d8c51",
+                                    name: "Operating room key",
+                                    iconLink:
+                                        "https://assets.tarkov.dev/62987da96188c076bc0d8c51-icon.webp",
+                                },
+                            ],
+                        ],
                         item: {
                             id: "5ac78a9b86f7741cca0bbd8d",
                             name: "Signal Jammer",
@@ -2983,6 +3480,8 @@ export let tmp = {
             {
                 id: "5a27bb5986f7741dfb660900",
                 name: "Cargo X - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bb5986f7741dfb660900.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3006,6 +3505,8 @@ export let tmp = {
             {
                 id: "5a0327ba86f77456b9154236",
                 name: "Spa Tour - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a0327ba86f77456b9154236.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3018,6 +3519,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c5bbd86f774785762df04",
                             name: "WD-40 (100ml)",
@@ -3032,6 +3537,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c5bbd86f774785762df04",
                             name: "WD-40 (100ml)",
@@ -3046,6 +3555,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e358a886f7741776641ac3",
                             name: "Clin window cleaner",
@@ -3060,6 +3573,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e358a886f7741776641ac3",
                             name: "Clin window cleaner",
@@ -3074,6 +3591,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e35cbb86f7741778269d83",
                             name: "Corrugated hose",
@@ -3088,6 +3609,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e35cbb86f7741778269d83",
                             name: "Corrugated hose",
@@ -3102,6 +3627,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e3556c86f7741776641ac2",
                             name: "Ox bleach",
@@ -3116,6 +3645,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e3556c86f7741776641ac2",
                             name: "Ox bleach",
@@ -3128,6 +3661,8 @@ export let tmp = {
             {
                 id: "5a03173786f77451cb427172",
                 name: "Spa Tour - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a03173786f77451cb427172.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3158,6 +3693,8 @@ export let tmp = {
             {
                 id: "5a27bb3d86f77411ea361a21",
                 name: "Cargo X - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bb3d86f77411ea361a21.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3188,6 +3725,8 @@ export let tmp = {
             {
                 id: "5a03296886f774569778596a",
                 name: "Spa Tour - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a03296886f774569778596a.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3218,6 +3757,8 @@ export let tmp = {
             {
                 id: "5a27bb1e86f7741f27621b7e",
                 name: "Cargo X - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bb1e86f7741f27621b7e.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3241,6 +3782,8 @@ export let tmp = {
             {
                 id: "5a27ba9586f7741b543d8e85",
                 name: "Spa Tour - Part 6",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27ba9586f7741b543d8e85.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3253,6 +3796,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 8000,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5696686a4bdc2da3298b456a",
                             name: "Dollars",
@@ -3265,6 +3812,8 @@ export let tmp = {
             {
                 id: "5a27bafb86f7741c73584017",
                 name: "Spa Tour - Part 7",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bafb86f7741c73584017.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3277,6 +3826,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "544fb3f34bdc2d03748b456a",
                             name: "Morphine injector",
@@ -3291,6 +3844,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "544fb3f34bdc2d03748b456a",
                             name: "Morphine injector",
@@ -3306,6 +3863,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59faf98186f774067b6be103",
                             name: "Alkaline cleaner for heat exchangers",
@@ -3320,6 +3881,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59faf98186f774067b6be103",
                             name: "Alkaline cleaner for heat exchangers",
@@ -3334,6 +3899,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e35cbb86f7741778269d83",
                             name: "Corrugated hose",
@@ -3348,6 +3917,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e35cbb86f7741778269d83",
                             name: "Corrugated hose",
@@ -3362,6 +3935,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59fafb5d86f774067a6f2084",
                             name: "Propane tank (5L)",
@@ -3376,6 +3953,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59fafb5d86f774067a6f2084",
                             name: "Propane tank (5L)",
@@ -3388,6 +3969,8 @@ export let tmp = {
             {
                 id: "5a0449d586f77474e66227b7",
                 name: "Spa Tour - Part 5",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a0449d586f77474e66227b7.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3411,6 +3994,8 @@ export let tmp = {
             {
                 id: "61958c366726521dd96828ec",
                 name: "Cargo X - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/61958c366726521dd96828ec.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3434,6 +4019,8 @@ export let tmp = {
             {
                 id: "64f731ab83cfca080a361e42",
                 name: "Pets Won't Need It - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f731ab83cfca080a361e42.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -3464,6 +4051,7 @@ export let tmp = {
             {
                 id: "6573387d0b26ed4fde798de3",
                 name: "Pets Won't Need It - Part 2",
+                taskImageLink: "https://assets.tarkov.dev/unknown-task.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -3501,6 +4089,8 @@ export let tmp = {
             {
                 id: "60c0c018f7afb4354815096a",
                 name: "The Huntsman Path - Factory Chief",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60c0c018f7afb4354815096a.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -3519,6 +4109,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60a7acf20c5cb24b01346648",
                             name: "BOSS cap",
@@ -3533,6 +4127,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60a7acf20c5cb24b01346648",
                             name: "BOSS cap",
@@ -3545,6 +4143,8 @@ export let tmp = {
             {
                 id: "5ac3479086f7742880308199",
                 name: "Insider",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac3479086f7742880308199.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -3561,6 +4161,8 @@ export let tmp = {
             {
                 id: "596a0e1686f7741ddf17dbee",
                 name: "Supply Plans",
+                taskImageLink:
+                    "https://assets.tarkov.dev/596a0e1686f7741ddf17dbee.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -3590,6 +4192,8 @@ export let tmp = {
             {
                 id: "596a101f86f7741ddb481582",
                 name: "Kind of Sabotage",
+                taskImageLink:
+                    "https://assets.tarkov.dev/596a101f86f7741ddb481582.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -3606,6 +4210,8 @@ export let tmp = {
             {
                 id: "5d25e2ee86f77443e35162ea",
                 name: "The Huntsman Path - Woods Keeper",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e2ee86f77443e35162ea.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -3624,6 +4230,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d08d21286f774736e7c94c3",
                             name: "Shturman's stash key",
@@ -3638,6 +4248,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d08d21286f774736e7c94c3",
                             name: "Shturman's stash key",
@@ -3650,6 +4264,8 @@ export let tmp = {
             {
                 id: "5ae3270f86f77445ba41d4dd",
                 name: "Gunsmith - Part 6",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae3270f86f77445ba41d4dd.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -3667,6 +4283,8 @@ export let tmp = {
             {
                 id: "6086c852c945025d41566124",
                 name: "Revision - Reserve",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6086c852c945025d41566124.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3761,6 +4379,8 @@ export let tmp = {
             {
                 id: "5ac3462b86f7741d6118b983",
                 name: "Farming - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac3462b86f7741d6118b983.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -3790,6 +4410,8 @@ export let tmp = {
             {
                 id: "6089736efa70fc097863b8f6",
                 name: "Back Door",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6089736efa70fc097863b8f6.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -3813,6 +4435,8 @@ export let tmp = {
             {
                 id: "5a27bb8386f7741c770d2d0a",
                 name: "Wet Job - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bb8386f7741c770d2d0a.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -3830,6 +4454,8 @@ export let tmp = {
             {
                 id: "5ac3464c86f7741d651d6877",
                 name: "Farming - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac3464c86f7741d651d6877.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -3842,6 +4468,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57347ca924597744596b4e71",
                             name: "Graphics card",
@@ -3856,6 +4486,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57347ca924597744596b4e71",
                             name: "Graphics card",
@@ -3870,6 +4504,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 15,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5734779624597737e04bf329",
                             name: "CPU fan",
@@ -3884,6 +4522,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 15,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5734779624597737e04bf329",
                             name: "CPU fan",
@@ -3896,6 +4538,8 @@ export let tmp = {
             {
                 id: "6089732b59b92115597ad789",
                 name: "Surplus Goods",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6089732b59b92115597ad789.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -3919,6 +4563,8 @@ export let tmp = {
             {
                 id: "5c0bde0986f77479cf22c2f8",
                 name: "A Shooter Born in Heaven",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0bde0986f77479cf22c2f8.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -3978,6 +4624,8 @@ export let tmp = {
             {
                 id: "5a27bc1586f7741f6d40fa2f",
                 name: "Wet Job - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bc1586f7741f6d40fa2f.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4000,6 +4648,8 @@ export let tmp = {
             {
                 id: "5a27bbf886f774333a418eeb",
                 name: "Wet Job - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bbf886f774333a418eeb.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4030,6 +4680,8 @@ export let tmp = {
             {
                 id: "5a27bc6986f7741c7358402b",
                 name: "Wet Job - Part 5",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bc6986f7741c7358402b.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4053,6 +4705,8 @@ export let tmp = {
             {
                 id: "60896888e4a85c72ef3fa300",
                 name: "Classified Technologies",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60896888e4a85c72ef3fa300.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4076,6 +4730,8 @@ export let tmp = {
             {
                 id: "5a27bc3686f7741c73584026",
                 name: "Wet Job - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bc3686f7741c73584026.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4099,6 +4755,8 @@ export let tmp = {
             {
                 id: "5d6fbc2886f77449d825f9d3",
                 name: "Mentor",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d6fbc2886f77449d825f9d3.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4111,6 +4769,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 50000,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "569668774bdc2da2298b4568",
                             name: "Euros",
@@ -4123,6 +4785,8 @@ export let tmp = {
             {
                 id: "6179b4d1bca27a099552e04e",
                 name: "Revision - Lighthouse",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179b4d1bca27a099552e04e.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4161,6 +4825,8 @@ export let tmp = {
             {
                 id: "5a27bc8586f7741b543d8ea4",
                 name: "Wet Job - Part 6",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27bc8586f7741b543d8ea4.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4178,6 +4844,8 @@ export let tmp = {
             {
                 id: "5ae448a386f7744d3730fff0",
                 name: "Only Business",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae448a386f7744d3730fff0.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -4194,6 +4862,8 @@ export let tmp = {
             {
                 id: "5967725e86f774601a446662",
                 name: "Shaking up the Teller",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5967725e86f774601a446662.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -4223,6 +4893,8 @@ export let tmp = {
             {
                 id: "5ede567cfa6dc072ce15d6e3",
                 name: "The Bunker - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ede567cfa6dc072ce15d6e3.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -4274,6 +4946,8 @@ export let tmp = {
             {
                 id: "60896e28e4a85c72ef3fa301",
                 name: "Disease History",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60896e28e4a85c72ef3fa301.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -4308,6 +4982,8 @@ export let tmp = {
             {
                 id: "6391359b9444fb141f4e6ee6",
                 name: "You've Got Mail",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6391359b9444fb141f4e6ee6.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -4331,6 +5007,8 @@ export let tmp = {
             {
                 id: "6089743983426423753cd58a",
                 name: "Safe Corridor",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6089743983426423753cd58a.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -4348,6 +5026,8 @@ export let tmp = {
             {
                 id: "5ac346cf86f7741d63233a02",
                 name: "Signal - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac346cf86f7741d63233a02.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -4385,6 +5065,8 @@ export let tmp = {
             {
                 id: "63913715f8e5dd32bf4e3aaa",
                 name: "Broadcast - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63913715f8e5dd32bf4e3aaa.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -4408,6 +5090,8 @@ export let tmp = {
             {
                 id: "6179aff8f57fb279792c60a1",
                 name: "Overpopulation",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179aff8f57fb279792c60a1.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4425,6 +5109,8 @@ export let tmp = {
             {
                 id: "63ab180c87413d64ae0ac20a",
                 name: "Dangerous Road",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63ab180c87413d64ae0ac20a.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -4442,6 +5128,8 @@ export let tmp = {
             {
                 id: "5ac244eb86f7741356335af1",
                 name: "Gunsmith - Part 7",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac244eb86f7741356335af1.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -4459,6 +5147,8 @@ export let tmp = {
             {
                 id: "5ac346e886f7741d6118b99b",
                 name: "Signal - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac346e886f7741d6118b99b.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -4475,6 +5165,8 @@ export let tmp = {
             {
                 id: "64ee9df4496db64f9b7a4432",
                 name: "The Door",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64ee9df4496db64f9b7a4432.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -4494,6 +5186,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -4509,6 +5205,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -4527,6 +5227,7 @@ export let tmp = {
             {
                 id: "6578ec473dbd035d04531a8d",
                 name: "Steady Signal",
+                taskImageLink: "https://assets.tarkov.dev/unknown-task.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -4572,6 +5273,8 @@ export let tmp = {
             {
                 id: "639135e0fa894f0a866afde6",
                 name: "Urban Medicine",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135e0fa894f0a866afde6.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -4601,6 +5304,8 @@ export let tmp = {
             {
                 id: "6179b3bdc7560e13d23eeb8d",
                 name: "Corporate Secrets",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179b3bdc7560e13d23eeb8d.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -4637,6 +5342,8 @@ export let tmp = {
             {
                 id: "639135f286e646067c176a87",
                 name: "Revision - Streets of Tarkov",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135f286e646067c176a87.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -4674,6 +5381,8 @@ export let tmp = {
             {
                 id: "5ae448e586f7744dcf0c2a67",
                 name: "Big Sale",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae448e586f7744dcf0c2a67.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -4725,6 +5434,8 @@ export let tmp = {
             {
                 id: "5ae448bf86f7744d733e55ee",
                 name: "Make ULTRA Great Again",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae448bf86f7744d733e55ee.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -4741,6 +5452,8 @@ export let tmp = {
             {
                 id: "5ae3277186f7745973054106",
                 name: "Gunsmith - Part 8",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae3277186f7745973054106.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -4758,6 +5471,8 @@ export let tmp = {
             {
                 id: "59c50a9e86f7745fef66f4ff",
                 name: "The Punisher - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59c50a9e86f7745fef66f4ff.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -4775,6 +5490,8 @@ export let tmp = {
             {
                 id: "60896bca6ee58f38c417d4f2",
                 name: "No Place for Renegades",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60896bca6ee58f38c417d4f2.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -4792,6 +5509,8 @@ export let tmp = {
             {
                 id: "6179ad56c760af5ad2053587",
                 name: "Seaside Vacation",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179ad56c760af5ad2053587.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -4815,6 +5534,8 @@ export let tmp = {
             {
                 id: "638fcd23dc65553116701d33",
                 name: "Audit",
+                taskImageLink:
+                    "https://assets.tarkov.dev/638fcd23dc65553116701d33.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -4838,6 +5559,8 @@ export let tmp = {
             {
                 id: "639135b04ed9512be67647d7",
                 name: "Glory to CPSU - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135b04ed9512be67647d7.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -4861,6 +5584,8 @@ export let tmp = {
             {
                 id: "5ae4490786f7744ca822adcc",
                 name: "Dressed to Kill",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae4490786f7744ca822adcc.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -4873,6 +5598,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5aa2b9ede5b5b000137b758b",
                             name: "Kinda cowboy hat",
@@ -4887,6 +5616,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e7708286f7742cbd762753",
                             name: "Ushanka ear flap hat",
@@ -4901,6 +5634,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e7708286f7742cbd762753",
                             name: "Ushanka ear flap hat",
@@ -4915,6 +5652,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5aa2b9ede5b5b000137b758b",
                             name: "Kinda cowboy hat",
@@ -4927,6 +5668,8 @@ export let tmp = {
             {
                 id: "5ae4493d86f7744b8e15aa8f",
                 name: "Database - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae4493d86f7744b8e15aa8f.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -4950,6 +5693,8 @@ export let tmp = {
             {
                 id: "608974af4b05530f55550c21",
                 name: "Inventory Check",
+                taskImageLink:
+                    "https://assets.tarkov.dev/608974af4b05530f55550c21.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -5001,6 +5746,8 @@ export let tmp = {
             {
                 id: "608974d01a66564e74191fc0",
                 name: "A Fuel Matter",
+                taskImageLink:
+                    "https://assets.tarkov.dev/608974d01a66564e74191fc0.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -5031,6 +5778,8 @@ export let tmp = {
             {
                 id: "65802b627b44fa5e14638899",
                 name: "Nothing Fishy About This",
+                taskImageLink:
+                    "https://assets.tarkov.dev/65802b627b44fa5e14638899.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -5053,6 +5802,8 @@ export let tmp = {
             {
                 id: "64e7b971f9d6fa49d6769b44",
                 name: "The Huntsman Path - Big Game",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64e7b971f9d6fa49d6769b44.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -5076,6 +5827,8 @@ export let tmp = {
             {
                 id: "64f3176921045e77405d63b5",
                 name: "Ambulances Again",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f3176921045e77405d63b5.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -5106,6 +5859,8 @@ export let tmp = {
             {
                 id: "5ae4493486f7744efa289417",
                 name: "Database - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae4493486f7744efa289417.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -5155,6 +5910,8 @@ export let tmp = {
             {
                 id: "5ae448f286f77448d73c0131",
                 name: "The Blood of War - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae448f286f77448d73c0131.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -5192,6 +5949,8 @@ export let tmp = {
             {
                 id: "5ae449b386f77446d8741719",
                 name: "Gratitude",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae449b386f77446d8741719.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -5205,6 +5964,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ab8f4ff86f77431c60d91ba",
                             name: "Ghost balaclava",
@@ -5220,6 +5983,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ab8f85d86f7745cd93a1cf5",
                             name: "Shemagh (Green)",
@@ -5235,6 +6002,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5aa2b9aee5b5b00015693121",
                             name: "RayBench Hipster Reserve sunglasses",
@@ -5250,6 +6021,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5aa2b923e5b5b000137b7589",
                             name: "Round frame sunglasses",
@@ -5262,6 +6037,8 @@ export let tmp = {
             {
                 id: "5c1234c286f77406fa13baeb",
                 name: "Setup",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c1234c286f77406fa13baeb.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -5279,6 +6056,8 @@ export let tmp = {
             {
                 id: "5a27ba1c86f77461ea5a3c56",
                 name: "The Cult - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a27ba1c86f77461ea5a3c56.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -5317,6 +6096,8 @@ export let tmp = {
             {
                 id: "59c50c8886f7745fed3193bf",
                 name: "The Punisher - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59c50c8886f7745fed3193bf.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5336,6 +6117,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 7,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "572b7fa524597762b747ce82",
                             name: "Lower half-mask",
@@ -5350,6 +6135,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 7,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "572b7fa524597762b747ce82",
                             name: "Lower half-mask",
@@ -5362,6 +6151,8 @@ export let tmp = {
             {
                 id: "626bd75c71bd851e971b82a5",
                 name: "Reconnaissance",
+                taskImageLink:
+                    "https://assets.tarkov.dev/626bd75c71bd851e971b82a5.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5399,6 +6190,8 @@ export let tmp = {
             {
                 id: "6179ac7511973d018217d0b9",
                 name: "Easy Job - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179ac7511973d018217d0b9.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5429,6 +6222,8 @@ export let tmp = {
             {
                 id: "6179acbdc760af5ad2053585",
                 name: "Easy Job - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179acbdc760af5ad2053585.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5446,6 +6241,8 @@ export let tmp = {
             {
                 id: "639872fa9b4fb827b200d8e5",
                 name: "Gunsmith - Part 9",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639872fa9b4fb827b200d8e5.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -5463,6 +6260,8 @@ export let tmp = {
             {
                 id: "60896b7bfa70fc097863b8f5",
                 name: "Documents",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60896b7bfa70fc097863b8f5.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5512,6 +6311,8 @@ export let tmp = {
             {
                 id: "59c512ad86f7741f0d09de9b",
                 name: "The Punisher - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59c512ad86f7741f0d09de9b.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5529,6 +6330,8 @@ export let tmp = {
             {
                 id: "5c0d190cd09282029f5390d8",
                 name: "Grenadier",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0d190cd09282029f5390d8.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5546,6 +6349,8 @@ export let tmp = {
             {
                 id: "5d25e48186f77443e625e386",
                 name: "Courtesy Visit",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e48186f77443e625e386.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -5584,6 +6389,8 @@ export let tmp = {
             {
                 id: "5d25e4d586f77443e625e388",
                 name: "Reserve",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e4d586f77443e625e388.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -5607,6 +6414,8 @@ export let tmp = {
             {
                 id: "6193850f60b34236ee0483de",
                 name: "Long Road",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6193850f60b34236ee0483de.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -5624,6 +6433,8 @@ export let tmp = {
             {
                 id: "5d25e48d86f77408251c4bfb",
                 name: "Shady Business",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e48d86f77408251c4bfb.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -5636,6 +6447,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c621186f774138d11ea29",
                             name: "Secure Flash drive",
@@ -5650,6 +6465,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c621186f774138d11ea29",
                             name: "Secure Flash drive",
@@ -5662,6 +6481,8 @@ export let tmp = {
             {
                 id: "5a68661a86f774500f48afb0",
                 name: "Health Care Privacy - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a68661a86f774500f48afb0.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -5693,6 +6514,8 @@ export let tmp = {
             {
                 id: "639136d68ba6894d155e77cf",
                 name: "Green Corridor",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639136d68ba6894d155e77cf.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5722,6 +6545,8 @@ export let tmp = {
             {
                 id: "639282134ed9512be67647ed",
                 name: "Road Closed",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639282134ed9512be67647ed.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -5751,6 +6576,8 @@ export let tmp = {
             {
                 id: "639136fa9444fb141f4e6eee",
                 name: "Watching You",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639136fa9444fb141f4e6eee.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -5780,6 +6607,8 @@ export let tmp = {
             {
                 id: "63a511ea30d85e10e375b045",
                 name: "Broadcast - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63a511ea30d85e10e375b045.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -5803,6 +6632,8 @@ export let tmp = {
             {
                 id: "639135a7e705511c8a4a1b78",
                 name: "Ballet Lover",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135a7e705511c8a4a1b78.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -5826,6 +6657,8 @@ export let tmp = {
             {
                 id: "5ae327c886f7745c7b3f2f3f",
                 name: "Gunsmith - Part 10",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae327c886f7745c7b3f2f3f.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -5843,6 +6676,8 @@ export let tmp = {
             {
                 id: "59ca264786f77445a80ed044",
                 name: "The Punisher - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59ca264786f77445a80ed044.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5869,6 +6704,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57e26fc7245977162a14b800",
                             name: "Bars A-2607 95Kh18 knife",
@@ -5883,6 +6722,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57e26fc7245977162a14b800",
                             name: "Bars A-2607 95Kh18 knife",
@@ -5895,6 +6738,8 @@ export let tmp = {
             {
                 id: "608a768d82e40b3c727fd17d",
                 name: "Pest Control",
+                taskImageLink:
+                    "https://assets.tarkov.dev/608a768d82e40b3c727fd17d.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -5912,6 +6757,8 @@ export let tmp = {
             {
                 id: "59ca29fb86f77445ab465c87",
                 name: "The Punisher - Part 5",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59ca29fb86f77445ab465c87.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -5925,6 +6772,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5644bd2b4bdc2d3b4c8b4572",
                             name: "Kalashnikov AK-74N 5.45x39 assault rifle",
@@ -5939,6 +6790,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5644bd2b4bdc2d3b4c8b4572",
                             name: "Kalashnikov AK-74N 5.45x39 assault rifle",
@@ -5953,6 +6808,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5447a9cd4bdc2dbd208b4567",
                             name: "Colt M4A1 5.56x45 assault rifle",
@@ -5967,6 +6826,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5447a9cd4bdc2dbd208b4567",
                             name: "Colt M4A1 5.56x45 assault rifle",
@@ -5981,6 +6844,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5448bd6b4bdc2dfc2f8b4569",
                             name: "Makarov PM 9x18PM pistol",
@@ -5995,6 +6862,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5448bd6b4bdc2dfc2f8b4569",
                             name: "Makarov PM 9x18PM pistol",
@@ -6014,6 +6885,8 @@ export let tmp = {
             {
                 id: "5a68667486f7742607157d28",
                 name: "Health Care Privacy - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a68667486f7742607157d28.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -6030,6 +6903,8 @@ export let tmp = {
             {
                 id: "5a68663e86f774501078f78a",
                 name: "Health Care Privacy - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a68663e86f774501078f78a.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -6059,6 +6934,8 @@ export let tmp = {
             {
                 id: "5a68665c86f774255929b4c7",
                 name: "Health Care Privacy - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a68665c86f774255929b4c7.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -6094,6 +6971,8 @@ export let tmp = {
             {
                 id: "5d6fb2c086f77449da599c24",
                 name: "An Apple a Day Keeps the Doctor Away",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d6fb2c086f77449da599c24.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -6106,6 +6985,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 400000,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5449016a4bdc2d6f028b456f",
                             name: "Roubles",
@@ -6118,6 +7001,8 @@ export let tmp = {
             {
                 id: "5a68669a86f774255929b4d4",
                 name: "Health Care Privacy - Part 5",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5a68669a86f774255929b4d4.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -6138,6 +7023,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590c5a7286f7747884343aea",
                             name: 'Gunpowder "Kite"',
@@ -6150,6 +7039,8 @@ export let tmp = {
             {
                 id: "61904daa7d0d857927447b9c",
                 name: "The Hermit",
+                taskImageLink:
+                    "https://assets.tarkov.dev/61904daa7d0d857927447b9c.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -6179,6 +7070,8 @@ export let tmp = {
             {
                 id: "5d25e44f86f77443e625e385",
                 name: "The Huntsman Path - Eraser - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e44f86f77443e625e385.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -6195,6 +7088,8 @@ export let tmp = {
             {
                 id: "5edab736cc183c769d778bc2",
                 name: "Colleagues - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5edab736cc183c769d778bc2.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -6232,6 +7127,8 @@ export let tmp = {
             {
                 id: "5eda19f0edce541157209cee",
                 name: "Anesthesia",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5eda19f0edce541157209cee.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -6269,6 +7166,8 @@ export let tmp = {
             {
                 id: "59ca2eb686f77445a80ed049",
                 name: "The Punisher - Part 6",
+                taskImageLink:
+                    "https://assets.tarkov.dev/59ca2eb686f77445a80ed049.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -6288,6 +7187,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 7,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32bb586f774757e1e8442",
                             name: "Dogtag BEAR",
@@ -6302,6 +7205,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 7,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32bb586f774757e1e8442",
                             name: "Dogtag BEAR",
@@ -6316,6 +7223,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 7,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32c3b86f77472a31742f0",
                             name: "Dogtag USEC",
@@ -6330,6 +7241,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 7,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32c3b86f77472a31742f0",
                             name: "Dogtag USEC",
@@ -6342,6 +7257,8 @@ export let tmp = {
             {
                 id: "5edabd13218d181e29451442",
                 name: "Rigged Game",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5edabd13218d181e29451442.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -6355,6 +7272,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5991b51486f77447b112d44f",
                             name: "MS2000 Marker",
@@ -6370,6 +7291,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5991b51486f77447b112d44f",
                             name: "MS2000 Marker",
@@ -6385,6 +7310,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5991b51486f77447b112d44f",
                             name: "MS2000 Marker",
@@ -6403,6 +7332,8 @@ export let tmp = {
             {
                 id: "5edaba7c0c502106f869bc02",
                 name: "Colleagues - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5edaba7c0c502106f869bc02.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -6438,6 +7369,8 @@ export let tmp = {
             {
                 id: "64e7b99017ab941a6f7bf9d7",
                 name: "Gendarmerie - Mall Cop",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64e7b99017ab941a6f7bf9d7.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -6455,6 +7388,8 @@ export let tmp = {
             {
                 id: "64e7b9a4aac4cd0a726562cb",
                 name: "Gendarmerie - Tickets, Please",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64e7b9a4aac4cd0a726562cb.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -6472,6 +7407,8 @@ export let tmp = {
             {
                 id: "64e7b9bffd30422ed03dad38",
                 name: "Gendarmerie - District Patrol",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64e7b9bffd30422ed03dad38.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -6489,6 +7426,8 @@ export let tmp = {
             {
                 id: "5edac020218d181e29451446",
                 name: "Samples",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5edac020218d181e29451446.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -6501,6 +7440,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed51652f6c34d2cc26336a1",
                             name: "M.U.L.E. stimulant injector",
@@ -6515,6 +7458,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed51652f6c34d2cc26336a1",
                             name: "M.U.L.E. stimulant injector",
@@ -6530,6 +7477,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed5166ad380ab312177c100",
                             name: '"Obdolbos" cocktail injector',
@@ -6544,6 +7495,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed5166ad380ab312177c100",
                             name: '"Obdolbos" cocktail injector',
@@ -6558,6 +7513,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed5160a87bb8443d10680b5",
                             name: "Meldonin injector",
@@ -6572,6 +7531,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed5160a87bb8443d10680b5",
                             name: "Meldonin injector",
@@ -6586,6 +7549,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515f6915ec335206e4152",
                             name: "AHF1-M stimulant injector",
@@ -6600,6 +7567,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515f6915ec335206e4152",
                             name: "AHF1-M stimulant injector",
@@ -6614,6 +7585,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515ece452db0eb56fc028",
                             name: "P22 (Product 22) stimulant injector",
@@ -6628,6 +7603,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515ece452db0eb56fc028",
                             name: "P22 (Product 22) stimulant injector",
@@ -6643,6 +7622,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515e03a40a50460332579",
                             name: "L1 (Norepinephrine) injector",
@@ -6657,6 +7640,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515e03a40a50460332579",
                             name: "L1 (Norepinephrine) injector",
@@ -6671,6 +7658,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515c8d380ab312177c0fa",
                             name: "3-(b-TG) stimulant injector",
@@ -6685,6 +7676,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515c8d380ab312177c0fa",
                             name: "3-(b-TG) stimulant injector",
@@ -6697,6 +7692,8 @@ export let tmp = {
             {
                 id: "6179ad0a6e9dd54ac275e3f2",
                 name: "The Huntsman Path - Outcasts",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179ad0a6e9dd54ac275e3f2.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -6713,6 +7710,8 @@ export let tmp = {
             {
                 id: "5b478eca86f7744642012254",
                 name: "Vitamins - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b478eca86f7744642012254.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -6762,6 +7761,8 @@ export let tmp = {
             {
                 id: "64f5aac4b63b74469b6c14c2",
                 name: "Glory to CPSU - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f5aac4b63b74469b6c14c2.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -6792,6 +7793,8 @@ export let tmp = {
             {
                 id: "639872fc93ae507d5858c3a6",
                 name: "Gunsmith - Part 11",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639872fc93ae507d5858c3a6.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -6809,6 +7812,8 @@ export let tmp = {
             {
                 id: "639136f086e646067c176a8b",
                 name: "Kings of the Rooftops",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639136f086e646067c176a8b.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -6832,6 +7837,8 @@ export let tmp = {
             {
                 id: "5b478ff486f7744d184ecbbf",
                 name: "Vitamins - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b478ff486f7744d184ecbbf.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -6844,6 +7851,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e7715586f7742ee5789605",
                             name: "Respirator",
@@ -6858,6 +7869,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e7715586f7742ee5789605",
                             name: "Respirator",
@@ -6872,6 +7887,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4335ba86f7744d2837a264",
                             name: "Medical bloodset",
@@ -6886,6 +7905,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4335ba86f7744d2837a264",
                             name: "Medical bloodset",
@@ -6898,6 +7921,8 @@ export let tmp = {
             {
                 id: "5edac34d0bb72a50635c2bfa",
                 name: "Colleagues - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5edac34d0bb72a50635c2bfa.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -6917,6 +7942,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c94bbff86f7747ee735c08f",
                             name: "TerraGroup Labs access keycard",
@@ -6931,6 +7960,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c94bbff86f7747ee735c08f",
                             name: "TerraGroup Labs access keycard",
@@ -6945,6 +7978,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515f6915ec335206e4152",
                             name: "AHF1-M stimulant injector",
@@ -6959,6 +7996,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515f6915ec335206e4152",
                             name: "AHF1-M stimulant injector",
@@ -6973,6 +8014,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515c8d380ab312177c0fa",
                             name: "3-(b-TG) stimulant injector",
@@ -6987,6 +8032,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ed515c8d380ab312177c0fa",
                             name: "3-(b-TG) stimulant injector",
@@ -6999,6 +8048,8 @@ export let tmp = {
             {
                 id: "64f5e20652fc01298e2c61e3",
                 name: "Beyond the Red Meat - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f5e20652fc01298e2c61e3.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -7022,6 +8073,7 @@ export let tmp = {
             {
                 id: "6573397ef3f8344c4575cd87",
                 name: "Properties All Around",
+                taskImageLink: "https://assets.tarkov.dev/unknown-task.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -7052,6 +8104,8 @@ export let tmp = {
             {
                 id: "64f6aafd67e11a7c6206e0d0",
                 name: "Beyond the Red Meat - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f6aafd67e11a7c6206e0d0.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -7075,6 +8129,8 @@ export let tmp = {
             {
                 id: "5f04886a3937dc337a6b8238",
                 name: "Chemistry Closet",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5f04886a3937dc337a6b8238.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -7098,6 +8154,8 @@ export let tmp = {
             {
                 id: "5edab4b1218d181e29451435",
                 name: "The Huntsman Path - Sadist",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5edab4b1218d181e29451435.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -7114,6 +8172,8 @@ export let tmp = {
             {
                 id: "639136df4b15ca31f76bc31f",
                 name: "The Huntsman Path - Administrator",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639136df4b15ca31f76bc31f.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -7138,6 +8198,8 @@ export let tmp = {
             {
                 id: "5b47799d86f7746c5d6a5fd8",
                 name: "Gunsmith - Part 12",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b47799d86f7746c5d6a5fd8.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -7155,6 +8217,8 @@ export let tmp = {
             {
                 id: "6578eb36e5020875d64645cd",
                 name: "The Huntsman Path - Crooked Cop",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6578eb36e5020875d64645cd.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -7181,6 +8245,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "6540d2162ae6d96b540afcaf",
                             name: "PR-Taran police baton",
@@ -7193,6 +8261,8 @@ export let tmp = {
             {
                 id: "5edac63b930f5454f51e128b",
                 name: "TerraGroup Employee",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5edac63b930f5454f51e128b.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -7222,6 +8292,8 @@ export let tmp = {
             {
                 id: "5b478d0f86f7744d190d91b5",
                 name: "Minibus",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b478d0f86f7744d190d91b5.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -7259,6 +8331,8 @@ export let tmp = {
             {
                 id: "5b47926a86f7747ccc057c15",
                 name: "Informed Means Armed",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b47926a86f7747ccc057c15.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -7272,6 +8346,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -7287,6 +8365,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -7302,6 +8384,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -7314,6 +8400,8 @@ export let tmp = {
             {
                 id: "5b4795fb86f7745876267770",
                 name: "Chumming",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b4795fb86f7745876267770.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -7327,6 +8415,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5734758f24597738025ee253",
                             name: "Golden neck chain",
@@ -7342,6 +8434,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5734758f24597738025ee253",
                             name: "Golden neck chain",
@@ -7357,6 +8453,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5734758f24597738025ee253",
                             name: "Golden neck chain",
@@ -7376,6 +8476,8 @@ export let tmp = {
             {
                 id: "658027799634223183395339",
                 name: "No Swiping",
+                taskImageLink:
+                    "https://assets.tarkov.dev/658027799634223183395339.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -7398,6 +8500,8 @@ export let tmp = {
             {
                 id: "5b4794cb86f774598100d5d4",
                 name: "Lend-Lease - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b4794cb86f774598100d5d4.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -7473,6 +8577,8 @@ export let tmp = {
             {
                 id: "5d4bec3486f7743cac246665",
                 name: "Regulated Materials",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d4bec3486f7743cac246665.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -7486,6 +8592,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d03794386f77420415576f5",
                             name: "6-STEN-140-M military battery",
@@ -7500,6 +8610,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d03794386f77420415576f5",
                             name: "6-STEN-140-M military battery",
@@ -7514,6 +8628,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d0379a886f77420407aa271",
                             name: "OFZ 30x160mm shell",
@@ -7528,6 +8646,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d0379a886f77420407aa271",
                             name: "OFZ 30x160mm shell",
@@ -7540,6 +8662,8 @@ export let tmp = {
             {
                 id: "5c0bd01e86f7747cdd799e56",
                 name: "Insomnia",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0bd01e86f7747cdd799e56.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -7557,6 +8681,8 @@ export let tmp = {
             {
                 id: "6179b3a12153c15e937d52bc",
                 name: "Energy Crisis",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179b3a12153c15e937d52bc.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -7595,6 +8721,8 @@ export let tmp = {
             {
                 id: "5ae4495086f77443c122bc40",
                 name: "Sew it Good - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae4495086f77443c122bc40.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -7607,6 +8735,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ab8f20c86f7745cdb629fb2",
                             name: "Ski hat with holes for eyes",
@@ -7621,6 +8753,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ab8f20c86f7745cdb629fb2",
                             name: "Ski hat with holes for eyes",
@@ -7635,6 +8771,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e763f286f7742ee57895da",
                             name: "Pilgrim tourist backpack",
@@ -7649,6 +8789,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e763f286f7742ee57895da",
                             name: "Pilgrim tourist backpack",
@@ -7661,6 +8805,8 @@ export let tmp = {
             {
                 id: "5d25e46e86f77409453bce7c",
                 name: "Ambulance",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e46e86f77409453bce7c.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -7673,6 +8819,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052e6986f7746b207bc3c9",
                             name: "Portable defibrillator",
@@ -7687,6 +8837,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d02778e86f774203e7dedbe",
                             name: "CMS surgical kit",
@@ -7701,6 +8855,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052e6986f7746b207bc3c9",
                             name: "Portable defibrillator",
@@ -7715,6 +8873,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d02778e86f774203e7dedbe",
                             name: "CMS surgical kit",
@@ -7727,6 +8889,8 @@ export let tmp = {
             {
                 id: "5ac244c486f77413e12cf945",
                 name: "Gunsmith - Part 13",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac244c486f77413e12cf945.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -7744,6 +8908,8 @@ export let tmp = {
             {
                 id: "5c0bbaa886f7746941031d82",
                 name: "Bullshit",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0bbaa886f7746941031d82.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -7764,6 +8930,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "55801eed4bdc2d89578b4588",
                             name: "SV-98 7.62x54R bolt-action sniper rifle",
@@ -7779,6 +8949,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59faf7ca86f7740dbe19f6c2",
                             name: "Roler Submariner gold wrist watch",
@@ -7798,6 +8972,8 @@ export let tmp = {
             {
                 id: "5ae4495c86f7744e87761355",
                 name: "Sew it Good - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae4495c86f7744e87761355.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -7811,6 +8987,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ab8e79e86f7742d8b372e78",
                             name: "BNTI Gzhel-K body armor",
@@ -7825,6 +9005,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ab8e79e86f7742d8b372e78",
                             name: "BNTI Gzhel-K body armor",
@@ -7840,6 +9024,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 50,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ab8e79e86f7742d8b372e78",
                             name: "BNTI Gzhel-K body armor",
@@ -7854,6 +9042,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 50,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ab8e79e86f7742d8b372e78",
                             name: "BNTI Gzhel-K body armor",
@@ -7866,6 +9058,8 @@ export let tmp = {
             {
                 id: "5ae4496986f774459e77beb6",
                 name: "Sew it Good - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae4496986f774459e77beb6.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -7879,6 +9073,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "545cdb794bdc2d3a198b456a",
                             name: "6B43 Zabralo-Sh body armor (Digital Flora)",
@@ -7893,6 +9091,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "545cdb794bdc2d3a198b456a",
                             name: "6B43 Zabralo-Sh body armor (Digital Flora)",
@@ -7908,6 +9110,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 50,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "545cdb794bdc2d3a198b456a",
                             name: "6B43 Zabralo-Sh body armor (Digital Flora)",
@@ -7922,6 +9128,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 50,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "545cdb794bdc2d3a198b456a",
                             name: "6B43 Zabralo-Sh body armor (Digital Flora)",
@@ -7934,6 +9144,7 @@ export let tmp = {
             {
                 id: "65733403eefc2c312a759ddb",
                 name: "Developer's Secrets - Part 1",
+                taskImageLink: "https://assets.tarkov.dev/unknown-task.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -7963,6 +9174,8 @@ export let tmp = {
             {
                 id: "5ae4497b86f7744cf402ed00",
                 name: "Sew it Good - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae4497b86f7744cf402ed00.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -7976,6 +9189,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e7643b86f7742cbf2c109a",
                             name: "WARTECH TV-109 + TV-106 chest rig (A-TACS FG)",
@@ -7990,6 +9207,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e7643b86f7742cbf2c109a",
                             name: "WARTECH TV-109 + TV-106 chest rig (A-TACS FG)",
@@ -8004,6 +9225,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5648a69d4bdc2ded0b8b457b",
                             name: "BlackRock chest rig (Gray)",
@@ -8018,6 +9243,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5648a69d4bdc2ded0b8b457b",
                             name: "BlackRock chest rig (Gray)",
@@ -8030,6 +9259,8 @@ export let tmp = {
             {
                 id: "6573382e557ff128bf3da536",
                 name: "Developer's Secrets - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6573382e557ff128bf3da536.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -8053,6 +9284,8 @@ export let tmp = {
             {
                 id: "63a9b229813bba58a50c9ee5",
                 name: "Worst Job in the World",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63a9b229813bba58a50c9ee5.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -8070,6 +9303,8 @@ export let tmp = {
             {
                 id: "639135e8c115f907b14700aa",
                 name: "Surveillance",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135e8c115f907b14700aa.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -8093,6 +9328,8 @@ export let tmp = {
             {
                 id: "5b47876e86f7744d1c353205",
                 name: "The Blood of War - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b47876e86f7744d1c353205.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -8105,6 +9342,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b43575a86f77424f443fe62",
                             name: "Fuel conditioner",
@@ -8119,6 +9360,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b43575a86f77424f443fe62",
                             name: "Fuel conditioner",
@@ -8131,6 +9376,8 @@ export let tmp = {
             {
                 id: "5ae4499a86f77449783815db",
                 name: "Charisma Brings Success",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae4499a86f77449783815db.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -8147,6 +9394,8 @@ export let tmp = {
             {
                 id: "63a9ae24009ffc6a551631a5",
                 name: "Best Job in the World",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63a9ae24009ffc6a551631a5.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -8164,6 +9413,8 @@ export let tmp = {
             {
                 id: "639135bbc115f907b14700a6",
                 name: "Audiophile",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135bbc115f907b14700a6.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -8193,6 +9444,8 @@ export let tmp = {
             {
                 id: "6179afd0bca27a099552e040",
                 name: "Lost Contact",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179afd0bca27a099552e040.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -8216,6 +9469,8 @@ export let tmp = {
             {
                 id: "5ae4498786f7744bde357695",
                 name: "The Key to Success",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae4498786f7744bde357695.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -8252,6 +9507,8 @@ export let tmp = {
             {
                 id: "5ae449a586f7744bde357696",
                 name: "No Fuss Needed",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae449a586f7744bde357696.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -8268,6 +9525,8 @@ export let tmp = {
             {
                 id: "626bd75b05f287031503c7f6",
                 name: "Drug Trafficking",
+                taskImageLink:
+                    "https://assets.tarkov.dev/626bd75b05f287031503c7f6.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -8286,6 +9545,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -8298,6 +9561,8 @@ export let tmp = {
             {
                 id: "6391372c8ba6894d155e77d7",
                 name: "Broadcast - Part 4",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6391372c8ba6894d155e77d7.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -8321,6 +9586,8 @@ export let tmp = {
             {
                 id: "639872fe8871e1272b10ccf6",
                 name: "Gunsmith - Part 14",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639872fe8871e1272b10ccf6.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -8338,6 +9605,8 @@ export let tmp = {
             {
                 id: "64ee99639878a0569d6ec8c9",
                 name: "Broadcast - Part 5",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64ee99639878a0569d6ec8c9.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -8363,6 +9632,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5fc64ea372b0dd78d51159dc",
                             name: "Cultist knife",
@@ -8381,6 +9654,8 @@ export let tmp = {
             {
                 id: "5b47891f86f7744d1b23c571",
                 name: "Living High is Not a Crime - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b47891f86f7744d1b23c571.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -8393,6 +9668,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e3639286f7741777737013",
                             name: "Bronze lion figurine",
@@ -8407,6 +9686,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e3639286f7741777737013",
                             name: "Bronze lion figurine",
@@ -8421,6 +9704,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "573478bc24597738002c6175",
                             name: "Horse figurine",
@@ -8435,6 +9722,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "573478bc24597738002c6175",
                             name: "Horse figurine",
@@ -8449,6 +9740,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e3658a86f7741776641ac4",
                             name: "Cat figurine",
@@ -8463,6 +9758,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e3658a86f7741776641ac4",
                             name: "Cat figurine",
@@ -8478,6 +9777,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59faf7ca86f7740dbe19f6c2",
                             name: "Roler Submariner gold wrist watch",
@@ -8492,6 +9795,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59faf7ca86f7740dbe19f6c2",
                             name: "Roler Submariner gold wrist watch",
@@ -8506,6 +9813,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09cfe4f842e1bd12da3e4",
                             name: "Golden egg",
@@ -8520,6 +9831,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09cfe4f842e1bd12da3e4",
                             name: "Golden egg",
@@ -8532,6 +9847,8 @@ export let tmp = {
             {
                 id: "5d25e4ad86f77443e625e387",
                 name: "Nostalgia",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e4ad86f77443e625e387.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -8561,6 +9878,8 @@ export let tmp = {
             {
                 id: "6572e876dc0d635f633a5714",
                 name: "Pyramid Scheme",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6572e876dc0d635f633a5714.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -8676,6 +9995,8 @@ export let tmp = {
             {
                 id: "5d25e4b786f77408251c4bfc",
                 name: "Fishing Place",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e4b786f77408251c4bfc.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -8689,6 +10010,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c94bbff86f7747ee735c08f",
                             name: "TerraGroup Labs access keycard",
@@ -8703,6 +10028,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c94bbff86f7747ee735c08f",
                             name: "TerraGroup Labs access keycard",
@@ -8715,6 +10044,8 @@ export let tmp = {
             {
                 id: "5b478b1886f7744d1b23c57d",
                 name: "Hot Delivery",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b478b1886f7744d1b23c57d.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -8728,6 +10059,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5645bcc04bdc2d363b8b4572",
                             name: "Peltor ComTac 2 headset (OD Green)",
@@ -8743,6 +10078,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5a7c4850e899ef00150be885",
                             name: "6B47 Ratnik-BSh helmet (Olive Drab)",
@@ -8758,6 +10097,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ab8e79e86f7742d8b372e78",
                             name: "BNTI Gzhel-K body armor",
@@ -8770,6 +10113,8 @@ export let tmp = {
             {
                 id: "5ae3280386f7742a41359364",
                 name: "Gunsmith - Part 15",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae3280386f7742a41359364.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -8787,6 +10132,8 @@ export let tmp = {
             {
                 id: "5c112d7e86f7740d6f647486",
                 name: "Scavenger",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c112d7e86f7740d6f647486.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -8803,6 +10150,8 @@ export let tmp = {
             {
                 id: "64edbb1317ab941a6f7cc247",
                 name: "Out of Time",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64edbb1317ab941a6f7cc247.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -8960,6 +10309,8 @@ export let tmp = {
             {
                 id: "6179b5eabca27a099552e052",
                 name: "Counteraction",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179b5eabca27a099552e052.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -8980,6 +10331,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 20,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32bb586f774757e1e8442",
                             name: "Dogtag BEAR",
@@ -8992,6 +10347,8 @@ export let tmp = {
             {
                 id: "5c1128e386f7746565181106",
                 name: "Fertilizers",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c1128e386f7746565181106.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -9004,6 +10361,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c06779c86f77426e00dd782",
                             name: "Bundle of wires",
@@ -9018,6 +10379,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c06782b86f77426df5407d2",
                             name: "Capacitors",
@@ -9032,6 +10397,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c06779c86f77426e00dd782",
                             name: "Bundle of wires",
@@ -9046,6 +10415,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c06782b86f77426df5407d2",
                             name: "Capacitors",
@@ -9058,6 +10431,8 @@ export let tmp = {
             {
                 id: "5ae449c386f7744bde357697",
                 name: "Sales Night",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae449c386f7744bde357697.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -9074,6 +10449,8 @@ export let tmp = {
             {
                 id: "5c0d0d5086f774363760aef2",
                 name: "Athlete",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0d0d5086f774363760aef2.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -9090,6 +10467,8 @@ export let tmp = {
             {
                 id: "6179b4f16e9dd54ac275e407",
                 name: "Missing Cargo",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179b4f16e9dd54ac275e407.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -9119,6 +10498,8 @@ export let tmp = {
             {
                 id: "6179b5b06e9dd54ac275e409",
                 name: "Our Own Land",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6179b5b06e9dd54ac275e409.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -9139,6 +10520,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 20,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32c3b86f77472a31742f0",
                             name: "Dogtag USEC",
@@ -9151,6 +10536,8 @@ export let tmp = {
             {
                 id: "5c0bd94186f7747a727f09b2",
                 name: "Test Drive - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0bd94186f7747a727f09b2.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -9168,6 +10555,8 @@ export let tmp = {
             {
                 id: "5d25e45e86f77408251c4bfa",
                 name: "The Huntsman Path - Eraser - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e45e86f77408251c4bfa.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -9184,6 +10573,8 @@ export let tmp = {
             {
                 id: "5c10f94386f774227172c572",
                 name: "The Blood of War - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c10f94386f774227172c572.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -9221,6 +10612,8 @@ export let tmp = {
             {
                 id: "5c0bc91486f7746ab41857a2",
                 name: "Silent Caliber",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0bc91486f7746ab41857a2.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -9245,6 +10638,8 @@ export let tmp = {
             {
                 id: "5c0d0f1886f77457b8210226",
                 name: "Lend-Lease - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0d0f1886f77457b8210226.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -9258,6 +10653,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c05308086f7746b2101e90b",
                             name: "Virtex programmable processor",
@@ -9273,6 +10672,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052f6886f7746b1e3db148",
                             name: "Military COFDM Wireless Signal Transmitter",
@@ -9287,6 +10690,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c05308086f7746b2101e90b",
                             name: "Virtex programmable processor",
@@ -9301,6 +10708,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052f6886f7746b1e3db148",
                             name: "Military COFDM Wireless Signal Transmitter",
@@ -9313,6 +10724,8 @@ export let tmp = {
             {
                 id: "5ac242ab86f77412464f68b4",
                 name: "Gunsmith - Part 16",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ac242ab86f77412464f68b4.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -9330,6 +10743,8 @@ export let tmp = {
             {
                 id: "5c0d4c12d09282029f539173",
                 name: "Peacekeeping Mission",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0d4c12d09282029f539173.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -9375,6 +10790,8 @@ export let tmp = {
             {
                 id: "63a5cf262964a7488f5243ce",
                 name: "Test Drive - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63a5cf262964a7488f5243ce.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -9392,6 +10809,8 @@ export let tmp = {
             {
                 id: "64f5deac39e45b527a7c4232",
                 name: "Test Drive - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f5deac39e45b527a7c4232.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -9409,6 +10828,8 @@ export let tmp = {
             {
                 id: "5d25e2e286f77444001e2e48",
                 name: "The Huntsman Path - Sellout",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e2e286f77444001e2e48.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -9428,6 +10849,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c0e874186f7745dc7616606",
                             name: "Maska-1SCh bulletproof helmet (Killa Edition)",
@@ -9442,6 +10867,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c0e874186f7745dc7616606",
                             name: "Maska-1SCh bulletproof helmet (Killa Edition)",
@@ -9454,6 +10883,8 @@ export let tmp = {
             {
                 id: "5dc53acb86f77469c740c893",
                 name: "The Stylish One",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5dc53acb86f77469c740c893.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -9470,6 +10901,8 @@ export let tmp = {
             {
                 id: "5c1141f386f77430ff393792",
                 name: "Living High is Not a Crime - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c1141f386f77430ff393792.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -9482,6 +10915,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590de71386f774347051a052",
                             name: "Antique teapot",
@@ -9496,6 +10933,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590de7e986f7741b096e5f32",
                             name: "Antique vase",
@@ -9510,6 +10951,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a091170b9d3c46de5b6cf2",
                             name: "Axel parrot figurine",
@@ -9524,6 +10969,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f62086f774219b0f1937",
                             name: "Raven figurine",
@@ -9538,6 +10987,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590de71386f774347051a052",
                             name: "Antique teapot",
@@ -9552,6 +11005,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590de7e986f7741b096e5f32",
                             name: "Antique vase",
@@ -9566,6 +11023,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a091170b9d3c46de5b6cf2",
                             name: "Axel parrot figurine",
@@ -9580,6 +11041,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f62086f774219b0f1937",
                             name: "Raven figurine",
@@ -9592,6 +11057,8 @@ export let tmp = {
             {
                 id: "639dbaf17c898a131e1cffff",
                 name: "Debtor",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639dbaf17c898a131e1cffff.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -9614,6 +11081,8 @@ export let tmp = {
             {
                 id: "5b47749f86f7746c5d6a5fd4",
                 name: "Gunsmith - Part 17",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b47749f86f7746c5d6a5fd4.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -9631,6 +11100,8 @@ export let tmp = {
             {
                 id: "600302d73b897b11364cd161",
                 name: "Hunter",
+                taskImageLink:
+                    "https://assets.tarkov.dev/600302d73b897b11364cd161.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -9647,6 +11118,8 @@ export let tmp = {
             {
                 id: "5d25e4ca86f77409dd5cdf2c",
                 name: "Hunting Trip",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5d25e4ca86f77409dd5cdf2c.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -9664,6 +11137,7 @@ export let tmp = {
             {
                 id: "65734c186dc1e402c80dc19e",
                 name: "Dandies",
+                taskImageLink: "https://assets.tarkov.dev/unknown-task.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -9684,6 +11158,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60bf74184a63fc79b60c57f6",
                             name: "Bomber beanie",
@@ -9699,6 +11177,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5aa2b9aee5b5b00015693121",
                             name: "RayBench Hipster Reserve sunglasses",
@@ -9711,6 +11193,8 @@ export let tmp = {
             {
                 id: "5b477b6f86f7747290681823",
                 name: "Gunsmith - Part 18",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b477b6f86f7747290681823.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -9728,6 +11212,8 @@ export let tmp = {
             {
                 id: "639135c3744e452011470807",
                 name: "House Arrest - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135c3744e452011470807.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -9751,6 +11237,8 @@ export let tmp = {
             {
                 id: "639135cd8ba6894d155e77cb",
                 name: "House Arrest - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135cd8ba6894d155e77cb.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -9780,6 +11268,8 @@ export let tmp = {
             {
                 id: "639135534b15ca31f76bc317",
                 name: "Your Car Needs a Service",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639135534b15ca31f76bc317.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -9803,6 +11293,8 @@ export let tmp = {
             {
                 id: "5c139eb686f7747878361a6f",
                 name: "Import",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c139eb686f7747878361a6f.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -9815,6 +11307,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052fb986f7746b2101e909",
                             name: "UHF RFID Reader",
@@ -9829,6 +11325,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c05300686f7746dce784e5d",
                             name: "VPX Flash Storage Module",
@@ -9843,6 +11343,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052fb986f7746b2101e909",
                             name: "UHF RFID Reader",
@@ -9857,6 +11361,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c05300686f7746dce784e5d",
                             name: "VPX Flash Storage Module",
@@ -9869,6 +11377,8 @@ export let tmp = {
             {
                 id: "5c0be13186f7746f016734aa",
                 name: "Psycho Sniper",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0be13186f7746f016734aa.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -9893,6 +11403,8 @@ export let tmp = {
             {
                 id: "5c12452c86f7744b83469073",
                 name: "Perfect Mediator",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c12452c86f7744b83469073.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -9939,6 +11451,8 @@ export let tmp = {
             {
                 id: "5c0be5fc86f774467a116593",
                 name: "Private Clinic",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0be5fc86f774467a116593.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -9951,6 +11465,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5af0534a86f7743b6f354284",
                             name: "Ophthalmoscope",
@@ -9965,6 +11483,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c0530ee86f774697952d952",
                             name: "LEDX Skin Transilluminator",
@@ -9979,6 +11501,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5af0534a86f7743b6f354284",
                             name: "Ophthalmoscope",
@@ -9993,6 +11519,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c0530ee86f774697952d952",
                             name: "LEDX Skin Transilluminator",
@@ -10005,6 +11535,8 @@ export let tmp = {
             {
                 id: "5c0bdb5286f774166e38eed4",
                 name: "Flint",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0bdb5286f774166e38eed4.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -10022,6 +11554,8 @@ export let tmp = {
             {
                 id: "63966faeea19ac7ed845db2c",
                 name: "Information Source",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63966faeea19ac7ed845db2c.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10074,6 +11608,8 @@ export let tmp = {
             {
                 id: "625d7001c4874104f230c0c5",
                 name: "Assessment - Part 3",
+                taskImageLink:
+                    "https://assets.tarkov.dev/625d7001c4874104f230c0c5.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10093,6 +11629,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 20,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c0e531286f7747fa54205c2",
                             name: "SJ1 TGLabs combat stimulant injector",
@@ -10108,6 +11648,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 8,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c0e531d86f7747fa23f4d42",
                             name: "SJ6 TGLabs combat stimulant injector",
@@ -10123,6 +11667,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5fca13ca637ee0341a484f46",
                             name: "SJ9 TGLabs combat stimulant injector",
@@ -10135,6 +11683,8 @@ export let tmp = {
             {
                 id: "625d7005a4eb80027c4f2e09",
                 name: "Knock-Knock",
+                taskImageLink:
+                    "https://assets.tarkov.dev/625d7005a4eb80027c4f2e09.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10158,6 +11708,8 @@ export let tmp = {
             {
                 id: "63966fe7ea74a47c2d3fc0e6",
                 name: "Return the Favor",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63966fe7ea74a47c2d3fc0e6.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10178,6 +11730,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "6389c8c5dbfd5e4b95197e6b",
                             name: 'TerraGroup "Blue Folders" materials',
@@ -10193,6 +11749,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "6389c8c5dbfd5e4b95197e6b",
                             name: 'TerraGroup "Blue Folders" materials',
@@ -10205,6 +11765,8 @@ export let tmp = {
             {
                 id: "63966fd9ea19ac7ed845db30",
                 name: "Payback",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63966fd9ea19ac7ed845db30.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10241,6 +11803,8 @@ export let tmp = {
             {
                 id: "625d700cc48e6c62a440fab5",
                 name: "Getting Acquainted",
+                taskImageLink:
+                    "https://assets.tarkov.dev/625d700cc48e6c62a440fab5.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10259,6 +11823,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62e910aaf957f2915e0a5e36",
                             name: "Digital secure DSP radio transmitter",
@@ -10283,6 +11851,8 @@ export let tmp = {
             {
                 id: "63966fbeea19ac7ed845db2e",
                 name: "Missing Informant",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63966fbeea19ac7ed845db2e.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10320,6 +11890,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "6398fd8ad3de3849057f5128",
                             name: "Backup hideout key",
@@ -10332,6 +11906,8 @@ export let tmp = {
             {
                 id: "63966fccac6f8f3c677b9d89",
                 name: "Snatch",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63966fccac6f8f3c677b9d89.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10376,6 +11952,8 @@ export let tmp = {
             {
                 id: "625d6ffcaa168e51321d69d7",
                 name: "Assessment - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/625d6ffcaa168e51321d69d7.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10393,6 +11971,8 @@ export let tmp = {
             {
                 id: "625d70031ed3bb5bcc5bd9e5",
                 name: "Key to the Tower",
+                taskImageLink:
+                    "https://assets.tarkov.dev/625d70031ed3bb5bcc5bd9e5.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10406,6 +11986,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59e366c186f7741778269d85",
                             name: "Piece of plexiglass",
@@ -10421,6 +12005,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5734795124597738002c6176",
                             name: "Insulating tape",
@@ -10436,6 +12024,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d0376a486f7747d8050965c",
                             name: "Military circuit board",
@@ -10451,6 +12043,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052f6886f7746b1e3db148",
                             name: "Military COFDM Wireless Signal Transmitter",
@@ -10465,6 +12061,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d1b304286f774253763a528",
                             name: "Working LCD",
@@ -10490,6 +12090,8 @@ export let tmp = {
             {
                 id: "625d6ffaf7308432be1d44c5",
                 name: "Network Provider - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/625d6ffaf7308432be1d44c5.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10528,6 +12130,8 @@ export let tmp = {
             {
                 id: "625d6fff4149f1149b5b12c9",
                 name: "Assessment - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/625d6fff4149f1149b5b12c9.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10566,6 +12170,8 @@ export let tmp = {
             {
                 id: "626148251ed3bb5bcc5bd9ed",
                 name: "Make Amends - Buyout",
+                taskImageLink:
+                    "https://assets.tarkov.dev/626148251ed3bb5bcc5bd9ed.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10578,6 +12184,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1000000,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5449016a4bdc2d6f028b456f",
                             name: "Roubles",
@@ -10590,6 +12200,8 @@ export let tmp = {
             {
                 id: "6261482fa4eb80027c4f2e11",
                 name: "Make Amends - Equipment",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6261482fa4eb80027c4f2e11.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10603,6 +12215,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c46fbd72e2216398b5a8c9c",
                             name: "SVDS 7.62x54R sniper rifle",
@@ -10615,6 +12231,8 @@ export let tmp = {
             {
                 id: "6391d90f4ed9512be67647df",
                 name: "Make Amends",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6391d90f4ed9512be67647df.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10633,6 +12251,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62e910aaf957f2915e0a5e36",
                             name: "Digital secure DSP radio transmitter",
@@ -10657,6 +12279,8 @@ export let tmp = {
             {
                 id: "63966ff54c3ef01b6f3ffad8",
                 name: "Provocation",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63966ff54c3ef01b6f3ffad8.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10677,6 +12301,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "635a758bfefc88a93f021b8a",
                             name: "Salty Dog beef sausage",
@@ -10692,6 +12320,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d1b376e86f774252519444e",
                             name: "Bottle of Fierce Hatchling moonshine",
@@ -10707,6 +12339,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c13cef886f774072e618e82",
                             name: "Toilet paper",
@@ -10725,6 +12361,8 @@ export let tmp = {
             {
                 id: "639670029113f06a7c3b2377",
                 name: "Following the Bread Crumbs",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639670029113f06a7c3b2377.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10768,6 +12406,8 @@ export let tmp = {
             {
                 id: "6396700fea19ac7ed845db32",
                 name: "Spotter",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6396700fea19ac7ed845db32.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10788,6 +12428,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62811fa609427b40ab14e765",
                             name: "AI .338 LM Tactical Sound Moderator",
@@ -10810,6 +12454,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5a1eaa87fcdbcb001865f75e",
                             name: "Trijicon REAP-IR thermal scope",
@@ -10828,6 +12476,8 @@ export let tmp = {
             {
                 id: "6396701b9113f06a7c3b2379",
                 name: "Make an Impression",
+                taskImageLink:
+                    "https://assets.tarkov.dev/6396701b9113f06a7c3b2379.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10852,6 +12502,8 @@ export let tmp = {
             {
                 id: "63967028c4a91c5cb76abd81",
                 name: "Trouble in the Big City",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63967028c4a91c5cb76abd81.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10896,6 +12548,8 @@ export let tmp = {
             {
                 id: "64f1cc571a5f313cb144bf90",
                 name: "Overseas Trust - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f1cc571a5f313cb144bf90.webp",
                 trader: {
                     name: "Lightkeeper",
                 },
@@ -10942,6 +12596,8 @@ export let tmp = {
             {
                 id: "64f1d6e732bed22c3e0c7423",
                 name: "Overseas Trust - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f1d6e732bed22c3e0c7423.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -10954,6 +12610,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 50000,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5696686a4bdc2da3298b456a",
                             name: "Dollars",
@@ -10966,6 +12626,8 @@ export let tmp = {
             {
                 id: "626148334149f1149b5b12ca",
                 name: "Make Amends - Security",
+                taskImageLink:
+                    "https://assets.tarkov.dev/626148334149f1149b5b12ca.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -10979,6 +12641,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -10994,6 +12660,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -11009,6 +12679,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -11024,6 +12698,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5b4391a586f7745321235ab2",
                             name: "WI-FI Camera",
@@ -11036,6 +12714,8 @@ export let tmp = {
             {
                 id: "62614836f7308432be1d44cc",
                 name: "Make Amends - Sweep Up",
+                taskImageLink:
+                    "https://assets.tarkov.dev/62614836f7308432be1d44cc.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11052,6 +12732,8 @@ export let tmp = {
             {
                 id: "626bdcc3a371ee3a7a3514c5",
                 name: "Stray Dogs",
+                taskImageLink:
+                    "https://assets.tarkov.dev/626bdcc3a371ee3a7a3514c5.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -11080,6 +12762,8 @@ export let tmp = {
             {
                 id: "5c0d1c4cd0928202a02a6f5c",
                 name: "Decontamination Service",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0d1c4cd0928202a02a6f5c.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -11097,6 +12781,8 @@ export let tmp = {
             {
                 id: "626bd75d5bef5d7d590bd415",
                 name: "Top Secret",
+                taskImageLink:
+                    "https://assets.tarkov.dev/626bd75d5bef5d7d590bd415.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -11127,6 +12813,8 @@ export let tmp = {
             {
                 id: "625d6ff5ddc94657c21a1625",
                 name: "Network Provider - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/625d6ff5ddc94657c21a1625.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11140,6 +12828,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "6389c70ca33d8c4cdf4932c6",
                             name: "Electronic components",
@@ -11155,6 +12847,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052f6886f7746b1e3db148",
                             name: "Military COFDM Wireless Signal Transmitter",
@@ -11170,6 +12866,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "590a3efd86f77437d351a25b",
                             name: "Gas analyzer",
@@ -11185,6 +12885,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "56742c324bdc2d150f8b456d",
                             name: "Broken GPhone smartphone",
@@ -11197,6 +12901,8 @@ export let tmp = {
             {
                 id: "639873003693c63d86328f25",
                 name: "Gunsmith - Part 19",
+                taskImageLink:
+                    "https://assets.tarkov.dev/639873003693c63d86328f25.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11214,6 +12920,8 @@ export let tmp = {
             {
                 id: "5b477f7686f7744d1b23c4d2",
                 name: "Gunsmith - Part 20",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b477f7686f7744d1b23c4d2.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11231,6 +12939,8 @@ export let tmp = {
             {
                 id: "63987301e11ec11ff5504036",
                 name: "Gunsmith - Part 21",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63987301e11ec11ff5504036.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11255,6 +12965,8 @@ export let tmp = {
             {
                 id: "5b47825886f77468074618d3",
                 name: "Gunsmith - Part 22",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5b47825886f77468074618d3.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11272,6 +12984,8 @@ export let tmp = {
             {
                 id: "64f83bcdde58fc437700d8fa",
                 name: "Gunsmith - Part 24",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f83bcdde58fc437700d8fa.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11289,6 +13003,8 @@ export let tmp = {
             {
                 id: "64f83bd983cfca080a362c82",
                 name: "Gunsmith - Part 25",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f83bd983cfca080a362c82.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11306,6 +13022,8 @@ export let tmp = {
             {
                 id: "64f83bb69878a0569d6ecfbe",
                 name: "Gunsmith - Part 23",
+                taskImageLink:
+                    "https://assets.tarkov.dev/64f83bb69878a0569d6ecfbe.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11323,6 +13041,8 @@ export let tmp = {
             {
                 id: "5c0d4e61d09282029f53920e",
                 name: "The Guide",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c0d4e61d09282029f53920e.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -11396,6 +13116,8 @@ export let tmp = {
             {
                 id: "63a9b36cc31b00242d28a99f",
                 name: "Slaughterhouse",
+                taskImageLink:
+                    "https://assets.tarkov.dev/63a9b36cc31b00242d28a99f.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -11462,6 +13184,8 @@ export let tmp = {
             {
                 id: "5ae449d986f774453a54a7e1",
                 name: "Supervisor",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5ae449d986f774453a54a7e1.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -11474,6 +13198,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ad7247386f7747487619dc3",
                             name: "Goshan cash register key",
@@ -11488,6 +13216,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5ad7247386f7747487619dc3",
                             name: "Goshan cash register key",
@@ -11500,6 +13232,8 @@ export let tmp = {
             {
                 id: "60e71b9bbd90872cb85440f3",
                 name: "Capturing Outposts",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71b9bbd90872cb85440f3.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -11531,6 +13265,8 @@ export let tmp = {
             {
                 id: "5e383a6386f77465910ce1f3",
                 name: "Textile - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5e383a6386f77465910ce1f3.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -11543,6 +13279,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af4d286f7746d4159f07a",
                             name: "Aramid fiber fabric",
@@ -11557,6 +13297,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af4d286f7746d4159f07a",
                             name: "Aramid fiber fabric",
@@ -11571,6 +13315,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af4a786f7746d3f3c3400",
                             name: "Ripstop fabric",
@@ -11585,6 +13333,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af4a786f7746d3f3c3400",
                             name: "Ripstop fabric",
@@ -11599,6 +13351,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c12688486f77426843c7d32",
                             name: "Paracord",
@@ -11613,6 +13369,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c12688486f77426843c7d32",
                             name: "Paracord",
@@ -11625,6 +13385,8 @@ export let tmp = {
             {
                 id: "5e381b0286f77420e3417a74",
                 name: "Textile - Part 1",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5e381b0286f77420e3417a74.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -11637,6 +13399,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af4d286f7746d4159f07a",
                             name: "Aramid fiber fabric",
@@ -11651,6 +13417,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af4d286f7746d4159f07a",
                             name: "Aramid fiber fabric",
@@ -11665,6 +13435,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af4a786f7746d3f3c3400",
                             name: "Ripstop fabric",
@@ -11679,6 +13453,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af4a786f7746d3f3c3400",
                             name: "Ripstop fabric",
@@ -11693,6 +13471,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c12688486f77426843c7d32",
                             name: "Paracord",
@@ -11707,6 +13489,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c12688486f77426843c7d32",
                             name: "Paracord",
@@ -11719,6 +13505,8 @@ export let tmp = {
             {
                 id: "5e4d515e86f77438b2195244",
                 name: "Textile - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5e4d515e86f77438b2195244.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -11731,6 +13519,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af47786f7746d404f3aaa",
                             name: "Fleece fabric",
@@ -11745,6 +13537,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af47786f7746d404f3aaa",
                             name: "Fleece fabric",
@@ -11759,6 +13555,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af41e86f774755a234b67",
                             name: "Cordura polyamide fabric",
@@ -11773,6 +13573,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af41e86f774755a234b67",
                             name: "Cordura polyamide fabric",
@@ -11787,6 +13591,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af29386f7746d4159f077",
                             name: "KEKTAPE duct tape",
@@ -11801,6 +13609,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af29386f7746d4159f077",
                             name: "KEKTAPE duct tape",
@@ -11813,6 +13625,8 @@ export let tmp = {
             {
                 id: "5e4d4ac186f774264f758336",
                 name: "Textile - Part 2",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5e4d4ac186f774264f758336.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -11825,6 +13639,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af47786f7746d404f3aaa",
                             name: "Fleece fabric",
@@ -11839,6 +13657,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af47786f7746d404f3aaa",
                             name: "Fleece fabric",
@@ -11853,6 +13675,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af41e86f774755a234b67",
                             name: "Cordura polyamide fabric",
@@ -11867,6 +13693,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af41e86f774755a234b67",
                             name: "Cordura polyamide fabric",
@@ -11881,6 +13711,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af29386f7746d4159f077",
                             name: "KEKTAPE duct tape",
@@ -11895,6 +13729,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e2af29386f7746d4159f077",
                             name: "KEKTAPE duct tape",
@@ -11907,6 +13745,8 @@ export let tmp = {
             {
                 id: "60e71bb4e456d449cd47ca75",
                 name: "Intimidator",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71bb4e456d449cd47ca75.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -11923,6 +13763,8 @@ export let tmp = {
             {
                 id: "60e71dc0a94be721b065bbfc",
                 name: "Long Line",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71dc0a94be721b065bbfc.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -11940,6 +13782,8 @@ export let tmp = {
             {
                 id: "60e71c9ad54b755a3b53eb66",
                 name: "The Cleaner",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71c9ad54b755a3b53eb66.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -11956,6 +13800,8 @@ export let tmp = {
             {
                 id: "60e71d23c1bfa3050473b8e6",
                 name: "Calibration",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71d23c1bfa3050473b8e6.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -11973,6 +13819,8 @@ export let tmp = {
             {
                 id: "60e71c48c1bfa3050473b8e5",
                 name: "Crisis",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71c48c1bfa3050473b8e5.webp",
                 trader: {
                     name: "Therapist",
                 },
@@ -11985,6 +13833,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052e6986f7746b207bc3c9",
                             name: "Portable defibrillator",
@@ -11999,6 +13851,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5af0534a86f7743b6f354284",
                             name: "Ophthalmoscope",
@@ -12013,6 +13869,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c0530ee86f774697952d952",
                             name: "LEDX Skin Transilluminator",
@@ -12027,6 +13887,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 20,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d1b3a5d86f774252167ba22",
                             name: "Pile of meds",
@@ -12042,6 +13906,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a0a043cf4a99369e2624a5",
                             name: "Bottle of OLOLO Multivitamins",
@@ -12056,6 +13924,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052e6986f7746b207bc3c9",
                             name: "Portable defibrillator",
@@ -12070,6 +13942,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5af0534a86f7743b6f354284",
                             name: "Ophthalmoscope",
@@ -12084,6 +13960,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c0530ee86f774697952d952",
                             name: "LEDX Skin Transilluminator",
@@ -12098,6 +13978,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 20,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d1b3a5d86f774252167ba22",
                             name: "Pile of meds",
@@ -12112,6 +13996,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a0a043cf4a99369e2624a5",
                             name: "Bottle of OLOLO Multivitamins",
@@ -12124,6 +14012,8 @@ export let tmp = {
             {
                 id: "5c51aac186f77432ea65c552",
                 name: "Collector",
+                taskImageLink:
+                    "https://assets.tarkov.dev/5c51aac186f77432ea65c552.webp",
                 trader: {
                     name: "Fence",
                 },
@@ -12136,6 +14026,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9c377d4351e3bac12251b",
                             name: "Old firesteel",
@@ -12150,6 +14044,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9c377d4351e3bac12251b",
                             name: "Old firesteel",
@@ -12164,6 +14062,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9c1e2d4351e00367fbcf0",
                             name: "Antique axe",
@@ -12178,6 +14080,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9c1e2d4351e00367fbcf0",
                             name: "Antique axe",
@@ -12192,6 +14098,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9c049d4351e44f824d360",
                             name: "Battered antique book",
@@ -12206,6 +14116,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9c049d4351e44f824d360",
                             name: "Battered antique book",
@@ -12220,6 +14134,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9b355d4351e6d1509862a",
                             name: "#FireKlean gun lube",
@@ -12234,6 +14152,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9b355d4351e6d1509862a",
                             name: "#FireKlean gun lube",
@@ -12248,6 +14170,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9bc53d4351e00367fbcee",
                             name: "Golden rooster figurine",
@@ -12262,6 +14188,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9bc53d4351e00367fbcee",
                             name: "Golden rooster figurine",
@@ -12276,6 +14206,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9bdb8d4351e003562b8a1",
                             name: "Silver Badge",
@@ -12290,6 +14224,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9bdb8d4351e003562b8a1",
                             name: "Silver Badge",
@@ -12304,6 +14242,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9b9ecd4351e3bac122519",
                             name: "Deadlyslob's beard oil",
@@ -12318,6 +14260,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9b9ecd4351e3bac122519",
                             name: "Deadlyslob's beard oil",
@@ -12332,6 +14278,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9b720d4351e450201234b",
                             name: "Golden 1GPhone smartphone",
@@ -12346,6 +14296,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9b720d4351e450201234b",
                             name: "Golden 1GPhone smartphone",
@@ -12360,6 +14314,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9b156d4351e00367fbce9",
                             name: "Jar of DevilDog mayo",
@@ -12374,6 +14332,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9b156d4351e00367fbce9",
                             name: "Jar of DevilDog mayo",
@@ -12388,6 +14350,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9c29cd4351e003562b8a3",
                             name: "Can of sprats",
@@ -12402,6 +14368,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9c29cd4351e003562b8a3",
                             name: "Can of sprats",
@@ -12416,6 +14386,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bd073a586f7747e6f135799",
                             name: "Fake mustache",
@@ -12430,6 +14404,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bd073a586f7747e6f135799",
                             name: "Fake mustache",
@@ -12444,6 +14422,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bd073c986f7747f627e796c",
                             name: "Kotton beanie",
@@ -12458,6 +14440,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bd073c986f7747f627e796c",
                             name: "Kotton beanie",
@@ -12472,6 +14458,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f62086f774219b0f1937",
                             name: "Raven figurine",
@@ -12486,6 +14476,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f62086f774219b0f1937",
                             name: "Raven figurine",
@@ -12500,6 +14494,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f79686f7744022011103",
                             name: "Pestily plague mask",
@@ -12514,6 +14512,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f79686f7744022011103",
                             name: "Pestily plague mask",
@@ -12528,6 +14530,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f76986f7740366043752",
                             name: "Shroud half-mask",
@@ -12542,6 +14548,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f76986f7740366043752",
                             name: "Shroud half-mask",
@@ -12557,6 +14567,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f6af86f7742199090bf3",
                             name: "Can of Dr. Lupo's coffee beans",
@@ -12572,6 +14586,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5e54f6af86f7742199090bf3",
                             name: "Can of Dr. Lupo's coffee beans",
@@ -12587,6 +14605,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9be8fd4351e00334cae6e",
                             name: "42 Signature Blend English Tea",
@@ -12602,6 +14624,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5bc9be8fd4351e00334cae6e",
                             name: "42 Signature Blend English Tea",
@@ -12616,6 +14642,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5f745ee30acaeb0d490d8c5b",
                             name: "Veritas guitar pick",
@@ -12630,6 +14660,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5f745ee30acaeb0d490d8c5b",
                             name: "Veritas guitar pick",
@@ -12644,6 +14678,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f988c4449e4cb624c1da",
                             name: "Armband (Evasion)",
@@ -12658,6 +14696,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f988c4449e4cb624c1da",
                             name: "Armband (Evasion)",
@@ -12672,6 +14714,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f93284c20f0feb453da7",
                             name: "Can of RatCola soda",
@@ -12686,6 +14732,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f93284c20f0feb453da7",
                             name: "Can of RatCola soda",
@@ -12700,6 +14750,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f7057897d47c5b04ab94",
                             name: "Loot Lord plushie",
@@ -12714,6 +14768,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f7057897d47c5b04ab94",
                             name: "Loot Lord plushie",
@@ -12728,6 +14786,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5fd8d28367cb5e077335170f",
                             name: "Smoke balaclava",
@@ -12742,6 +14804,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5fd8d28367cb5e077335170f",
                             name: "Smoke balaclava",
@@ -12756,6 +14822,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f6c058e0b0481a09ad11",
                             name: "WZ Wallet",
@@ -12770,6 +14840,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f6c058e0b0481a09ad11",
                             name: "WZ Wallet",
@@ -12784,6 +14858,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f561c4449e4cb624c1d7",
                             name: "LVNDMARK's rat poison",
@@ -12798,6 +14876,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "60b0f561c4449e4cb624c1d7",
                             name: "LVNDMARK's rat poison",
@@ -12813,6 +14895,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09ec84f842e1bd12da3f2",
                             name: "Missam forklift key",
@@ -12828,6 +14914,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09e974f842e1bd12da3f0",
                             name: "Video cassette with the Cyborg Killer movie",
@@ -12843,6 +14933,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09e73af34e73a266d932a",
                             name: "BakeEzy cook book",
@@ -12858,6 +14952,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09e410b9d3c46de5b6e78",
                             name: "JohnB Liquid DNB glasses",
@@ -12873,6 +14971,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09dd4621468534a797ac7",
                             name: "Baddie's red beard",
@@ -12888,6 +14990,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09d79de7ac81993580530",
                             name: "DRD body armor",
@@ -12903,6 +15009,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09d3bcf4a99369e262447",
                             name: "Gingy keychain",
@@ -12918,6 +15028,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09cfe4f842e1bd12da3e4",
                             name: "Golden egg",
@@ -12933,6 +15047,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09cb7a04c0c5c6e0a84f8",
                             name: "Press pass (issued for NoiceGuy)",
@@ -12948,6 +15066,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a091170b9d3c46de5b6cf2",
                             name: "Axel parrot figurine",
@@ -12963,6 +15085,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a08f4c4f842e1bd12d9d62",
                             name: "BEAR Buddy plush toy",
@@ -12975,6 +15101,8 @@ export let tmp = {
             {
                 id: "60e71c11d54b755a3b53eb65",
                 name: "Night Sweep",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71c11d54b755a3b53eb65.webp",
                 trader: {
                     name: "Skier",
                 },
@@ -12987,6 +15115,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 12,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5fc64ea372b0dd78d51159dc",
                             name: "Cultist knife",
@@ -13001,6 +15133,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 12,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5fc64ea372b0dd78d51159dc",
                             name: "Cultist knife",
@@ -13013,6 +15149,8 @@ export let tmp = {
             {
                 id: "60effd818b669d08a35bfad5",
                 name: "The Choice",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60effd818b669d08a35bfad5.webp",
                 trader: {
                     name: "Fence",
                 },
@@ -13025,6 +15163,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59db794186f77448bc595262",
                             name: "Secure container Epsilon",
@@ -13037,6 +15179,8 @@ export let tmp = {
             {
                 id: "60e729cf5698ee7b05057439",
                 name: "Swift One",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e729cf5698ee7b05057439.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -13054,6 +15198,8 @@ export let tmp = {
             {
                 id: "60e71dc67fcf9c556f325056",
                 name: "Booze",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71dc67fcf9c556f325056.webp",
                 trader: {
                     name: "Ragman",
                 },
@@ -13067,6 +15213,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d40407c86f774318526545a",
                             name: "Bottle of Tarkovskaya vodka",
@@ -13082,6 +15232,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d403f9186f7743cac3f229b",
                             name: "Bottle of Dan Jackiel whiskey",
@@ -13097,6 +15251,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d1b33a686f7742523398398",
                             name: "Canister with purified water",
@@ -13111,6 +15269,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 20,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09f32621468534a797acb",
                             name: "Bottle of Pevko Light beer",
@@ -13125,6 +15287,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d40407c86f774318526545a",
                             name: "Bottle of Tarkovskaya vodka",
@@ -13139,6 +15305,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 10,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d403f9186f7743cac3f229b",
                             name: "Bottle of Dan Jackiel whiskey",
@@ -13153,6 +15323,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d1b33a686f7742523398398",
                             name: "Canister with purified water",
@@ -13167,6 +15341,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 20,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a09f32621468534a797acb",
                             name: "Bottle of Pevko Light beer",
@@ -13179,6 +15357,8 @@ export let tmp = {
             {
                 id: "60e71d6d7fcf9c556f325055",
                 name: "The Courier",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71d6d7fcf9c556f325055.webp",
                 trader: {
                     name: "Mechanic",
                 },
@@ -13192,6 +15372,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5a1eaa87fcdbcb001865f75e",
                             name: "Trijicon REAP-IR thermal scope",
@@ -13207,6 +15391,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5a1eaa87fcdbcb001865f75e",
                             name: "Trijicon REAP-IR thermal scope",
@@ -13219,6 +15407,8 @@ export let tmp = {
             {
                 id: "60e71ccb5688f6424c7bfec4",
                 name: "Trophies",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71ccb5688f6424c7bfec4.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -13232,6 +15422,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 20,
                         foundInRaid: true,
+                        dogTagLevel: 50,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32bb586f774757e1e8442",
                             name: "Dogtag BEAR",
@@ -13247,6 +15441,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 20,
                         foundInRaid: true,
+                        dogTagLevel: 50,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32c3b86f77472a31742f0",
                             name: "Dogtag USEC",
@@ -13259,6 +15457,8 @@ export let tmp = {
             {
                 id: "60e71b62a0beca400d69efc4",
                 name: "Escort",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71b62a0beca400d69efc4.webp",
                 trader: {
                     name: "Prapor",
                 },
@@ -13312,6 +15512,8 @@ export let tmp = {
             {
                 id: "60e71ce009d7c801eb0c0ec6",
                 name: "Special Equipment",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71ce009d7c801eb0c0ec6.webp",
                 trader: {
                     name: "Peacekeeper",
                 },
@@ -13324,6 +15526,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c05300686f7746dce784e5d",
                             name: "VPX Flash Storage Module",
@@ -13338,6 +15544,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052fb986f7746b2101e909",
                             name: "UHF RFID Reader",
@@ -13353,6 +15563,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c05308086f7746b2101e90b",
                             name: "Virtex programmable processor",
@@ -13368,6 +15582,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052f6886f7746b1e3db148",
                             name: "Military COFDM Wireless Signal Transmitter",
@@ -13382,6 +15600,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a0a16d0b9d3c46de5b6e97",
                             name: "Military flash drive",
@@ -13396,6 +15618,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c05300686f7746dce784e5d",
                             name: "VPX Flash Storage Module",
@@ -13410,6 +15636,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052fb986f7746b2101e909",
                             name: "UHF RFID Reader",
@@ -13424,6 +15654,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c05308086f7746b2101e90b",
                             name: "Virtex programmable processor",
@@ -13438,6 +15672,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5c052f6886f7746b1e3db148",
                             name: "Military COFDM Wireless Signal Transmitter",
@@ -13452,6 +15690,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 4,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "62a0a16d0b9d3c46de5b6e97",
                             name: "Military flash drive",
@@ -13464,6 +15706,8 @@ export let tmp = {
             {
                 id: "60e71e8ed54b755a3b53eb67",
                 name: "The Huntsman Path - Relentless",
+                taskImageLink:
+                    "https://assets.tarkov.dev/60e71e8ed54b755a3b53eb67.webp",
                 trader: {
                     name: "Jaeger",
                 },
@@ -13510,6 +15754,8 @@ export let tmp = {
             {
                 id: "61e6e5e0f5b9633f6719ed95",
                 name: "Compensation for Damage - Trust",
+                taskImageLink:
+                    "https://assets.tarkov.dev/61e6e5e0f5b9633f6719ed95.webp",
                 trader: {
                     name: "Fence",
                 },
@@ -13523,6 +15769,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32bb586f774757e1e8442",
                             name: "Dogtag BEAR",
@@ -13538,6 +15788,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 5,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "59f32c3b86f77472a31742f0",
                             name: "Dogtag USEC",
@@ -13550,6 +15804,8 @@ export let tmp = {
             {
                 id: "61e6e60223374d168a4576a6",
                 name: "Compensation for Damage - Wager",
+                taskImageLink:
+                    "https://assets.tarkov.dev/61e6e60223374d168a4576a6.webp",
                 trader: {
                     name: "Fence",
                 },
@@ -13567,6 +15823,8 @@ export let tmp = {
             {
                 id: "61e6e615eea2935bc018a2c5",
                 name: "Compensation for Damage - Barkeep",
+                taskImageLink:
+                    "https://assets.tarkov.dev/61e6e615eea2935bc018a2c5.webp",
                 trader: {
                     name: "Fence",
                 },
@@ -13580,6 +15838,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5d403f9186f7743cac3f229b",
                             name: "Bottle of Dan Jackiel whiskey",
@@ -13595,6 +15857,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 3,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "57514643245977207f2c2d09",
                             name: "Can of TarCola soda",
@@ -13607,6 +15873,8 @@ export let tmp = {
             {
                 id: "61e6e621bfeab00251576265",
                 name: "Compensation for Damage - Collection",
+                taskImageLink:
+                    "https://assets.tarkov.dev/61e6e621bfeab00251576265.webp",
                 trader: {
                     name: "Fence",
                 },
@@ -13620,6 +15888,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 2,
                         foundInRaid: true,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5447a9cd4bdc2dbd208b4567",
                             name: "Colt M4A1 5.56x45 assault rifle",
@@ -13632,6 +15904,8 @@ export let tmp = {
             {
                 id: "61e6e60c5ca3b3783662be27",
                 name: "Compensation for Damage - Wergild",
+                taskImageLink:
+                    "https://assets.tarkov.dev/61e6e60c5ca3b3783662be27.webp",
                 trader: {
                     name: "Fence",
                 },
@@ -13644,6 +15918,10 @@ export let tmp = {
                         __typename: "TaskObjectiveItem",
                         count: 1000000,
                         foundInRaid: false,
+                        dogTagLevel: 0,
+                        minDurability: 0,
+                        maxDurability: 100,
+                        requiredKeys: null,
                         item: {
                             id: "5449016a4bdc2d6f028b456f",
                             name: "Roubles",

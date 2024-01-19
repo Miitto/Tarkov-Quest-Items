@@ -25,6 +25,116 @@
     }
 }
 
+.itemList {
+    overflow-y: auto;
+    max-height: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr auto 0.5rem auto;
+}
+
 .itemLine {
+    display: grid;
+    grid-template-columns: subgrid;
+    align-items: center;
+    grid-column: 1 / -1;
+    padding-right: 1rem;
+    p {
+        margin: 0;
+        padding: 0 0.1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        &:nth-last-child(3) {
+            text-align: right;
+            justify-content: flex-end;
+        }
+
+        &:last-child {
+            span {
+                flex-grow: 1;
+            }
+        }
+
+        &:nth-last-child(2) {
+            width: fit-content;
+        }
+
+        &:nth-child(2) {
+            padding-left: 0.5rem;
+        }
+
+        button {
+            height: 100%;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            background-color: transparent;
+            border: none;
+            padding: 0.75em;
+            font-size: 1.2em;
+
+            &:hover {
+                filter: brightness(0.5);
+            }
+
+            &:active {
+                filter: brightness(0.1);
+            }
+        }
+    }
+
+    > div:first-child {
+        position: relative;
+        height: 64px;
+        svg {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            transform: translate(-20%, -50%);
+        }
+    }
+}
+
+.filterBar {
     display: flex;
+
+    > input[type="text"] {
+        flex: 1 1 0;
+        border-radius: 0;
+        border: none;
+        outline: none;
+        box-shadow: none;
+        padding: 0.75em;
+    }
+}
+
+.titleBar {
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-column: 1 / -1;
+    align-items: center;
+    min-height: 2rem;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 6;
+
+    button {
+        margin: 0;
+        background-color: var(--bg-color-alt);
+        border: none;
+        box-shadow: 0 0 2px black;
+        height: 100%;
+        position: relative;
+
+        &:hover {
+            filter: brightness(1.2);
+        }
+
+        &:last-child {
+            grid-column: span 2;
+        }
+    }
 }

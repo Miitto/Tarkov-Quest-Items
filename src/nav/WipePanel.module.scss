@@ -77,11 +77,21 @@ nav {
 
     > span {
         display: flex;
-        button {
-            border: none;
-            font-size: 1.5em;
-            margin: 0;
-            &:first-child {
+
+        div {
+            max-width: 50%;
+
+            &.tooltip .tooltiptext {
+                left: 0;
+            }
+
+            button {
+                border: none;
+                font-size: 1.5em;
+                margin: 0;
+                width: 100%;
+            }
+            &:first-of-type button {
                 background-color: $tarkov-tan;
                 color: $tarkov-text;
 
@@ -96,7 +106,7 @@ nav {
                 }
             }
 
-            &:last-child {
+            &:last-of-type button {
                 background-color: red;
                 color: $tarkov-tan;
 

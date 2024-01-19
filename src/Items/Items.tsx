@@ -1,73 +1,61 @@
-import { useEffect, useState } from "react";
-import { CollatedItem, Item, Objective, Task } from "../types";
-import { invoke } from "@tauri-apps/api";
+import { useEffect, useMemo, useState } from "react";
+import { CollatedItem } from "../types";
 
 import styles from "./Items.module.scss";
+import { ItemLine } from "./ItemLine";
+import { ItemTitleBar } from "./ItemTitleBar";
 
-export function ItemsPanel() {
-    const [items, setItems] = useState<CollatedItem[]>([]);
+export function ItemsPanel({
+    items,
+    setItems,
+}: {
+    items: CollatedItem[];
+    setItems: (items: CollatedItem[]) => void;
+}) {
     const [activePage, setActivePage] = useState(0);
 
-    useEffect(() => {
-        (async () => {
-            let onlyItems: Item[] = await invoke("get_all_items");
+    const [filterName, setFilterName] = useState("");
 
-            let objectives: Objective[] = await invoke("get_all_objectives");
+    const [sort, setSort] = useState("name");
 
-            let items: CollatedItem[] = [];
-            await onlyItems.forEach(async (item: Item) => {
-                let objectiveFir = objectives.find(
-                    (objective: any) =>
-                        objective.item == item.id && objective.found_in_raid
+    const filteredItems = useMemo(() => {
+        return items
+            .filter((item) => {
+                return (
+                    item.name
+                        .toLowerCase()
+                        .includes(filterName.toLowerCase()) || filterName == ""
                 );
-                if (objectiveFir) {
-                    let i = items.find((i) => i.id == item.id && i.foundInRaid);
-                    if (!i) {
-                        i = JSON.parse(JSON.stringify(item)) as CollatedItem;
-
-                        i.foundInRaid = true;
-                        i.levelRequired = [];
-                        items.push(i);
+            })
+            .sort((a, b) => {
+                if (sort.startsWith("name")) {
+                    if (sort.endsWith("-")) {
+                        return b.name.localeCompare(a.name);
                     }
-
-                    let task: Task = await invoke("get_task", {
-                        taskId: objectiveFir.task,
-                    })!;
-
-                    i.levelRequired.push({
-                        level: task.min_level,
-                        count: objectiveFir.count,
-                    });
+                    return a.name.localeCompare(b.name);
                 }
-                let objectiveNotFir = objectives.find(
-                    (objective: any) =>
-                        objective.item == item.id && objective.found_in_raid
-                );
-                if (objectiveNotFir) {
-                    let i = items.find(
-                        (i) => i.id == item.id && !i.foundInRaid
-                    );
-                    if (!i) {
-                        i = JSON.parse(JSON.stringify(item)) as CollatedItem;
-
-                        i.foundInRaid = false;
-                        i.levelRequired = [];
-                        items.push(i);
+                if (sort.startsWith("collected")) {
+                    if (sort.endsWith("-")) {
+                        return a.collected - b.collected;
                     }
-
-                    let task: Task = await invoke("get_task", {
-                        taskId: objectiveNotFir.task,
-                    })!;
-
-                    i.levelRequired.push({
-                        level: task.min_level,
-                        count: objectiveNotFir.count,
-                    });
+                    return b.collected - a.collected;
                 }
+                if (sort.startsWith("total")) {
+                    if (sort.endsWith("-")) {
+                        return a.totalCount - b.totalCount;
+                    }
+                    return b.totalCount - a.totalCount;
+                }
+                if (sort.startsWith("fir")) {
+                    if (a.foundInRaid && b.foundInRaid) return 0;
+                    if (sort.endsWith("-")) {
+                        return a.foundInRaid ? 1 : -1;
+                    }
+                    return b.foundInRaid ? 1 : -1;
+                }
+                return 0;
             });
-            setItems(items);
-        })();
-    }, []);
+    }, [items, filterName, sort]);
 
     return (
         <>
@@ -77,7 +65,7 @@ export function ItemsPanel() {
                         className={activePage == 0 ? styles.active : ""}
                         onClick={() => setActivePage(0)}
                     >
-                        All
+                        Needs Collecting
                     </button>
                 </li>
                 <li>
@@ -85,46 +73,100 @@ export function ItemsPanel() {
                         className={activePage == 1 ? styles.active : ""}
                         onClick={() => setActivePage(1)}
                     >
-                        Needs Collecting
+                        All
                     </button>
                 </li>
             </ul>
-            <ul>
+            <FilterBar
+                filterName={filterName}
+                setFilterName={setFilterName}
+            />
+            <ul className={styles.itemList}>
+                <ItemTitleBar
+                    sort={sort}
+                    setSort={setSort}
+                />
                 {activePage == 0 ? (
-                    <AllPage items={items} />
+                    <NeedsCollectingPage
+                        items={filteredItems}
+                        setItems={setItems}
+                    />
                 ) : (
-                    <NeedsCollectingPage items={items} />
+                    <AllPage
+                        items={filteredItems}
+                        setItems={setItems}
+                    />
                 )}
             </ul>
         </>
     );
 }
 
-function AllPage({ items }: { items: Item[] }) {
+function FilterBar({
+    filterName,
+    setFilterName,
+}: {
+    filterName: string;
+    setFilterName: (name: string) => void;
+}) {
+    return (
+        <div className={styles.filterBar}>
+            <input
+                type="text"
+                placeholder="Filter Name..."
+                value={filterName}
+                onChange={(e) => setFilterName(e.target.value)}
+            />
+        </div>
+    );
+}
+
+function AllPage({
+    items,
+    setItems,
+}: {
+    items: CollatedItem[];
+    setItems: (items: CollatedItem[]) => void;
+}) {
     return (
         <>
-            {items.map((item: Item) => {
-                return <ItemLine item={item} />;
+            {items.map((item: CollatedItem) => {
+                return (
+                    <ItemLine
+                        key={`${item.id}${item.foundInRaid}${item.totalCount}${item.collected}`}
+                        item={item}
+                        setItems={setItems}
+                        items={items}
+                    />
+                );
             })}
         </>
     );
 }
 
-function NeedsCollectingPage({ items }: { items: Item[] }) {
+function NeedsCollectingPage({
+    items,
+    setItems,
+}: {
+    items: CollatedItem[];
+    setItems: (items: CollatedItem[]) => void;
+}) {
+    const noneCollectedItems = useMemo(() => {
+        return items.filter((item) => item.collected < item.totalCount);
+    }, [items]);
+
     return (
         <>
-            {items.map((item: Item) => {
-                return <ItemLine item={item} />;
+            {noneCollectedItems.map((item: CollatedItem) => {
+                return (
+                    <ItemLine
+                        key={`${item.id}${item.foundInRaid}${item.totalCount}${item.collected}`}
+                        item={item}
+                        setItems={setItems}
+                        items={items}
+                    />
+                );
             })}
         </>
-    );
-}
-
-function ItemLine({ item }: { item: Item }) {
-    return (
-        <span className={styles.itemLine}>
-            <img src={item.image} />
-            <p>{item.name}</p>
-        </span>
     );
 }

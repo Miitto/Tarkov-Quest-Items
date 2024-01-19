@@ -22,6 +22,59 @@
     min-width: 0;
 }
 
+.tooltip {
+    position: relative;
+
+    &:hover {
+        > .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: $tarkov-tan;
+    color: $tarkov-text;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+    font-size: 1rem;
+
+    /* Position the tooltip text */
+    position: absolute;
+    z-index: 10;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+
+    &.left {
+        left: 0;
+        margin-left: 0;
+    }
+
+    /* Fade in tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: $tarkov-tan transparent transparent transparent;
+    }
+
+    &.left::after {
+        left: calc(38.2px / 2);
+    }
+}
+
 button {
     display: flex;
     flex-direction: row;

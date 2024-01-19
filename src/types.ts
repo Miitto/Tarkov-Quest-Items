@@ -27,6 +27,7 @@ export interface CollatedItem {
     image: string;
     collected: number;
     foundInRaid: boolean;
+    totalCount: number;
     levelRequired: [
         {
             level: number;
@@ -36,9 +37,22 @@ export interface CollatedItem {
 }
 
 export interface Task {
+    fir: any;
     id: string;
     name: string;
     vendor: string;
     min_level: number;
     wipe: number;
+    image: string;
+}
+
+export interface CollatedTask {
+    id: string;
+    name: string;
+    image: string;
+    vendor: string;
+    min_level: number;
+    wipe: number;
+    completed: number;
+    objectives: Objective[];
 }

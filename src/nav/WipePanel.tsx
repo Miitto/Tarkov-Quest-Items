@@ -5,16 +5,33 @@ import { invoke } from "@tauri-apps/api/tauri";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { tmp } from "../tmp";
 
-export function WipePanel() {
+export function WipePanel({
+    activeWipe,
+    setActiveWipe,
+}: {
+    activeWipe: number;
+    setActiveWipe: (idx: number) => void;
+}) {
     const [wipes, setWipes] = useState<Wipe[]>([]);
-    const [activeWipe, setActiveWipe] = useState(0);
 
     let createDialog: RefObject<HTMLDialogElement> = useRef(null);
     let deleteDialog: RefObject<HTMLDialogElement> = useRef(null);
 
+    function pickWipe(wipeId: number) {
+        setActiveWipe(wipeId);
+        invoke("pick_wipe", {
+            wipeId: wipeId,
+        });
+    }
+
     useEffect(() => {
-        invoke("get_all_wipes").then((wipes) => {
+        invoke<Wipe[]>("get_all_wipes").then((wipes): void => {
             setWipes(wipes as Wipe[]);
+            if (wipes.length > 0) pickWipe(wipes[0].id);
+            if (wipes.length > 0)
+                invoke("pick_wipe", {
+                    wipeId: wipes[0].id,
+                });
         });
     }, []);
 
@@ -29,8 +46,6 @@ export function WipePanel() {
     async function createWipe(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
-        console.log("Clicked");
-
         // let res = await fetch("https://api.tarkov.dev/graphql", {
         //     method: "POST",
         //     headers: {
@@ -39,29 +54,39 @@ export function WipePanel() {
         //     },
         //     body: JSON.stringify({
         //         query: `{
-        //                     tasks {
-        //                         id
-        //                         name
-        //                         trader {
-        //                             name
-        //                         }
-        //                         minPlayerLevel
-        //                         objectives {
-        //                             id
-        //                             description
-        //                             optional
-        //                             ... on TaskObjectiveItem {
-        //                                 count
-        //                                 foundInRaid
-        //                                 item {
-        //                                     id
-        //                                     name
-        //                                     iconLink
-        //                                 }
-        //                             }
-        //                         }
-        //                     }
-        //                 }`,
+        //          tasks {
+        //            id
+        //            name
+        //            taskImageLink
+        //            trader {
+        //              name
+        //            }
+        //            minPlayerLevel
+        //            objectives {
+        //              id
+        //              description
+        //              optional
+        //              __typename
+        //              ... on TaskObjectiveItem {
+        //                count
+        //                foundInRaid
+        //                dogTagLevel
+        //                minDurability
+        //                maxDurability
+        //                requiredKeys {
+        //                  id
+        //                  name
+        //                  iconLink
+        //                }
+        //                item {
+        //                  id
+        //                  name
+        //                  iconLink
+        //                }
+        //              }
+        //            }
+        //          }
+        //        }`,
         //     }),
         // });
         // let data = (await res.json()).data;
@@ -76,6 +101,8 @@ export function WipePanel() {
             task.min_level = task.minPlayerLevel;
             delete task.minPlayerLevel;
 
+            if (!task.hasOwnProperty("image")) task.image = "";
+
             task.objectives.forEach((objective: any) => {
                 if (!objective.hasOwnProperty("count")) objective.count = 0;
                 if (!objective.hasOwnProperty("item")) objective.item = null;
@@ -89,6 +116,7 @@ export function WipePanel() {
                 objective.found_in_raid = objective.foundInRaid;
                 delete objective.foundInRaid;
                 objective.task = task.id;
+                objective.completed = false;
             });
         });
 
@@ -96,7 +124,7 @@ export function WipePanel() {
             name: (event.target as any).elements[0].value,
         }).then(async (wipe) => {
             setWipes([wipe as Wipe, ...wipes]);
-            setActiveWipe(0);
+            pickWipe(wipe.id);
             createDialog?.current?.close();
             data.tasks.forEach((task: any) => {
                 task.wipe = wipe.id;
@@ -110,6 +138,8 @@ export function WipePanel() {
             let objectives = data.tasks.flatMap((task: any) =>
                 task.objectives.map((objective: any) => {
                     objective.item = objective.item?.id;
+                    objective.task = task.id;
+                    objective.wipe = activeWipe;
                     return objective;
                 })
             );
@@ -125,33 +155,39 @@ export function WipePanel() {
 
     async function deleteWipe() {
         await invoke("delete_wipe", {
-            wipeId: wipes[activeWipe].id,
+            wipeId: activeWipe,
         });
-        setWipes(wipes.filter((_: Wipe, idx) => activeWipe != idx));
+        setWipes(wipes.filter((wipe: Wipe) => activeWipe != wipe.id));
         deleteDialog?.current?.close();
     }
 
     return (
         <nav className={styles.nav}>
             <ul>
-                {wipes.map((wipe: Wipe, idx: number) => {
+                {wipes.map((wipe: Wipe) => {
                     return (
                         <WipeLine
                             wipe={wipe}
-                            active={idx == activeWipe}
-                            click={() => setActiveWipe(idx)}
+                            active={wipe.id == activeWipe}
+                            click={() => pickWipe(wipe.id)}
                             key={wipe.id}
                         />
                     );
                 })}
             </ul>
             <span>
-                <button onClick={newWipe}>
-                    <FontAwesomeIcon icon="square-plus" />
-                </button>
-                <button onClick={removeWipe}>
-                    <FontAwesomeIcon icon="trash" />
-                </button>
+                <div className="tooltip">
+                    <button onClick={newWipe}>
+                        <FontAwesomeIcon icon="square-plus" />
+                    </button>
+                    <span className="left tooltiptext">New Wipe</span>
+                </div>
+                <div className="tooltip">
+                    <button onClick={removeWipe}>
+                        <FontAwesomeIcon icon="trash" />
+                    </button>
+                    <span className="tooltiptext">Delete Wipe</span>
+                </div>
             </span>
             <dialog
                 ref={createDialog}
