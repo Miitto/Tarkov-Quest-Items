@@ -1,15 +1,17 @@
 import { invoke } from "@tauri-apps/api";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { CollatedTask, Objective, Task } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Tasks.module.scss";
 import { TaskPage } from "./TaskPage";
+import { appWindow } from "@tauri-apps/api/window";
 
 export function TasksPanel({ activeWipe }: { activeWipe: number }) {
     const [tasks, setTasks] = useState<CollatedTask[]>([]);
     const [filterName, setFilterName] = useState("");
     const [sort, setSort] = useState("lvl");
     const [TaskDialog, setTaskDialog] = useState(<DefaultDialog />);
+    const [height, setHeight] = useState(0);
 
     const filteredTasks = useMemo(() => {
         return tasks
@@ -69,13 +71,27 @@ export function TasksPanel({ activeWipe }: { activeWipe: number }) {
             setTasks(collated);
         });
     }, [activeWipe]);
+
+    let ul = useRef<HTMLUListElement>(null);
+
+    appWindow.listen("tauri://resize", () => {
+        setHeight(ul.current?.clientHeight ?? 0);
+    });
+
+    useEffect(() => {
+        setHeight(ul.current?.clientHeight ?? 0);
+    }, []);
+
     return (
         <>
             <FilterBar
                 filterName={filterName}
                 setFilterName={setFilterName}
             />
-            <ul className={styles.taskList}>
+            <ul
+                className={styles.taskList}
+                ref={ul}
+            >
                 <TitleBar
                     sort={sort}
                     setSort={setSort}
@@ -83,6 +99,7 @@ export function TasksPanel({ activeWipe }: { activeWipe: number }) {
                 <TaskPage
                     tasks={filteredTasks as any}
                     setTaskDialog={setTaskDialog as any}
+                    height={height}
                 />
             </ul>
             {TaskDialog}

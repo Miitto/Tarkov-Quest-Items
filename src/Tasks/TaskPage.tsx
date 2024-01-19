@@ -18,6 +18,7 @@ const Row = ({ index, style, setSize, tasks, setTaskDialog }: any) => (
 interface Props {
     tasks: CollatedTask[];
     setTaskDialog: (dialog: JSX.Element) => void;
+    height: number;
 }
 
 export class TaskPage extends React.Component<Props> {
@@ -26,7 +27,14 @@ export class TaskPage extends React.Component<Props> {
             acc[i] = 34;
             return acc;
         }, {}),
+        height: this.props.height,
     };
+
+    componentDidUpdate(prevProps: Props) {
+        if (this.props.height != prevProps.height) {
+            this.setState({ height: this.props.height });
+        }
+    }
 
     constructor(props: any) {
         super(props);
@@ -39,7 +47,7 @@ export class TaskPage extends React.Component<Props> {
             <List
                 ref={this.listRef}
                 className="List"
-                height={500}
+                height={this.state.height - 32}
                 itemCount={this.props.tasks.length}
                 itemSize={this.getSize}
                 width={300}
