@@ -73,11 +73,11 @@ impl Objective {
 
         let mut text = String::new();
         for _ in 0..objectives.len() {
-            text += "(?, ?, ?, ?, ?, ?, ?, ?, ?),";
+            text += "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?),";
         }
         let prep = db.prepare(
                 format!(
-                    "INSERT OR IGNORE INTO objectives (id, description, optional, count, found_in_raid, item, task, completed, wipe) VALUES {}",
+                    "INSERT OR IGNORE INTO objectives (id, description, optional, count, found_in_raid, item, task, completed, wipe, collected) VALUES {}",
                     text.trim_end_matches(',')
                 )
                 .to_string()
@@ -112,6 +112,7 @@ impl Objective {
                 Box::new(objective.task),
                 Box::new(completed_text),
                 Box::new(objective.wipe.to_string()),
+                Box::new(objective.collected.to_string()),
             ];
             vars.append(&mut items);
         }

@@ -16,6 +16,7 @@ pub struct UpdateObjective {
     pub description: Option<String>,
     pub optional: Option<bool>,
     pub count: Option<i64>,
+    pub collected: Option<i64>,
     pub found_in_raid: Option<bool>,
     pub item: Option<String>,
     pub task: Option<String>,
@@ -48,6 +49,7 @@ impl Objective {
             description,
             optional,
             count,
+            collected,
             found_in_raid,
             item,
             task,
@@ -68,6 +70,10 @@ impl Objective {
         }
         if let Some(value) = count {
             text += "count = ?, ";
+            vars.push(Box::new(value));
+        }
+        if let Some(value) = collected {
+            text += "collected = ?, ";
             vars.push(Box::new(value));
         }
         if let Some(value) = found_in_raid {
@@ -114,7 +120,7 @@ impl Objective {
         }
 
         let prep = db.prepare(
-                "SELECT id, description, optional, count, found_in_raid, item, task, completed, wipe FROM objectives WHERE id = ?",
+                "SELECT id, description, optional, count, found_in_raid, item, task, completed, wipe, collected FROM objectives WHERE id = ?",
             );
         if prep.is_err() {
             println!("Error preparing statement: {:?}", prep.unwrap_err());
@@ -153,6 +159,7 @@ impl Objective {
             task: row.get(6).unwrap(),
             completed: row.get(7).unwrap(),
             wipe: row.get(8).unwrap(),
+            collected: row.get(9).unwrap(),
         };
         Ok(obj)
     }

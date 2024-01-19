@@ -11,14 +11,30 @@ export interface Item {
 
 export interface Objective {
     id: string;
-    name: string;
     description: string;
-    item: Item;
+    item: string;
     task: string;
+    wipe: number;
     completed: boolean;
     optional: boolean;
     count: number;
+    collected: number;
     found_in_raid: boolean;
+}
+
+export interface CollatedObjective {
+    id: string;
+    description: string;
+    item: string;
+    itemImage: string;
+    task: string;
+    wipe: number;
+    completed: boolean;
+    optional: boolean;
+    count: number;
+    collected: number;
+    found_in_raid: boolean;
+    in_stash: number;
 }
 
 export interface CollatedItem {

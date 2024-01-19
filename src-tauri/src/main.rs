@@ -54,6 +54,7 @@ async fn main() -> Result<(), Error> {
             task text not null,
             wipe integer not null,
             count integer not null,
+            collected integer not null,
             found_in_raid integer not null,
             optional integer not null,
             description text not null,
@@ -92,11 +93,16 @@ async fn main() -> Result<(), Error> {
             update_task,
             get_all_tasks,
             update_objective,
-            collect_item,
-            remove_item,
+            collect,
+            uncollect,
             pick_wipe,
             get_current_wipe,
-            get_item_quantity
+            get_collected_quantity,
+            assign,
+            assign_quantity,
+            unassign,
+            unassign_quantity,
+            get_item_image
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

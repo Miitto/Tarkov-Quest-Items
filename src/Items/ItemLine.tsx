@@ -30,7 +30,7 @@ export function ItemLine({
             return i;
         });
         setItems(newItems);
-        invoke("collect_item", {
+        invoke("collect", {
             id: item.id,
             fir: item.foundInRaid,
         });
@@ -48,7 +48,7 @@ export function ItemLine({
             return i;
         });
         setItems(newItems);
-        invoke("remove_item", {
+        invoke("uncollect", {
             id: item.id,
             fir: item.foundInRaid,
         });

@@ -95,30 +95,52 @@
             }
         }
     }
+}
 
-    > div {
-        max-height: 0;
-        overflow: hidden;
-        grid-column: 1 / -1;
-        box-shadow: 0 0 2px black;
-        position: relative;
+.objList {
+    max-height: 0;
+    overflow: hidden;
+    grid-column: 1 / -1;
+    box-shadow: 0 0 2px black;
+    position: relative;
 
-        &.show {
-            max-height: unset;
+    &.show {
+        max-height: unset;
+    }
+
+    > span {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.5rem 0.5rem 1rem;
+        background-color: var(--bg-color-alt);
+
+        button {
+            background-color: var(--bg-color-alt);
+            border: none;
+            padding: 0.5rem;
+            font-size: 1.2em;
+
+            &:hover {
+                filter: brightness(1.2);
+            }
+
+            &:active {
+                filter: brightness(0.1);
+            }
         }
 
-        > span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 0.5rem 0.5rem 1rem;
-            background-color: var(--bg-color-alt);
+        p {
+            margin: 0;
+            padding: 0;
 
-            p {
-                margin: 0;
-                padding: 0;
+            &:first-of-type {
                 flex-grow: 1;
             }
+        }
+
+        img {
+            height: 3rem;
         }
     }
 }
@@ -127,12 +149,25 @@
     background-color: $tarkov-tan !important;
     color: $tarkov-text !important;
 
-    button {
+    &:has(div) > button {
         background-color: $tarkov-tan !important;
         color: $tarkov-text !important;
 
         &:hover {
             background-color: $tarkov-tan-darker !important;
+        }
+
+        &:active {
+            background-color: $tarkov-tan-lighter !important;
+        }
+    }
+
+    &:not(:has(div)) > button {
+        background-color: $tarkov-tan-darker !important;
+        color: $tarkov-text !important;
+
+        &:hover {
+            filter: brightness(0.75);
         }
 
         &:active {
@@ -176,5 +211,35 @@
         &:hover {
             filter: brightness(1.2);
         }
+    }
+}
+
+.mainDialog {
+    background-color: transparent;
+    padding: 0;
+    background-color: var(--bg-color-alt);
+
+    form {
+        display: flex;
+        padding: 2rem;
+        width: fit-content;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        input[type="number"] {
+            width: 3rem;
+            padding: 0.5rem;
+            border-radius: 0;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            text-align: center;
+        }
+    }
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
     }
 }

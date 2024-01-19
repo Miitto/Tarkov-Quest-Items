@@ -22,7 +22,7 @@ pub async fn get_all_items(
 }
 
 #[tauri::command]
-pub async fn collect_item(
+pub async fn collect(
     id: String,
     fir: bool,
     quantity: Option<i64>,
@@ -31,19 +31,17 @@ pub async fn collect_item(
 ) -> Result<i64, Error> {
     let wipe_id = *wipe_state.lock().unwrap();
     if wipe_id.is_none() {
-        return Err(Error::Other {
-            message: "No wipe selected".to_string(),
-        });
+        return Err(Error::NoWipeSelected);
     }
     if let Some(q) = quantity {
-        Item::collect(id, fir, q, db_lock.inner().clone(), wipe_id.unwrap()).await
+        Item::collect(id, fir, q, db_lock.inner().clone(), wipe_id.unwrap())
     } else {
-        Item::collect(id, fir, 1, db_lock.inner().clone(), wipe_id.unwrap()).await
+        Item::collect(id, fir, 1, db_lock.inner().clone(), wipe_id.unwrap())
     }
 }
 
 #[tauri::command]
-pub async fn remove_item(
+pub async fn uncollect(
     id: String,
     fir: bool,
     quantity: Option<i64>,
@@ -52,19 +50,17 @@ pub async fn remove_item(
 ) -> Result<i64, Error> {
     let wipe_id = *wipe_state.lock().unwrap();
     if wipe_id.is_none() {
-        return Err(Error::Other {
-            message: "No wipe selected".to_string(),
-        });
+        return Err(Error::NoWipeSelected);
     }
     if let Some(q) = quantity {
-        Item::remove(id, fir, q, db_lock.inner().clone(), wipe_id.unwrap()).await
+        Item::uncollect(id, fir, q, db_lock.inner().clone(), wipe_id.unwrap())
     } else {
-        Item::remove(id, fir, 1, db_lock.inner().clone(), wipe_id.unwrap()).await
+        Item::uncollect(id, fir, 1, db_lock.inner().clone(), wipe_id.unwrap())
     }
 }
 
 #[tauri::command]
-pub async fn get_item_quantity(
+pub async fn get_collected_quantity(
     id: String,
     fir: bool,
     wipe_state: State<'_, Mutex<Option<i64>>>,
@@ -72,10 +68,16 @@ pub async fn get_item_quantity(
 ) -> Result<i64, Error> {
     let wipe_id = *wipe_state.lock().unwrap();
     if wipe_id.is_none() {
-        return Err(Error::Other {
-            message: "No wipe selected".to_string(),
-        });
+        return Err(Error::NoWipeSelected);
     }
 
     Item::get_quantity(id, fir, db_lock.inner().clone(), wipe_id.unwrap()).await
+}
+
+#[tauri::command]
+pub async fn get_item_image(
+    id: String,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<String, Error> {
+    Item::get_image(id, db_lock.inner().clone()).await
 }

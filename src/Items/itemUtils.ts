@@ -1,5 +1,5 @@
 import { invoke } from "@tauri-apps/api";
-import { CollatedItem, Item, Objective, Task } from "../types";
+import { CollatedItem, Item, Objective } from "../types";
 
 export async function getItems() {
     let onlyItems: Item[] = await invoke("get_all_items");
@@ -9,78 +9,82 @@ export async function getItems() {
     let items: CollatedItem[] = [];
     await Promise.all(
         onlyItems.map(async (item: Item) => {
-            let objectiveFir = objectives.find(
+            let objectiveFirs = objectives.filter(
                 (objective: any) =>
                     objective.item == item.id && objective.found_in_raid
             );
-            if (objectiveFir) {
-                let i = items.find((i) => i.id == item.id && i.foundInRaid);
-                if (!i) {
-                    i = JSON.parse(JSON.stringify(item)) as CollatedItem;
+            await Promise.all(
+                objectiveFirs.map(async (objective) => {
+                    let i = items.find((i) => i.id == item.id && i.foundInRaid);
+                    if (!i) {
+                        i = JSON.parse(JSON.stringify(item)) as CollatedItem;
 
-                    i.foundInRaid = true;
-                    i.levelRequired = [];
-                    i.collected = 0;
-                    i.totalCount = 0;
-                    items.push(i);
-                }
+                        i.foundInRaid = true;
+                        i.levelRequired = [];
+                        i.collected = 0;
+                        i.totalCount = 0;
+                        items.push(i);
+                    }
 
-                let quantity = await invoke<number>("get_item_quantity", {
-                    id: item.id,
-                    fir: true,
-                });
+                    let quantity = await invoke<number>(
+                        "get_collected_quantity",
+                        {
+                            id: item.id,
+                            fir: true,
+                        }
+                    );
 
-                i.collected += quantity;
+                    i.collected += quantity;
 
-                if (!objectiveFir.completed) {
-                    i.totalCount += objectiveFir.count;
+                    if (!objective.completed) {
+                        i.totalCount += objective.count - objective.collected;
+                    }
 
-                    let task: Task = await invoke("get_task", {
-                        taskId: objectiveFir.task,
-                    })!;
-
-                    i.levelRequired.push({
-                        level: task.min_level,
-                        count: objectiveFir.count,
-                    });
-                }
-            }
-            let objectiveNotFir = objectives.find(
+                    return i;
+                })
+            );
+            let objectiveNotFirs = objectives.filter(
                 (objective: any) =>
                     objective.item == item.id && !objective.found_in_raid
             );
-            if (objectiveNotFir) {
-                let i = items.find((i) => i.id == item.id && !i.foundInRaid);
-                if (!i) {
-                    i = JSON.parse(JSON.stringify(item)) as CollatedItem;
+            await Promise.all(
+                objectiveNotFirs.map(async (objective) => {
+                    if (
+                        objective.description
+                            .toLowerCase()
+                            .startsWith("hand over")
+                    ) {
+                        return;
+                    }
+                    let i = items.find(
+                        (i) => i.id == item.id && !i.foundInRaid
+                    );
+                    if (!i) {
+                        i = JSON.parse(JSON.stringify(item)) as CollatedItem;
 
-                    i.foundInRaid = false;
-                    i.levelRequired = [];
-                    i.collected = 0;
-                    i.totalCount = 0;
-                    items.push(i);
-                }
+                        i.foundInRaid = false;
+                        i.levelRequired = [];
+                        i.collected = 0;
+                        i.totalCount = 0;
+                        items.push(i);
+                    }
 
-                let quantity = await invoke<number>("get_item_quantity", {
-                    id: item.id,
-                    fir: false,
-                });
+                    let quantity = await invoke<number>(
+                        "get_collected_quantity",
+                        {
+                            id: item.id,
+                            fir: false,
+                        }
+                    );
 
-                i.collected += quantity;
+                    i.collected += quantity;
 
-                if (!objectiveNotFir.completed) {
-                    i.totalCount += objectiveNotFir.count;
-
-                    let task: Task = await invoke("get_task", {
-                        taskId: objectiveNotFir.task,
-                    })!;
-
-                    i.levelRequired.push({
-                        level: task.min_level,
-                        count: objectiveNotFir.count,
-                    });
-                }
-            }
+                    if (!objective.completed) {
+                        i.totalCount += objective.count - objective.collected;
+                    }
+                    return i;
+                })
+            );
             return item;
         })
     );

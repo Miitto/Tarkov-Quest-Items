@@ -17,6 +17,8 @@ pub enum Error {
     Tauri(#[from] tauri::Error),
     #[error("Not found: {message}")]
     NotFound { message: String },
+    #[error("No Wipe Selected")]
+    NoWipeSelected,
     #[error("{message}")]
     Other { message: String },
 }

@@ -1,13 +1,15 @@
 import { invoke } from "@tauri-apps/api";
-import { useEffect, useMemo, useState } from "react";
-import { CollatedTask, Objective, Task } from "../types";
+import { useEffect, useMemo, useRef, useState } from "react";
+import { CollatedObjective, CollatedTask, Objective, Task } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Tasks.module.scss";
+import { TaskLine } from "./TaskLine";
 
 export function TasksPanel({ activeWipe }: { activeWipe: number }) {
     const [tasks, setTasks] = useState<CollatedTask[]>([]);
     const [filterName, setFilterName] = useState("");
     const [sort, setSort] = useState("lvl");
+    const [MainDialog, setMainDialog] = useState(<DefaultDialog />);
 
     const filteredTasks = useMemo(() => {
         return tasks
@@ -66,7 +68,7 @@ export function TasksPanel({ activeWipe }: { activeWipe: number }) {
             collated.sort((a, b) => b.name.localeCompare(a.name));
             setTasks(collated);
         });
-    }, []);
+    }, [activeWipe]);
     return (
         <>
             <FilterBar
@@ -78,8 +80,12 @@ export function TasksPanel({ activeWipe }: { activeWipe: number }) {
                     sort={sort}
                     setSort={setSort}
                 />
-                <TaskPage tasks={filteredTasks} />
+                <TaskPage
+                    tasks={filteredTasks}
+                    setMainDialog={setMainDialog}
+                />
             </ul>
+            {MainDialog}
         </>
     );
 }
@@ -189,7 +195,13 @@ function TitleBar({
     );
 }
 
-function TaskPage({ tasks }: { tasks: CollatedTask[] }) {
+function TaskPage({
+    tasks,
+    setMainDialog,
+}: {
+    tasks: CollatedTask[];
+    setMainDialog: (dialog: JSX.Element) => void;
+}) {
     return (
         <>
             {tasks.map((task: CollatedTask) => {
@@ -197,6 +209,7 @@ function TaskPage({ tasks }: { tasks: CollatedTask[] }) {
                     <TaskLine
                         key={`${task.id}${task.completed}`}
                         task={task}
+                        setMainDialog={setMainDialog}
                     />
                 );
             })}
@@ -204,92 +217,6 @@ function TaskPage({ tasks }: { tasks: CollatedTask[] }) {
     );
 }
 
-function TaskLine({ task }: { task: CollatedTask }) {
-    const [open, setOpen] = useState(false);
-    const [taskState, setTaskState] = useState<CollatedTask>(task);
-    return (
-        <span
-            className={`${styles.taskLine} ${
-                taskState.completed == taskState.objectives.length
-                    ? styles.completed
-                    : ""
-            }`}
-        >
-            <button onClick={() => setOpen(!open)}>
-                <img src={taskState.image} />
-                <p>{taskState.name}</p>
-                <p>{taskState.min_level}</p>
-                <p>
-                    {taskState.completed}/{taskState.objectives.length}
-                </p>
-            </button>
-            <div className={open ? styles.show : ""}>
-                {taskState.objectives.map((objective: Objective) => {
-                    return (
-                        <ObjectiveLine
-                            key={`${objective.id}${objective.completed}${objective.found_in_raid}`}
-                            objective={objective}
-                            taskState={taskState}
-                            taskStateSetter={setTaskState}
-                        />
-                    );
-                })}
-            </div>
-        </span>
-    );
-}
-
-function ObjectiveLine({
-    objective,
-    taskState,
-    taskStateSetter,
-}: {
-    objective: Objective;
-    taskState: CollatedTask;
-    taskStateSetter: (task: CollatedTask) => void;
-}) {
-    const [objectiveState, setObjectiveState] = useState<Objective>(objective);
-    useEffect(() => {
-        setObjectiveState(objective);
-    }, [objective]);
-
-    function updateTaskState(obj: Objective) {
-        let newTaskState = JSON.parse(JSON.stringify(taskState));
-        newTaskState.objectives = newTaskState.objectives.map(
-            (o: Objective) => {
-                if (o.id === obj.id) {
-                    return obj;
-                }
-                return o;
-            }
-        );
-        newTaskState.completed = newTaskState.objectives.filter(
-            (o: Objective) => o.completed
-        ).length;
-        taskStateSetter(newTaskState);
-    }
-
-    function updateObjectiveState(e: React.ChangeEvent<HTMLInputElement>) {
-        invoke<Objective>("update_objective", {
-            id: objective.id,
-            completed: e.target.checked,
-        }).then((obj: Objective) => {
-            updateTaskState(obj);
-        });
-    }
-
-    return (
-        <span
-            className={`${styles.objectiveLine} ${
-                objectiveState.completed ? styles.completed : ""
-            }`}
-        >
-            <p>{objectiveState.description}</p>
-            <input
-                type="checkbox"
-                checked={objectiveState.completed}
-                onChange={updateObjectiveState}
-            />
-        </span>
-    );
+function DefaultDialog() {
+    return <dialog></dialog>;
 }

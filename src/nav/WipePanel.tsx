@@ -17,9 +17,9 @@ export function WipePanel({
     let createDialog: RefObject<HTMLDialogElement> = useRef(null);
     let deleteDialog: RefObject<HTMLDialogElement> = useRef(null);
 
-    function pickWipe(wipeId: number) {
+    async function pickWipe(wipeId: number) {
         setActiveWipe(wipeId);
-        invoke("pick_wipe", {
+        return await invoke<number>("pick_wipe", {
             wipeId: wipeId,
         });
     }
@@ -124,7 +124,9 @@ export function WipePanel({
             name: (event.target as any).elements[0].value,
         }).then(async (wipe) => {
             setWipes([wipe as Wipe, ...wipes]);
-            pickWipe(wipe.id);
+            await invoke<number>("pick_wipe", {
+                wipeId: wipe.id,
+            });
             createDialog?.current?.close();
             data.tasks.forEach((task: any) => {
                 task.wipe = wipe.id;
@@ -139,7 +141,8 @@ export function WipePanel({
                 task.objectives.map((objective: any) => {
                     objective.item = objective.item?.id;
                     objective.task = task.id;
-                    objective.wipe = activeWipe;
+                    objective.wipe = wipe.id;
+                    objective.collected = 0;
                     return objective;
                 })
             );
@@ -150,6 +153,8 @@ export function WipePanel({
             await invoke("create_objectives", {
                 objectives: objectives,
             });
+
+            setActiveWipe(wipe.id);
         });
     }
 

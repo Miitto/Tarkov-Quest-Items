@@ -77,7 +77,7 @@ impl Item {
         println!("Created {} items", items.len());
     }
 
-    pub async fn collect(
+    pub fn collect(
         item_id: String,
         fir: bool,
         quantity: i64,
@@ -106,24 +106,29 @@ impl Item {
         ]);
         if exec.is_err() {
             println!("Error collecting item: {:?}", exec.unwrap_err());
-        }
-
-        let res = db.prepare("UPDATE found_items SET quantity = quantity + ? WHERE item = ? AND found_in_raid = ? AND wipe = ?");
-        if res.is_err() {
-            println!("Error preparing statement: {:?}", res.unwrap_err());
             return Err(Error::Other {
-                message: "Error Preparing Statement".to_string(),
+                message: "Error Collecting Item".to_string(),
             });
         }
-        let mut stmt = res.unwrap();
-        let exec = stmt.execute([
-            &quantity.to_string(),
-            &item_id,
-            &fir_text.to_string(),
-            &wipe.to_string(),
-        ]);
-        if exec.is_err() {
-            println!("Error collecting item: {:?}", exec.unwrap_err());
+
+        if exec.unwrap() == 0 {
+            let res = db.prepare("UPDATE found_items SET quantity = quantity + ? WHERE item = ? AND found_in_raid = ? AND wipe = ?");
+            if res.is_err() {
+                println!("Error preparing statement: {:?}", res.unwrap_err());
+                return Err(Error::Other {
+                    message: "Error Preparing Statement".to_string(),
+                });
+            }
+            let mut stmt = res.unwrap();
+            let exec = stmt.execute([
+                &quantity.to_string(),
+                &item_id,
+                &fir_text.to_string(),
+                &wipe.to_string(),
+            ]);
+            if exec.is_err() {
+                println!("Error collecting item: {:?}", exec.unwrap_err());
+            }
         }
 
         let res = db.prepare("SELECT quantity FROM found_items WHERE item = ?");
@@ -147,7 +152,7 @@ impl Item {
         Ok(quantity)
     }
 
-    pub async fn remove(
+    pub fn uncollect(
         item_id: String,
         fir: bool,
         quantity: i64,
@@ -155,6 +160,28 @@ impl Item {
         wipe: i64,
     ) -> Result<i64, Error> {
         let db = db_lock.lock().unwrap();
+
+        let mut fnd_item_stmt = db.prepare(
+            "SELECT quantity FROM found_items WHERE item = ? AND found_in_raid = ? AND wipe = ?",
+        )?;
+
+        let fir_text = if fir { "1" } else { "0" };
+
+        let mut quants =
+            fnd_item_stmt.query([&item_id, &fir_text.to_string(), &wipe.to_string()])?;
+        let row_opt = quants.next()?;
+        if row_opt.is_none() {
+            return Err(Error::Other {
+                message: "No Items Collected".to_string(),
+            });
+        }
+        let fnd_quantity = row_opt.unwrap().get::<usize, i64>(0)?;
+
+        if fnd_quantity < quantity {
+            return Err(Error::Other {
+                message: "Not Enough Collected".to_string(),
+            });
+        }
 
         let res = db.prepare("UPDATE found_items SET quantity = quantity - ? WHERE item = ? AND quantity > 0 AND found_in_raid = ? AND wipe = ?");
         if res.is_err() {
@@ -240,6 +267,48 @@ impl Item {
         let opt = g.unwrap();
         if opt.is_none() {
             return Ok(0);
+        }
+
+        Ok(opt.unwrap().get(0).unwrap())
+    }
+
+    pub async fn get_image(id: String, db: Arc<Mutex<Connection>>) -> Result<String, Error> {
+        let db = db.lock().unwrap();
+
+        let res = db.prepare("SELECT image FROM items WHERE id = ?");
+
+        if res.is_err() {
+            return Err(Error::Other {
+                message: "Error Preparing Statement".to_string(),
+            });
+        }
+
+        let mut stmt = res.unwrap();
+
+        let query = stmt.query([&id]);
+
+        if query.is_err() {
+            return Err(Error::Other {
+                message: "Error Querying Item".to_string(),
+            });
+        }
+
+        let mut q = query.unwrap();
+
+        let g = q.next();
+
+        if g.is_err() {
+            return Err(Error::Other {
+                message: "Error Getting Item".to_string(),
+            });
+        }
+
+        let opt = g.unwrap();
+
+        if opt.is_none() {
+            return Err(Error::Other {
+                message: "No Item Found".to_string(),
+            });
         }
 
         Ok(opt.unwrap().get(0).unwrap())

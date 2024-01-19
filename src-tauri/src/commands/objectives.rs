@@ -21,9 +21,7 @@ pub async fn get_all_objectives(
 ) -> Result<Vec<Objective>, Error> {
     let wipe_id = *wipe_state.lock().unwrap();
     if wipe_id.is_none() {
-        return Err(Error::Other {
-            message: "No wipe selected".to_string(),
-        });
+        return Err(Error::NoWipeSelected);
     }
 
     let obj = Objective::all(wipe_id.unwrap(), db_lock.inner().clone()).await;
@@ -38,9 +36,7 @@ pub async fn get_task_objectives(
 ) -> Result<Vec<Objective>, Error> {
     let wipe_id = *wipe_state.lock().unwrap();
     if wipe_id.is_none() {
-        return Err(Error::Other {
-            message: "No wipe selected".to_string(),
-        });
+        return Err(Error::NoWipeSelected);
     }
 
     let objs = Objective::task_get(id, wipe_id.unwrap(), db_lock.inner().clone()).await;
@@ -54,6 +50,7 @@ pub fn update_objective(
     description: Option<String>,
     optional: Option<bool>,
     count: Option<i64>,
+    collected: Option<i64>,
     found_in_raid: Option<bool>,
     item: Option<String>,
     task: Option<String>,
@@ -63,9 +60,7 @@ pub fn update_objective(
 ) -> Result<Objective, Error> {
     let wipe_id = *wipe_state.lock().unwrap();
     if wipe_id.is_none() {
-        return Err(Error::Other {
-            message: "No wipe selected".to_string(),
-        });
+        return Err(Error::NoWipeSelected);
     }
 
     Objective::update(
@@ -75,6 +70,7 @@ pub fn update_objective(
             description,
             optional,
             count,
+            collected,
             found_in_raid,
             item,
             task,
@@ -82,4 +78,62 @@ pub fn update_objective(
         },
         db_lock.inner().clone(),
     )
+}
+
+#[tauri::command]
+pub fn assign(
+    id: String,
+    wipe_state: State<'_, Mutex<Option<i64>>>,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<Objective, Error> {
+    let wipe_id = *wipe_state.lock().unwrap();
+    if wipe_id.is_none() {
+        return Err(Error::NoWipeSelected);
+    }
+
+    Objective::assign(id, wipe_id.unwrap(), db_lock.inner().clone())
+}
+
+#[tauri::command]
+pub fn unassign(
+    id: String,
+    wipe_state: State<'_, Mutex<Option<i64>>>,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<Objective, Error> {
+    let wipe_id = *wipe_state.lock().unwrap();
+    if wipe_id.is_none() {
+        return Err(Error::NoWipeSelected);
+    }
+
+    Objective::unassign(id, wipe_id.unwrap(), db_lock.inner().clone())
+}
+
+#[tauri::command]
+pub fn assign_quantity(
+    id: String,
+    quantity: i64,
+    wipe_state: State<'_, Mutex<Option<i64>>>,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<Objective, Error> {
+    let wipe_id = *wipe_state.lock().unwrap();
+    if wipe_id.is_none() {
+        return Err(Error::NoWipeSelected);
+    }
+
+    Objective::assign_quantity(id, wipe_id.unwrap(), quantity, db_lock.inner().clone())
+}
+
+#[tauri::command]
+pub fn unassign_quantity(
+    id: String,
+    quantity: i64,
+    wipe_state: State<'_, Mutex<Option<i64>>>,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<Objective, Error> {
+    let wipe_id = *wipe_state.lock().unwrap();
+    if wipe_id.is_none() {
+        return Err(Error::NoWipeSelected);
+    }
+
+    Objective::unassign_quantity(id, wipe_id.unwrap(), quantity, db_lock.inner().clone())
 }
