@@ -68,6 +68,12 @@ export function ItemLine({
                 )}
             </div>
             <p>{item.name}</p>
+            <p>{item.dogtag_level > 0 ? `^${item.dogtag_level}` : ""}</p>
+            <p>
+                {item.min_durability > 0 || item.max_durability < 100
+                    ? `${item.min_durability}%-${item.max_durability}%`
+                    : ""}
+            </p>
             <p>
                 <button onClick={decrement}>
                     <FontAwesomeIcon icon="minus" />

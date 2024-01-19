@@ -1,6 +1,6 @@
 import { invoke } from "@tauri-apps/api";
-import { useEffect, useMemo, useRef, useState } from "react";
-import { CollatedObjective, CollatedTask, Objective, Task } from "../types";
+import { useEffect, useMemo, useState } from "react";
+import { CollatedTask, Objective, Task } from "../types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./Tasks.module.scss";
 import { TaskLine } from "./TaskLine";

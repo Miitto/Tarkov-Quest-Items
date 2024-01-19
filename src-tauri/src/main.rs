@@ -59,6 +59,9 @@ async fn main() -> Result<(), Error> {
             optional integer not null,
             description text not null,
             completed integer not null default 0,
+            dogtag_level integer not null default 0,
+            min_durability integer not null default 0,
+            max_durability integer not null default 100,
             PRIMARY KEY (id, wipe),
             FOREIGN KEY (task, wipe) REFERENCES tasks(id, wipe) on delete cascade
         )",
@@ -71,6 +74,9 @@ async fn main() -> Result<(), Error> {
         item integer not null references items(id) on delete cascade,
         wipe integer not null references wipes(id) on delete cascade,
         found_in_raid integer not null,
+        dogtag_level integer not null default 0,
+        min_durability integer not null default 0,
+        max_durability integer not null default 100,
         PRIMARY KEY (item, wipe)
     )",
         (),

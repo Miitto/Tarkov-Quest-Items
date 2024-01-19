@@ -60,6 +60,80 @@ export function ItemTitleBar({
             </button>
             <button
                 onClick={() => {
+                    if (sort.startsWith("dtl")) {
+                        if (sort.endsWith("-")) {
+                            setSort("dtl");
+                        } else {
+                            setSort("dtl-");
+                        }
+                    } else {
+                        setSort("dtl");
+                    }
+                }}
+            >
+                DTL
+                {sort.startsWith("dtl") ? (
+                    sort.endsWith("-") ? (
+                        <FontAwesomeIcon icon="chevron-up" />
+                    ) : (
+                        <FontAwesomeIcon icon="chevron-down" />
+                    )
+                ) : (
+                    ""
+                )}
+            </button>
+            <div>
+                <button
+                    onClick={() => {
+                        if (sort.startsWith("mindur")) {
+                            if (sort.endsWith("-")) {
+                                setSort("mindur");
+                            } else {
+                                setSort("mindur-");
+                            }
+                        } else {
+                            setSort("mindur");
+                        }
+                    }}
+                >
+                    Min
+                    {sort.startsWith("mindur") ? (
+                        sort.endsWith("-") ? (
+                            <FontAwesomeIcon icon="chevron-up" />
+                        ) : (
+                            <FontAwesomeIcon icon="chevron-down" />
+                        )
+                    ) : (
+                        ""
+                    )}
+                </button>
+                <button
+                    onClick={() => {
+                        if (sort.startsWith("maxdur")) {
+                            if (sort.endsWith("-")) {
+                                setSort("maxdur");
+                            } else {
+                                setSort("maxdur-");
+                            }
+                        } else {
+                            setSort("maxdur");
+                        }
+                    }}
+                >
+                    Max
+                    {sort.startsWith("maxdur") ? (
+                        sort.endsWith("-") ? (
+                            <FontAwesomeIcon icon="chevron-up" />
+                        ) : (
+                            <FontAwesomeIcon icon="chevron-down" />
+                        )
+                    ) : (
+                        ""
+                    )}
+                </button>
+            </div>
+            <button
+                onClick={() => {
                     if (sort.startsWith("collected")) {
                         if (sort.endsWith("-")) {
                             setSort("collected");

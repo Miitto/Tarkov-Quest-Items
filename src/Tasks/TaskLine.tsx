@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CollatedObjective, CollatedTask, Objective } from "../types";
+import { CollatedTask, Objective } from "../types";
 import styles from "./Tasks.module.scss";
 import { ObjectiveLine } from "./ObjectiveLine";
 

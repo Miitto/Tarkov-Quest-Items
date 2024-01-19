@@ -21,6 +21,9 @@ pub struct UpdateObjective {
     pub item: Option<String>,
     pub task: Option<String>,
     pub completed: Option<bool>,
+    pub dogtag_level: Option<i64>,
+    pub min_durability: Option<i64>,
+    pub max_durability: Option<i64>,
 }
 
 impl Objective {
@@ -54,6 +57,9 @@ impl Objective {
             item,
             task,
             completed,
+            dogtag_level,
+            min_durability,
+            max_durability,
         } = obj;
         let db = db_lock.lock().unwrap();
 
@@ -92,6 +98,18 @@ impl Objective {
             text += "completed = ?, ";
             vars.push(Box::new(value));
         }
+        if let Some(value) = dogtag_level {
+            text += "dogtag_level = ?, ";
+            vars.push(Box::new(value));
+        }
+        if let Some(value) = min_durability {
+            text += "min_durability = ?, ";
+            vars.push(Box::new(value));
+        }
+        if let Some(value) = max_durability {
+            text += "max_durability = ?, ";
+            vars.push(Box::new(value));
+        }
 
         let prep = db.prepare(
             format!(
@@ -120,7 +138,7 @@ impl Objective {
         }
 
         let prep = db.prepare(
-                "SELECT id, description, optional, count, found_in_raid, item, task, completed, wipe, collected FROM objectives WHERE id = ?",
+                "SELECT id, description, optional, count, found_in_raid, item, task, completed, wipe, collected, dogtag_level, min_durability, max_durability FROM objectives WHERE id = ? AND wipe = ?",
             );
         if prep.is_err() {
             println!("Error preparing statement: {:?}", prep.unwrap_err());
@@ -130,7 +148,7 @@ impl Objective {
         }
         let mut p = prep.unwrap();
 
-        let query = p.query([id]);
+        let query = p.query([id, wipe.to_string()]);
         if query.is_err() {
             println!("Error querying objectives");
         }
@@ -160,6 +178,9 @@ impl Objective {
             completed: row.get(7).unwrap(),
             wipe: row.get(8).unwrap(),
             collected: row.get(9).unwrap(),
+            dogtag_level: row.get(10).unwrap(),
+            min_durability: row.get(11).unwrap(),
+            max_durability: row.get(12).unwrap(),
         };
         Ok(obj)
     }

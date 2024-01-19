@@ -73,11 +73,11 @@ impl Objective {
 
         let mut text = String::new();
         for _ in 0..objectives.len() {
-            text += "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?),";
+            text += "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?),";
         }
         let prep = db.prepare(
                 format!(
-                    "INSERT OR IGNORE INTO objectives (id, description, optional, count, found_in_raid, item, task, completed, wipe, collected) VALUES {}",
+                    "INSERT OR IGNORE INTO objectives (id, description, optional, count, found_in_raid, item, task, completed, wipe, collected, dogtag_level, min_durability, max_durability) VALUES {}",
                     text.trim_end_matches(',')
                 )
                 .to_string()
@@ -95,13 +95,6 @@ impl Objective {
             let fir_text = if objective.found_in_raid { "1" } else { "0" };
             let completed_text = if objective.completed { "1" } else { "0" };
 
-            if objective.wipe != 1 {
-                println!(
-                    "Wipe {} does not exist in the database. Please add it first.",
-                    objective.wipe
-                );
-            }
-
             let mut items: Vec<Box<dyn ToSql>> = vec![
                 Box::new(objective.id),
                 Box::new(objective.description),
@@ -113,6 +106,9 @@ impl Objective {
                 Box::new(completed_text),
                 Box::new(objective.wipe.to_string()),
                 Box::new(objective.collected.to_string()),
+                Box::new(objective.dogtag_level.to_string()),
+                Box::new(objective.min_durability.to_string()),
+                Box::new(objective.max_durability.to_string()),
             ];
             vars.append(&mut items);
         }

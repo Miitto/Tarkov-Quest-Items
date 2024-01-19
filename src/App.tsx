@@ -8,7 +8,7 @@ import { getItems } from "./Items/itemUtils";
 
 function App() {
     const [activePanel, setActivePanel] = useState(0);
-    const [activeWipe, setActiveWipe] = useState(0);
+    const [activeWipe, setActiveWipe] = useState(-1);
     const [items, setItems] = useState<CollatedItem[]>([]);
 
     useEffect(() => {

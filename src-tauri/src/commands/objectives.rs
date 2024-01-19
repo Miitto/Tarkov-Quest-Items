@@ -55,6 +55,9 @@ pub fn update_objective(
     item: Option<String>,
     task: Option<String>,
     completed: Option<bool>,
+    dogtag_level: Option<i64>,
+    min_durability: Option<i64>,
+    max_durability: Option<i64>,
     wipe_state: State<'_, Mutex<Option<i64>>>,
     db_lock: State<'_, Arc<Mutex<Connection>>>,
 ) -> Result<Objective, Error> {
@@ -75,6 +78,9 @@ pub fn update_objective(
             item,
             task,
             completed,
+            dogtag_level,
+            min_durability,
+            max_durability,
         },
         db_lock.inner().clone(),
     )

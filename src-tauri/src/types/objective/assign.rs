@@ -15,11 +15,14 @@ impl Objective {
     ) -> Result<Self, Error> {
         let item_id: String;
         let fir: bool;
+        let dt_lvl: i64;
+        let min_dur: i64;
+        let max_dur: i64;
         {
             let db = db_lock.lock().unwrap();
 
             let mut obj_stmt = db.prepare(
-                "SELECT item, found_in_raid FROM objectives WHERE id = ?1 AND wipe = ?2",
+                "SELECT item, found_in_raid, dogtag_level, min_durability, max_durability FROM objectives WHERE id = ?1 AND wipe = ?2",
             )?;
 
             let mut obj_rows = obj_stmt.query([&id, &wipe_id.to_string()])?;
@@ -36,9 +39,21 @@ impl Objective {
 
             item_id = obj.get::<usize, String>(0)?;
             fir = obj.get::<usize, bool>(1)?;
+            dt_lvl = obj.get::<usize, i64>(2)?;
+            min_dur = obj.get::<usize, i64>(3)?;
+            max_dur = obj.get::<usize, i64>(4)?;
         }
 
-        let uncollected = Item::uncollect(item_id, fir, 1, db_lock.clone(), wipe_id);
+        let uncollected = Item::uncollect(
+            item_id,
+            fir,
+            dt_lvl,
+            min_dur,
+            max_dur,
+            1,
+            db_lock.clone(),
+            wipe_id,
+        );
 
         if uncollected.is_err() {
             println!("Error uncollecting item: {:?}", uncollected);
@@ -73,7 +88,7 @@ impl Objective {
             });
         }
 
-        let obj_stmt_res = db.prepare("SELECT id, description, optional, count, collected, found_in_raid, item, task, completed, wipe FROM objectives WHERE id = ?1 AND wipe = ?2");
+        let obj_stmt_res = db.prepare("SELECT id, description, optional, count, collected, found_in_raid, item, task, completed, wipe, dogtag_level, min_durability, max_durability FROM objectives WHERE id = ?1 AND wipe = ?2");
         if obj_stmt_res.is_err() {
             return Err(Error::Other {
                 message: format!("Error Preparing Statement {}", obj_stmt_res.unwrap_err())
@@ -118,6 +133,9 @@ impl Objective {
             task: obj.get::<usize, String>(7)?,
             completed: obj.get::<usize, bool>(8)?,
             wipe: obj.get::<usize, i64>(9)?,
+            dogtag_level: obj.get::<usize, i64>(10)?,
+            min_durability: obj.get::<usize, i64>(11)?,
+            max_durability: obj.get::<usize, i64>(12)?,
         })
     }
 
@@ -129,11 +147,14 @@ impl Objective {
     ) -> Result<Objective, Error> {
         let item_id: String;
         let fir: bool;
+        let dt_lvl: i64;
+        let min_dur: i64;
+        let max_dur: i64;
         {
             let db = db_lock.lock().unwrap();
 
             let mut obj_stmt = db.prepare(
-                "SELECT item, found_in_raid FROM objectives WHERE id = ?1 AND wipe = ?2",
+                "SELECT item, found_in_raid, dogtag_level, min_durability, max_durability FROM objectives WHERE id = ?1 AND wipe = ?2",
             )?;
 
             let mut obj_rows = obj_stmt.query([&id, &wipe_id.to_string()])?;
@@ -150,9 +171,21 @@ impl Objective {
 
             item_id = obj.get::<usize, String>(0)?;
             fir = obj.get::<usize, bool>(1)?;
+            dt_lvl = obj.get::<usize, i64>(2)?;
+            min_dur = obj.get::<usize, i64>(3)?;
+            max_dur = obj.get::<usize, i64>(4)?;
         }
 
-        let uncollected = Item::uncollect(item_id, fir, quantity, db_lock.clone(), wipe_id);
+        let uncollected = Item::uncollect(
+            item_id,
+            fir,
+            dt_lvl,
+            min_dur,
+            max_dur,
+            quantity,
+            db_lock.clone(),
+            wipe_id,
+        );
 
         if uncollected.is_err() {
             println!("Error uncollecting item: {:?}", uncollected);
@@ -188,7 +221,7 @@ impl Objective {
             });
         }
 
-        let obj_stmt_res = db.prepare("SELECT id, description, optional, count, collected, found_in_raid, item, task, completed, wipe FROM objectives WHERE id = ?1 AND wipe = ?2");
+        let obj_stmt_res = db.prepare("SELECT id, description, optional, count, collected, found_in_raid, item, task, completed, wipe, dogtag_level, min_durability, max_durability FROM objectives WHERE id = ?1 AND wipe = ?2");
         if obj_stmt_res.is_err() {
             return Err(Error::Other {
                 message: format!("Error Preparing Statement {}", obj_stmt_res.unwrap_err())
@@ -233,6 +266,9 @@ impl Objective {
             task: obj.get::<usize, String>(7)?,
             completed: obj.get::<usize, bool>(8)?,
             wipe: obj.get::<usize, i64>(9)?,
+            dogtag_level: obj.get::<usize, i64>(10)?,
+            min_durability: obj.get::<usize, i64>(11)?,
+            max_durability: obj.get::<usize, i64>(12)?,
         })
     }
 }

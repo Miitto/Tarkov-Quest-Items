@@ -4,6 +4,7 @@ import { CollatedItem } from "../types";
 import styles from "./Items.module.scss";
 import { ItemLine } from "./ItemLine";
 import { ItemTitleBar } from "./ItemTitleBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function ItemsPanel({
     items,
@@ -15,6 +16,7 @@ export function ItemsPanel({
     const [activePage, setActivePage] = useState(0);
 
     const [filterName, setFilterName] = useState("");
+    const [filterFir, setFilterFir] = useState(false);
 
     const [sort, setSort] = useState("name");
 
@@ -22,9 +24,11 @@ export function ItemsPanel({
         return items
             .filter((item) => {
                 return (
-                    item.name
+                    (item.name
                         .toLowerCase()
-                        .includes(filterName.toLowerCase()) || filterName == ""
+                        .includes(filterName.toLowerCase()) ||
+                        filterName == "") &&
+                    (!filterFir || item.foundInRaid)
                 );
             })
             .sort((a, b) => {
@@ -53,9 +57,61 @@ export function ItemsPanel({
                     }
                     return b.foundInRaid ? 1 : -1;
                 }
+                if (sort.startsWith("dtl")) {
+                    if (a.dogtag_level != 0 && b.dogtag_level == 0) {
+                        return -1;
+                    }
+                    if (a.dogtag_level == 0 && b.dogtag_level != 0) {
+                        return 1;
+                    }
+                    if (sort.endsWith("-")) {
+                        return a.dogtag_level - b.dogtag_level;
+                    }
+                    return b.dogtag_level - a.dogtag_level;
+                }
+                if (sort.startsWith("mindur")) {
+                    if (
+                        (a.max_durability != 100 || a.min_durability != 0) &&
+                        b.max_durability == 100 &&
+                        b.min_durability == 0
+                    ) {
+                        return -1;
+                    }
+                    if (
+                        a.max_durability == 100 &&
+                        a.min_durability == 0 &&
+                        (b.max_durability != 100 || b.min_durability != 0)
+                    ) {
+                        return 1;
+                    }
+                    if (sort.endsWith("-")) {
+                        return b.min_durability - a.min_durability;
+                    }
+                    return a.min_durability - b.min_durability;
+                }
+                if (sort.startsWith("maxdur")) {
+                    if (
+                        (a.max_durability != 100 || a.min_durability != 0) &&
+                        b.max_durability == 100 &&
+                        b.min_durability == 0
+                    ) {
+                        return -1;
+                    }
+                    if (
+                        a.max_durability == 100 &&
+                        a.min_durability == 0 &&
+                        (b.max_durability != 100 || b.min_durability != 0)
+                    ) {
+                        return 1;
+                    }
+                    if (sort.endsWith("-")) {
+                        return b.max_durability - a.max_durability;
+                    }
+                    return a.max_durability - b.max_durability;
+                }
                 return 0;
             });
-    }, [items, filterName, sort]);
+    }, [items, filterName, sort, filterFir]);
 
     return (
         <>
@@ -80,6 +136,8 @@ export function ItemsPanel({
             <FilterBar
                 filterName={filterName}
                 setFilterName={setFilterName}
+                filterFir={filterFir}
+                setFilterFir={setFilterFir}
             />
             <ul className={styles.itemList}>
                 <ItemTitleBar
@@ -105,12 +163,26 @@ export function ItemsPanel({
 function FilterBar({
     filterName,
     setFilterName,
+    filterFir,
+    setFilterFir,
 }: {
     filterName: string;
     setFilterName: (name: string) => void;
+    filterFir: boolean;
+    setFilterFir: (fir: boolean) => void;
 }) {
     return (
         <div className={styles.filterBar}>
+            <label>
+                <input
+                    type="checkbox"
+                    checked={filterFir}
+                    onChange={(e) => setFilterFir(e.target.checked)}
+                />
+                <span>
+                    <FontAwesomeIcon icon="circle-check" />
+                </span>
+            </label>
             <input
                 type="text"
                 placeholder="Filter Name..."
@@ -133,7 +205,7 @@ function AllPage({
             {items.map((item: CollatedItem) => {
                 return (
                     <ItemLine
-                        key={`${item.id}${item.foundInRaid}${item.totalCount}${item.collected}`}
+                        key={`${item.id}${item.foundInRaid}${item.totalCount}${item.collected}${item.dogtag_level}${item.min_durability}${item.max_durability}`}
                         item={item}
                         setItems={setItems}
                         items={items}
@@ -160,7 +232,7 @@ function NeedsCollectingPage({
             {noneCollectedItems.map((item: CollatedItem) => {
                 return (
                     <ItemLine
-                        key={`${item.id}${item.foundInRaid}${item.totalCount}${item.collected}`}
+                        key={`${item.id}${item.foundInRaid}${item.totalCount}${item.collected}${item.dogtag_level}${item.min_durability}${item.max_durability}`}
                         item={item}
                         setItems={setItems}
                         items={items}

@@ -22,9 +22,13 @@ pub async fn get_all_items(
 }
 
 #[tauri::command]
+#[allow(clippy::too_many_arguments)]
 pub async fn collect(
     id: String,
     fir: bool,
+    dogtag_level: Option<i64>,
+    min_durability: Option<i64>,
+    max_durability: Option<i64>,
     quantity: Option<i64>,
     db_lock: State<'_, Arc<Mutex<Connection>>>,
     wipe_state: State<'_, Mutex<Option<i64>>>,
@@ -33,17 +37,44 @@ pub async fn collect(
     if wipe_id.is_none() {
         return Err(Error::NoWipeSelected);
     }
+
+    let dt_lvl = dogtag_level.unwrap_or(0);
+    let min_dur = min_durability.unwrap_or(0);
+    let max_dur = max_durability.unwrap_or(100);
+
     if let Some(q) = quantity {
-        Item::collect(id, fir, q, db_lock.inner().clone(), wipe_id.unwrap())
+        Item::collect(
+            id,
+            fir,
+            dt_lvl,
+            min_dur,
+            max_dur,
+            q,
+            db_lock.inner().clone(),
+            wipe_id.unwrap(),
+        )
     } else {
-        Item::collect(id, fir, 1, db_lock.inner().clone(), wipe_id.unwrap())
+        Item::collect(
+            id,
+            fir,
+            dt_lvl,
+            min_dur,
+            max_dur,
+            1,
+            db_lock.inner().clone(),
+            wipe_id.unwrap(),
+        )
     }
 }
 
 #[tauri::command]
-pub async fn uncollect(
+#[allow(clippy::too_many_arguments)]
+pub fn uncollect(
     id: String,
     fir: bool,
+    dogtag_level: Option<i64>,
+    min_durability: Option<i64>,
+    max_durability: Option<i64>,
     quantity: Option<i64>,
     wipe_state: State<'_, Mutex<Option<i64>>>,
     db_lock: State<'_, Arc<Mutex<Connection>>>,
@@ -52,10 +83,33 @@ pub async fn uncollect(
     if wipe_id.is_none() {
         return Err(Error::NoWipeSelected);
     }
+
+    let dt_lvl = dogtag_level.unwrap_or(0);
+    let min_dur = min_durability.unwrap_or(0);
+    let max_dur = max_durability.unwrap_or(100);
+
     if let Some(q) = quantity {
-        Item::uncollect(id, fir, q, db_lock.inner().clone(), wipe_id.unwrap())
+        Item::uncollect(
+            id,
+            fir,
+            dt_lvl,
+            min_dur,
+            max_dur,
+            q,
+            db_lock.inner().clone(),
+            wipe_id.unwrap(),
+        )
     } else {
-        Item::uncollect(id, fir, 1, db_lock.inner().clone(), wipe_id.unwrap())
+        Item::uncollect(
+            id,
+            fir,
+            dt_lvl,
+            min_dur,
+            max_dur,
+            1,
+            db_lock.inner().clone(),
+            wipe_id.unwrap(),
+        )
     }
 }
 
@@ -63,6 +117,9 @@ pub async fn uncollect(
 pub async fn get_collected_quantity(
     id: String,
     fir: bool,
+    dogtag_level: Option<i64>,
+    min_durability: Option<i64>,
+    max_durability: Option<i64>,
     wipe_state: State<'_, Mutex<Option<i64>>>,
     db_lock: State<'_, Arc<Mutex<Connection>>>,
 ) -> Result<i64, Error> {
@@ -71,7 +128,20 @@ pub async fn get_collected_quantity(
         return Err(Error::NoWipeSelected);
     }
 
-    Item::get_quantity(id, fir, db_lock.inner().clone(), wipe_id.unwrap()).await
+    let dt_lvl = dogtag_level.unwrap_or(0);
+    let min_dur = min_durability.unwrap_or(0);
+    let max_dur = max_durability.unwrap_or(100);
+
+    Item::get_quantity(
+        id,
+        fir,
+        dt_lvl,
+        min_dur,
+        max_dur,
+        db_lock.inner().clone(),
+        wipe_id.unwrap(),
+    )
+    .await
 }
 
 #[tauri::command]

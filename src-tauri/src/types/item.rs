@@ -77,9 +77,13 @@ impl Item {
         println!("Created {} items", items.len());
     }
 
+    #[allow(clippy::too_many_arguments)]
     pub fn collect(
         item_id: String,
         fir: bool,
+        dogtag_level: i64,
+        min_durability: i64,
+        max_durability: i64,
         quantity: i64,
         db_lock: Arc<Mutex<Connection>>,
         wipe: i64,
@@ -87,7 +91,7 @@ impl Item {
         let db = db_lock.lock().unwrap();
 
         let res =
-            db.prepare("INSERT OR IGNORE INTO found_items (quantity, item, wipe, found_in_raid) VALUES (?, ?, ?, ?)");
+            db.prepare("INSERT OR IGNORE INTO found_items (quantity, item, wipe, found_in_raid, dogtag_level, min_durability, max_durability) VALUES (?, ?, ?, ?, ?, ?, ?)");
         if res.is_err() {
             println!("Error preparing statement: {:?}", res.unwrap_err());
             return Err(Error::Other {
@@ -103,6 +107,9 @@ impl Item {
             &item_id,
             &wipe.to_string(),
             &fir_text.to_string(),
+            &dogtag_level.to_string(),
+            &min_durability.to_string(),
+            &max_durability.to_string(),
         ]);
         if exec.is_err() {
             println!("Error collecting item: {:?}", exec.unwrap_err());
@@ -112,7 +119,7 @@ impl Item {
         }
 
         if exec.unwrap() == 0 {
-            let res = db.prepare("UPDATE found_items SET quantity = quantity + ? WHERE item = ? AND found_in_raid = ? AND wipe = ?");
+            let res = db.prepare("UPDATE found_items SET quantity = quantity + ? WHERE item = ? AND found_in_raid = ? AND wipe = ? AND dogtag_level = ? AND min_durability = ? AND max_durability = ?");
             if res.is_err() {
                 println!("Error preparing statement: {:?}", res.unwrap_err());
                 return Err(Error::Other {
@@ -125,6 +132,9 @@ impl Item {
                 &item_id,
                 &fir_text.to_string(),
                 &wipe.to_string(),
+                &dogtag_level.to_string(),
+                &min_durability.to_string(),
+                &max_durability.to_string(),
             ]);
             if exec.is_err() {
                 println!("Error collecting item: {:?}", exec.unwrap_err());
@@ -152,9 +162,13 @@ impl Item {
         Ok(quantity)
     }
 
+    #[allow(clippy::too_many_arguments)]
     pub fn uncollect(
         item_id: String,
         fir: bool,
+        dogtag_level: i64,
+        min_durability: i64,
+        max_durability: i64,
         quantity: i64,
         db_lock: Arc<Mutex<Connection>>,
         wipe: i64,
@@ -162,13 +176,19 @@ impl Item {
         let db = db_lock.lock().unwrap();
 
         let mut fnd_item_stmt = db.prepare(
-            "SELECT quantity FROM found_items WHERE item = ? AND found_in_raid = ? AND wipe = ?",
+            "SELECT quantity FROM found_items WHERE item = ? AND found_in_raid = ? AND wipe = ? AND dogtag_level = ? AND min_durability = ? AND max_durability = ?",
         )?;
 
         let fir_text = if fir { "1" } else { "0" };
 
-        let mut quants =
-            fnd_item_stmt.query([&item_id, &fir_text.to_string(), &wipe.to_string()])?;
+        let mut quants = fnd_item_stmt.query([
+            &item_id,
+            &fir_text.to_string(),
+            &wipe.to_string(),
+            &dogtag_level.to_string(),
+            &min_durability.to_string(),
+            &max_durability.to_string(),
+        ])?;
         let row_opt = quants.next()?;
         if row_opt.is_none() {
             return Err(Error::Other {
@@ -183,7 +203,7 @@ impl Item {
             });
         }
 
-        let res = db.prepare("UPDATE found_items SET quantity = quantity - ? WHERE item = ? AND quantity > 0 AND found_in_raid = ? AND wipe = ?");
+        let res = db.prepare("UPDATE found_items SET quantity = quantity - ? WHERE item = ? AND quantity > 0 AND found_in_raid = ? AND wipe = ? AND dogtag_level = ? and min_durability = ? AND max_durability = ?");
         if res.is_err() {
             println!("Error preparing statement: {:?}", res.unwrap_err());
             return Err(Error::Other {
@@ -199,6 +219,9 @@ impl Item {
             &item_id,
             &fir_text.to_string(),
             &wipe.to_string(),
+            &dogtag_level.to_string(),
+            &min_durability.to_string(),
+            &max_durability.to_string(),
         ]);
         if exec.is_err() {
             println!("Error removing item: {:?}", exec.unwrap_err());
@@ -233,13 +256,16 @@ impl Item {
     pub async fn get_quantity(
         item_id: String,
         fir: bool,
+        dogtag_level: i64,
+        min_durability: i64,
+        max_durability: i64,
         db_lock: Arc<Mutex<Connection>>,
         wipe: i64,
     ) -> Result<i64, Error> {
         let db = db_lock.lock().unwrap();
 
         let res = db.prepare(
-            "SELECT quantity FROM found_items WHERE item = ? AND found_in_raid = ? AND wipe = ?",
+            "SELECT quantity FROM found_items WHERE item = ? AND found_in_raid = ? AND wipe = ? AND dogtag_level = ? AND min_durability = ? AND max_durability = ?",
         );
         if res.is_err() {
             println!("Error preparing statement: {:?}", res.unwrap_err());
@@ -251,7 +277,14 @@ impl Item {
 
         let fir_text = if fir { "1" } else { "0" };
 
-        let query = stmt.query([&item_id, &fir_text.to_string(), &wipe.to_string()]);
+        let query = stmt.query([
+            &item_id,
+            &fir_text.to_string(),
+            &wipe.to_string(),
+            &dogtag_level.to_string(),
+            &min_durability.to_string(),
+            &max_durability.to_string(),
+        ]);
         if query.is_err() {
             return Err(Error::Other {
                 message: "Error Querying Item".to_string(),

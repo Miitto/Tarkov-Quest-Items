@@ -15,14 +15,23 @@ export async function getItems() {
             );
             await Promise.all(
                 objectiveFirs.map(async (objective) => {
-                    let i = items.find((i) => i.id == item.id && i.foundInRaid);
+                    let i = items.find(
+                        (i) =>
+                            i.id == item.id &&
+                            i.foundInRaid &&
+                            i.dogtag_level == objective.dogtag_level &&
+                            i.min_durability == objective.min_durability &&
+                            i.max_durability == objective.max_durability
+                    );
                     if (!i) {
                         i = JSON.parse(JSON.stringify(item)) as CollatedItem;
 
                         i.foundInRaid = true;
-                        i.levelRequired = [];
                         i.collected = 0;
                         i.totalCount = 0;
+                        i.dogtag_level = objective.dogtag_level;
+                        i.min_durability = objective.min_durability;
+                        i.max_durability = objective.max_durability;
                         items.push(i);
                     }
 
@@ -57,15 +66,22 @@ export async function getItems() {
                         return;
                     }
                     let i = items.find(
-                        (i) => i.id == item.id && !i.foundInRaid
+                        (i) =>
+                            i.id == item.id &&
+                            !i.foundInRaid &&
+                            i.dogtag_level == objective.dogtag_level &&
+                            i.min_durability == objective.min_durability &&
+                            i.max_durability == objective.max_durability
                     );
                     if (!i) {
                         i = JSON.parse(JSON.stringify(item)) as CollatedItem;
 
                         i.foundInRaid = false;
-                        i.levelRequired = [];
                         i.collected = 0;
                         i.totalCount = 0;
+                        i.dogtag_level = objective.dogtag_level;
+                        i.min_durability = objective.min_durability;
+                        i.max_durability = objective.max_durability;
                         items.push(i);
                     }
 
@@ -91,6 +107,5 @@ export async function getItems() {
     items.sort((a, b) => {
         return a.name.localeCompare(b.name);
     });
-    console.log(items);
     return items;
 }

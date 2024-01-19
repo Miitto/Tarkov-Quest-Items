@@ -14,6 +14,9 @@ pub struct Objective {
     pub task: String,
     pub completed: bool,
     pub wipe: i64,
+    pub dogtag_level: i64,
+    pub min_durability: i64,
+    pub max_durability: i64,
 }
 
 pub mod all;

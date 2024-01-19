@@ -38,6 +38,14 @@
     align-items: center;
     grid-column: 1 / -1;
 
+    &:has(.show) {
+        box-shadow: 0 0 2px 1px $tarkov-tan;
+
+        &:first-of-type {
+            margin-top: 2px;
+        }
+    }
+
     > button {
         padding: 0.5rem 0;
         grid-column: 1 / -1;

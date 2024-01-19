@@ -20,6 +20,9 @@ export interface Objective {
     count: number;
     collected: number;
     found_in_raid: boolean;
+    min_durability: number;
+    max_durability: number;
+    dogtag_level: number;
 }
 
 export interface CollatedObjective {
@@ -35,6 +38,9 @@ export interface CollatedObjective {
     collected: number;
     found_in_raid: boolean;
     in_stash: number;
+    min_durability: number;
+    max_durability: number;
+    dogtag_level: number;
 }
 
 export interface CollatedItem {
@@ -43,13 +49,10 @@ export interface CollatedItem {
     image: string;
     collected: number;
     foundInRaid: boolean;
+    min_durability: number;
+    max_durability: number;
+    dogtag_level: number;
     totalCount: number;
-    levelRequired: [
-        {
-            level: number;
-            count: number;
-        }?
-    ];
 }
 
 export interface Task {

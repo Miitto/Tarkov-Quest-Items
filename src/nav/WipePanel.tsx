@@ -113,8 +113,21 @@ export function WipePanel({
                 }
                 if (!objective.hasOwnProperty("foundInRaid"))
                     objective.foundInRaid = false;
+
                 objective.found_in_raid = objective.foundInRaid;
-                delete objective.foundInRaid;
+                objective.dogtag_level = objective.dogTagLevel ?? 0;
+                objective.min_durability = objective.minDurability ?? 0;
+                objective.max_durability = objective.maxDurability ?? 100;
+
+                // Data Source has some Errors, so attempt to fix them from descriptions
+                if (objective.description.includes("50-")) {
+                    objective.min_durability = 50;
+                }
+
+                if (objective.description.includes("-50")) {
+                    objective.max_durability = 50;
+                }
+
                 objective.task = task.id;
                 objective.completed = false;
             });
@@ -139,6 +152,7 @@ export function WipePanel({
 
             let objectives = data.tasks.flatMap((task: any) =>
                 task.objectives.map((objective: any) => {
+                    console.log(objective);
                     objective.item = objective.item?.id;
                     objective.task = task.id;
                     objective.wipe = wipe.id;

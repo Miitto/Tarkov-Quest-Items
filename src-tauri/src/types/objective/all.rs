@@ -21,7 +21,7 @@ impl Objective {
         let db = db_lock.lock().unwrap();
 
         let prep = db.prepare(
-                "SELECT id, description, optional, count, found_in_raid, item, task, completed, wipe, collected FROM objectives WHERE wipe = ?",
+                "SELECT id, description, optional, count, found_in_raid, item, task, completed, wipe, collected, dogtag_level, min_durability, max_durability FROM objectives WHERE wipe = ?",
             );
         if prep.is_err() {
             println!("Error preparing statement: {:?}", prep.unwrap_err());
@@ -41,6 +41,9 @@ impl Objective {
                 completed: row.get(7)?,
                 wipe: row.get(8)?,
                 collected: row.get(9)?,
+                dogtag_level: row.get(10)?,
+                min_durability: row.get(11)?,
+                max_durability: row.get(12)?,
             })
         });
         if query.is_err() {
