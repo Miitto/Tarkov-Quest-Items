@@ -66,55 +66,6 @@ impl Task {
         })
     }
 
-    pub fn create(
-        id: String,
-        name: String,
-        vendor: String,
-        min_level: i64,
-        wipe_id: i64,
-        image: String,
-        db_lock: Arc<Mutex<Connection>>,
-    ) -> Self {
-        let id2 = id.clone();
-        let name2 = name.clone();
-        let vendor2 = vendor.clone();
-        let image2 = image.clone();
-
-        tokio::spawn(async move {
-            let db = db_lock.lock().unwrap();
-            let prep = db
-            .prepare(
-                "INSERT OR IGNORE INTO tasks (id, name, vendor, min_level, wipe, image) VALUES (?, ?, ?, ?, ?, ?)",
-            );
-            if prep.is_err() {
-                println!("Error preparing statement: {:?}", prep.unwrap_err());
-                return;
-            }
-            let mut stmt = prep.unwrap();
-            let res = stmt.execute([
-                &id.to_string(),
-                &name.to_string(),
-                &vendor.to_string(),
-                &min_level.to_string(),
-                &wipe_id.to_string(),
-                &image.to_string(),
-            ]);
-
-            if res.is_err() {
-                println!("Error inserting task: {:?} | {}", res.unwrap_err(), name);
-            }
-        });
-
-        Task {
-            id: id2,
-            name: name2,
-            vendor: vendor2,
-            min_level,
-            wipe: wipe_id,
-            image: image2,
-        }
-    }
-
     pub fn bulk_create(tasks: Vec<Task>, db_lock: Arc<Mutex<Connection>>) {
         //tokio::spawn(async move {
         let db = db_lock.lock().unwrap();
@@ -156,23 +107,6 @@ impl Task {
         }
         //});
         println!("Created {} tasks", tasks.len());
-    }
-
-    pub fn delete(task_id: String, db_lock: Arc<Mutex<Connection>>) {
-        tokio::spawn(async move {
-            let db = db_lock.lock().unwrap();
-
-            let prep = db.prepare("DELETE FROM tasks WHERE id = ?");
-            if prep.is_err() {
-                println!("Error preparing statement: {:?}", prep.unwrap_err());
-                return;
-            }
-            let mut stmt = prep.unwrap();
-            let exec = stmt.execute([&task_id]);
-            if exec.is_err() {
-                println!("Error deleting task: {:?}", exec.unwrap_err());
-            }
-        });
     }
 
     pub async fn update(

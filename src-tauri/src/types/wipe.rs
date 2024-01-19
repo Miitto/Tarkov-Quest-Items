@@ -2,7 +2,6 @@ use rusqlite::Connection;
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
 use std::sync::Mutex;
-use tauri::State;
 #[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Wipe {
     pub id: i64,

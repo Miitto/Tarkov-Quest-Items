@@ -1,4 +1,3 @@
-use std::sync::{Arc, LockResult, Mutex};
 pub mod item;
 pub mod objective;
 pub mod task;
@@ -41,12 +40,4 @@ pub trait LockResultExt {
     ///
     /// [poisoned]: https://doc.rust-lang.org/stable/std/sync/struct.Mutex.html#poisoning
     fn ignore_poison(self) -> Self::Guard;
-}
-
-impl<Guard> LockResultExt for LockResult<Guard> {
-    type Guard = Guard;
-
-    fn ignore_poison(self) -> Guard {
-        self.unwrap_or_else(|e| e.into_inner())
-    }
 }

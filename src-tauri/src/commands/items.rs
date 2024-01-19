@@ -6,8 +6,6 @@ use rusqlite::Connection;
 use std::sync::Mutex;
 use tauri::State;
 
-use super::wipe;
-
 #[tauri::command]
 pub fn create_items(items: Vec<Item>, db_lock: State<Arc<Mutex<Connection>>>) -> Result<(), Error> {
     Item::bulk_create(items, db_lock.inner().clone());

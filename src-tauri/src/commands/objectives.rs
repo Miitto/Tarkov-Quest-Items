@@ -1,4 +1,4 @@
-use crate::types::{objective::Objective, Error};
+use crate::types::{objective::update::UpdateObjective, objective::Objective, Error};
 use rusqlite::Connection;
 use std::sync::Arc;
 use std::sync::Mutex;
@@ -48,7 +48,8 @@ pub async fn get_task_objectives(
 }
 
 #[tauri::command]
-pub async fn update_objective(
+#[allow(clippy::too_many_arguments)]
+pub fn update_objective(
     id: String,
     description: Option<String>,
     optional: Option<bool>,
@@ -68,16 +69,17 @@ pub async fn update_objective(
     }
 
     Objective::update(
-        id,
-        wipe_id.unwrap(),
-        description,
-        optional,
-        count,
-        found_in_raid,
-        item,
-        task,
-        completed,
+        UpdateObjective {
+            id,
+            wipe: wipe_id.unwrap(),
+            description,
+            optional,
+            count,
+            found_in_raid,
+            item,
+            task,
+            completed,
+        },
         db_lock.inner().clone(),
     )
-    .await
 }
