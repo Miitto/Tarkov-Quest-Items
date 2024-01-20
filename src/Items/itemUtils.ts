@@ -52,8 +52,13 @@ export async function getItems() {
                     objective.item == item.id && !objective.found_in_raid
             );
             for (let objective of objectiveNotFirs) {
+                if (objective.count > 150) {
+                    console.log("Found");
+                }
                 if (
-                    objective.description.toLowerCase().startsWith("hand over")
+                    objective.description
+                        .toLowerCase()
+                        .startsWith("hand over the")
                 ) {
                     return;
                 }
