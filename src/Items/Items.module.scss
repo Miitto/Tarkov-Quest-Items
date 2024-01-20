@@ -49,10 +49,8 @@
             justify-content: flex-end;
         }
 
-        &:last-child {
-            span {
-                flex-grow: 1;
-            }
+        span {
+            flex-grow: 1;
         }
 
         &:nth-last-child(2) {
@@ -81,6 +79,11 @@
 
             &:active {
                 filter: brightness(0.1);
+            }
+
+            &:disabled {
+                color: grey !important;
+                filter: brightness(1);
             }
         }
     }
@@ -202,5 +205,35 @@
                 flex-shrink: 0;
             }
         }
+    }
+}
+
+.itemDialog {
+    background-color: transparent;
+    padding: 0;
+    background-color: var(--bg-color-alt);
+
+    form {
+        display: flex;
+        padding: 2rem;
+        width: fit-content;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+
+        input[type="number"] {
+            width: 3rem;
+            padding: 0.5rem;
+            border-radius: 0;
+            border: none;
+            outline: none;
+            box-shadow: none;
+            text-align: center;
+        }
+    }
+
+    &::backdrop {
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
     }
 }

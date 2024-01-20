@@ -20,6 +20,8 @@ export function ItemsPanel({
 
     const [sort, setSort] = useState("name");
 
+    const [ItemDialog, setItemDialog] = useState(<DefaultDialog />);
+
     const filteredItems = useMemo(() => {
         return items
             .filter((item) => {
@@ -148,14 +150,17 @@ export function ItemsPanel({
                     <NeedsCollectingPage
                         items={filteredItems}
                         setItems={setItems}
+                        setItemDialog={setItemDialog}
                     />
                 ) : (
                     <AllPage
                         items={filteredItems}
                         setItems={setItems}
+                        setItemDialog={setItemDialog}
                     />
                 )}
             </ul>
+            {ItemDialog}
         </>
     );
 }
@@ -196,9 +201,11 @@ function FilterBar({
 function AllPage({
     items,
     setItems,
+    setItemDialog,
 }: {
     items: CollatedItem[];
     setItems: (items: CollatedItem[]) => void;
+    setItemDialog: (dialog: JSX.Element) => void;
 }) {
     return (
         <>
@@ -209,6 +216,7 @@ function AllPage({
                         item={item}
                         setItems={setItems}
                         items={items}
+                        setItemDialog={setItemDialog}
                     />
                 );
             })}
@@ -219,9 +227,11 @@ function AllPage({
 function NeedsCollectingPage({
     items,
     setItems,
+    setItemDialog,
 }: {
     items: CollatedItem[];
     setItems: (items: CollatedItem[]) => void;
+    setItemDialog: (dialog: JSX.Element) => void;
 }) {
     const noneCollectedItems = useMemo(() => {
         return items.filter((item) => item.collected < item.totalCount);
@@ -236,9 +246,14 @@ function NeedsCollectingPage({
                         item={item}
                         setItems={setItems}
                         items={items}
+                        setItemDialog={setItemDialog}
                     />
                 );
             })}
         </>
     );
+}
+
+function DefaultDialog() {
+    return <dialog></dialog>;
 }
