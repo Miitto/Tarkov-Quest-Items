@@ -15,6 +15,25 @@
             "shell": {
                 "all": false,
                 "open": true
+            },
+            "path": {
+                "all": true
+            },
+            "fs": {
+                "all": false,
+                "readDir": true,
+                "copyFile": true,
+                "createDir": true,
+                "removeDir": true,
+                "removeFile": true,
+                "renameFile": true,
+                "readFile": true,
+                "scope": [
+                    "$APP/*",
+                    "$RESOURCE",
+                    "$RESOURCE/*",
+                    "$RESOURCE/wipe_data/*"
+                ]
             }
         },
         "bundle": {
@@ -27,7 +46,10 @@
                 "icons/128x128@2x.png",
                 "icons/icon.icns",
                 "icons/icon.ico"
-            ]
+            ],
+            "resources": [
+                "wipe_data/*"
+            ] 
         },
         "security": {
             "csp": null

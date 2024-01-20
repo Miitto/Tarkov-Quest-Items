@@ -65,7 +65,6 @@ export class TaskPage extends React.Component<Props> {
     }
 
     setSize = (i: number, size: number) => {
-        console.log("Setting size", i, size);
         if (this.listRef.current) {
             this.listRef.current.resetAfterIndex(i);
         }

@@ -53,7 +53,6 @@ export async function getItems() {
             );
             for (let objective of objectiveNotFirs) {
                 if (objective.count > 150) {
-                    console.log("Found");
                 }
                 if (
                     objective.description

@@ -3,7 +3,8 @@ import { Item, Wipe } from "../types";
 import styles from "./WipePanel.module.scss";
 import { invoke } from "@tauri-apps/api/tauri";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { fourteen_zero } from "../fourteen_zero";
+import { readTextFile, readDir, BaseDirectory } from "@tauri-apps/api/fs";
+import queryWipe from "../lib/script/api/fetch";
 
 export function WipePanel({
     activeWipe,
@@ -13,6 +14,7 @@ export function WipePanel({
     setActiveWipe: (idx: number) => void;
 }) {
     const [wipes, setWipes] = useState<Wipe[]>([]);
+    const [wipeData, setWipeData] = useState<string[]>([]);
 
     let createDialog: RefObject<HTMLDialogElement> = useRef(null);
     let deleteDialog: RefObject<HTMLDialogElement> = useRef(null);
@@ -32,9 +34,11 @@ export function WipePanel({
             setWipes(wipes as Wipe[]);
             if (wipes.length > 0) pickWipe(activeWipe);
         });
+        getWipeData();
     }, []);
 
     function newWipe() {
+        getWipeData();
         createDialog?.current?.showModal();
     }
 
@@ -45,53 +49,22 @@ export function WipePanel({
     async function createWipe(event: React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
-        // let res = await fetch("https://api.tarkov.dev/graphql", {
-        //     method: "POST",
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         Accept: "application/json",
-        //     },
-        //     body: JSON.stringify({
-        //         query: `{
-        //          tasks {
-        //            id
-        //            name
-        //            taskImageLink
-        //            trader {
-        //              name
-        //            }
-        //            minPlayerLevel
-        //            objectives {
-        //              id
-        //              description
-        //              optional
-        //              __typename
-        //              ... on TaskObjectiveItem {
-        //                count
-        //                foundInRaid
-        //                dogTagLevel
-        //                minDurability
-        //                maxDurability
-        //                requiredKeys {
-        //                  id
-        //                  name
-        //                  iconLink
-        //                }
-        //                item {
-        //                  id
-        //                  name
-        //                  iconLink
-        //                }
-        //              }
-        //            }
-        //          }
-        //        }`,
-        //     }),
-        // });
-        // let data = (await res.json()).data;
+        let form = event.target as HTMLFormElement;
+        let name = (form.elements[0] as HTMLInputElement).value;
 
-        let data = fourteen_zero.data;
+        let wipeData = (form.elements[1] as HTMLSelectElement).value;
 
+        let data: any;
+
+        if (wipeData == "query") {
+            data = await queryWipe();
+        } else {
+            data = JSON.parse(
+                (await readTextFile(`./src/data/${wipeData}.json`)) ?? {
+                    data: { tasks: [] },
+                }
+            ).data;
+        }
         let items: Item[] = [];
 
         data.tasks.forEach((task: any) => {
@@ -133,7 +106,7 @@ export function WipePanel({
         });
 
         invoke<Wipe>("create_wipe", {
-            name: (event.target as any).elements[0].value,
+            name: name,
         }).then(async (wipe) => {
             setWipes([wipe as Wipe, ...wipes]);
             await invoke<number>("pick_wipe", {
@@ -151,7 +124,6 @@ export function WipePanel({
 
             let objectives = data.tasks.flatMap((task: any) =>
                 task.objectives.map((objective: any) => {
-                    console.log(objective);
                     objective.item = objective.item?.id;
                     objective.task = task.id;
                     objective.wipe = wipe.id;
@@ -177,6 +149,27 @@ export function WipePanel({
         });
         setWipes(wipes.filter((wipe: Wipe) => activeWipe != wipe.id));
         deleteDialog?.current?.close();
+    }
+
+    function getWipeData() {
+        readDir(`wipe_data`, {
+            dir: BaseDirectory.Resource,
+        }).then((files) => {
+            setWipeData(
+                files
+                    .filter((file) => file.name!.endsWith(".json"))
+                    .map((file) => file.name!.replace(".json", ""))
+                    .sort((a, b) => {
+                        if (
+                            !isNaN(parseFloat(a)) &&
+                            !isNaN(parseFloat(b)) &&
+                            parseFloat(a) > parseFloat(b)
+                        )
+                            return -1;
+                        return a.localeCompare(b);
+                    })
+            );
+        });
     }
 
     return (
@@ -217,6 +210,20 @@ export function WipePanel({
                 <form onSubmit={createWipe}>
                     <label>Name:</label>
                     <input type="text" />
+                    <label>Wipe Data:</label>
+                    <select value={wipeData[0]}>
+                        {wipeData.map((name) => {
+                            return (
+                                <option
+                                    key={name}
+                                    value={name}
+                                >
+                                    {name}
+                                </option>
+                            );
+                        })}
+                        <option value="query">Query</option>
+                    </select>
                     <button
                         type="submit"
                         className="tarkov-btn"
