@@ -3,7 +3,7 @@ import { Item, Wipe } from "../types";
 import styles from "./WipePanel.module.scss";
 import { invoke } from "@tauri-apps/api/tauri";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { tmp } from "../tmp";
+import { fourteen_zero } from "../fourteen_zero";
 
 export function WipePanel({
     activeWipe,
@@ -90,7 +90,7 @@ export function WipePanel({
         // });
         // let data = (await res.json()).data;
 
-        let data = tmp.data;
+        let data = fourteen_zero.data;
 
         let items: Item[] = [];
 
