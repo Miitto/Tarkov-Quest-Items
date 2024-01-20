@@ -26,7 +26,7 @@ export function ItemLine({
     };
 
     function increment(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-        if (!e.ctrlKey) {
+        if (!e.ctrlKey && !e.shiftKey) {
             let newItems = items.map((i) => {
                 if (
                     i.id == item.id &&
@@ -53,7 +53,7 @@ export function ItemLine({
     }
 
     function decrement(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
-        if (!e.ctrlKey) {
+        if (!e.ctrlKey && !e.shiftKey) {
             let newItems = items.map((i) => {
                 if (
                     i.id == item.id &&

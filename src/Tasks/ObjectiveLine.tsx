@@ -75,7 +75,7 @@ export function ObjectiveLine({
     function assignItem(
         event: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) {
-        if (!event.ctrlKey) {
+        if (!event.ctrlKey && !event.shiftKey) {
             invoke<Objective>("assign", {
                 id: objective.id,
             })
@@ -95,7 +95,7 @@ export function ObjectiveLine({
     function unassignItem(
         event: React.MouseEvent<HTMLButtonElement, MouseEvent>
     ) {
-        if (!event.ctrlKey) {
+        if (!event.ctrlKey && !event.shiftKey) {
             invoke<Objective>("unassign", {
                 id: objective.id,
             })
