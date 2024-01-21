@@ -4,6 +4,9 @@ use crate::types::Error;
 
 use crate::types::settings::Settings;
 
+use std::sync::Mutex;
+use tauri::State;
+
 #[tauri::command]
 pub async fn open_settings(app: tauri::AppHandle) -> Result<bool, Error> {
     let settings_window_opt = app.get_window("settings");
@@ -30,5 +33,10 @@ pub async fn open_settings(app: tauri::AppHandle) -> Result<bool, Error> {
 
 #[tauri::command]
 pub async fn find_tarkov() -> Result<String, Error> {
-    Settings::find_tarkov()
+    Ok(Settings::find_tarkov())
+}
+
+#[tauri::command]
+pub fn get_settings(settings: State<Mutex<Settings>>) -> Settings {
+    (*settings.lock().unwrap()).clone()
 }

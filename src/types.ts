@@ -75,3 +75,7 @@ export interface CollatedTask {
     completed: number;
     objectives: Objective[];
 }
+
+export interface Settings {
+    install_location: string;
+}

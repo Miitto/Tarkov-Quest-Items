@@ -117,7 +117,8 @@ async fn main() -> Result<(), Error> {
             unassign_quantity,
             get_item_image,
             open_settings,
-            find_tarkov
+            find_tarkov,
+            get_settings
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

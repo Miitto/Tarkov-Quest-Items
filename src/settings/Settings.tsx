@@ -1,8 +1,17 @@
 import { open } from "@tauri-apps/api/dialog";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { Settings } from "../types";
+import { invoke } from "@tauri-apps/api";
 
-export function Settings() {
-    const [path, setPath] = useState("");
+export function SettingsPage() {
+    const [installLocation, setInstallLocation] = useState<string>("");
+
+    useEffect(() => {
+        (async () => {
+            let settings = await invoke<Settings>("get_settings");
+            setInstallLocation(settings.install_location);
+        })();
+    }, []);
 
     async function pickPath() {
         const dir = (await open({
@@ -10,7 +19,7 @@ export function Settings() {
         })) as unknown as string | null; // Since it will not be an array, as multiple is not set
 
         if (dir) {
-            setPath(dir);
+            setInstallLocation(dir);
         }
     }
 
@@ -19,8 +28,8 @@ export function Settings() {
             <form>
                 <input
                     type="text"
-                    value={path}
-                    onChange={(e) => setPath(e.target.value)}
+                    value={installLocation}
+                    onChange={(e) => setInstallLocation(e.target.value)}
                 />
                 <button onClick={pickPath}>Pick Path</button>
                 <input type="submit" />
