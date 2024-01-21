@@ -1,8 +1,8 @@
 [package]
 name = "tarkov-task-items"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+version = "0.0.1"
+description = "An Application to Keep Track of Tasks and Items in Escape from Tarkov"
+authors = ["Miitto"]
 license = ""
 repository = ""
 edition = "2021"
@@ -13,13 +13,26 @@ edition = "2021"
 tauri-build = { version = "1.5", features = [] }
 
 [dependencies]
-tauri = { version = "1.5", features = [ "fs-read-file", "path-all", "fs-remove-file", "fs-copy-file", "fs-remove-dir", "fs-create-dir", "fs-rename-file", "fs-read-dir", "shell-open"] }
+tauri = { version = "1.5", features = [
+    "dialog-all",
+    "fs-read-file",
+    "path-all",
+    "fs-remove-file",
+    "fs-copy-file",
+    "fs-remove-dir",
+    "fs-create-dir",
+    "fs-rename-file",
+    "fs-read-dir",
+    "shell-open",
+] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 thiserror = "1.0.48"
 rusqlite = { version = "0.29.0", features = ["bundled"] }
 reqwest = { version = "0.11.23", features = ["json"] }
 tokio = { version = "1.35.1", features = ["macros"] }
+winreg = "0.52.0"
+rust-ini = "0.20.0"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem

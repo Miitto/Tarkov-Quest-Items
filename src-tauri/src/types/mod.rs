@@ -1,5 +1,6 @@
 pub mod item;
 pub mod objective;
+pub mod settings;
 pub mod task;
 pub mod wipe;
 

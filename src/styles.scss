@@ -159,8 +159,20 @@ ul {
 
 #root {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 100vh;
+    max-height: 100vh;
+
+    > div {
+        display: flex;
+        flex-direction: row;
+        flex: 0 1 100%;
+        overflow: hidden;
+
+        &:first-child {
+            flex: 0 0 fit-content;
+        }
+    }
 }
 
 @media (prefers-color-scheme: dark) {

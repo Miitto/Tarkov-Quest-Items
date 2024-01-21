@@ -6,8 +6,11 @@ use rusqlite::Connection;
 mod commands;
 use commands::items::*;
 use commands::objectives::*;
+use commands::settings::*;
 use commands::tasks::*;
 use commands::wipe::*;
+use tauri::Manager;
+use types::settings::Settings;
 mod types;
 
 use std::sync::{Arc, Mutex};
@@ -83,6 +86,10 @@ async fn main() -> Result<(), Error> {
     )?;
 
     tauri::Builder::default()
+        .setup(|app| {
+            app.manage(Mutex::new(Settings::new(app.app_handle())));
+            Ok(())
+        })
         .manage(Arc::new(Mutex::new(db)))
         .manage(Mutex::new(None as Option<i64>))
         .invoke_handler(tauri::generate_handler![
@@ -108,7 +115,9 @@ async fn main() -> Result<(), Error> {
             assign_quantity,
             unassign,
             unassign_quantity,
-            get_item_image
+            get_item_image,
+            open_settings,
+            find_tarkov
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

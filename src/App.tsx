@@ -6,6 +6,8 @@ import { WipePanel } from "./nav/WipePanel";
 import { CollatedItem } from "./types";
 import { getItems } from "./Items/itemUtils";
 
+import { MenuBar } from "./nav/MenuBar";
+
 function App() {
     const [activePanel, setActivePanel] = useState(0);
     const [activeWipe, setActiveWipe] = useState(-1);
@@ -26,41 +28,48 @@ function App() {
 
     return (
         <>
-            <WipePanel
-                activeWipe={activeWipe}
-                setActiveWipe={setActiveWipePersist}
-            />
-            <main className={styles.main}>
-                <ul>
-                    <li>
-                        <button
-                            className={activePanel == 0 ? styles.active : ""}
-                            onClick={() => setActivePanel(0)}
-                        >
-                            Items
-                        </button>
-                    </li>
-                    <li>
-                        <button
-                            className={activePanel == 1 ? styles.active : ""}
-                            onClick={() => setActivePanel(1)}
-                        >
-                            Tasks
-                        </button>
-                    </li>
-                </ul>
+            <MenuBar />
+            <div>
+                <WipePanel
+                    activeWipe={activeWipe}
+                    setActiveWipe={setActiveWipePersist}
+                />
+                <main className={styles.main}>
+                    <ul>
+                        <li>
+                            <button
+                                className={
+                                    activePanel == 0 ? styles.active : ""
+                                }
+                                onClick={() => setActivePanel(0)}
+                            >
+                                Items
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                className={
+                                    activePanel == 1 ? styles.active : ""
+                                }
+                                onClick={() => setActivePanel(1)}
+                            >
+                                Tasks
+                            </button>
+                        </li>
+                    </ul>
 
-                <section>
-                    {activePanel == 0 ? (
-                        <ItemsPanel
-                            items={items}
-                            setItems={setItems}
-                        />
-                    ) : (
-                        <TasksPanel activeWipe={activeWipe} />
-                    )}
-                </section>
-            </main>
+                    <section>
+                        {activePanel == 0 ? (
+                            <ItemsPanel
+                                items={items}
+                                setItems={setItems}
+                            />
+                        ) : (
+                            <TasksPanel activeWipe={activeWipe} />
+                        )}
+                    </section>
+                </main>
+            </div>
         </>
     );
 }
