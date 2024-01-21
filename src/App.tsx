@@ -19,11 +19,13 @@ function App() {
     }
 
     useEffect(() => {
-        (async () => {
-            setItems([]); // Clear Items while loading
-            let items = await getItems();
-            setItems(items);
-        })();
+        if (activeWipe != -1) {
+            (async () => {
+                setItems([]); // Clear Items while loading
+                let items = await getItems();
+                setItems(items);
+            })();
+        }
     }, [activeWipe]);
 
     return (

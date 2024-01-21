@@ -15,6 +15,7 @@ export function WipePanel({
 }) {
     const [wipes, setWipes] = useState<Wipe[]>([]);
     const [wipeData, setWipeData] = useState<string[]>([]);
+    const [pickedWipeData, setPickedWipeData] = useState<string>("");
 
     let createDialog: RefObject<HTMLDialogElement> = useRef(null);
     let deleteDialog: RefObject<HTMLDialogElement> = useRef(null);
@@ -29,7 +30,7 @@ export function WipePanel({
     useEffect(() => {
         invoke<Wipe[]>("get_all_wipes").then((wipes): void => {
             let activeWipe = parseInt(
-                localStorage.getItem("activeWipe") ?? wipes[0].id.toString()
+                localStorage.getItem("activeWipe") ?? wipes[0]?.id.toString()
             );
             setWipes(wipes as Wipe[]);
             if (wipes.length > 0) pickWipe(activeWipe);
@@ -60,7 +61,9 @@ export function WipePanel({
             data = await queryWipe();
         } else {
             data = JSON.parse(
-                (await readTextFile(`./src/data/${wipeData}.json`)) ?? {
+                (await readTextFile(`wipe_data/${wipeData}.json`, {
+                    dir: BaseDirectory.Resource,
+                })) ?? {
                     data: { tasks: [] },
                 }
             ).data;
@@ -169,6 +172,7 @@ export function WipePanel({
                         return a.localeCompare(b);
                     })
             );
+            setPickedWipeData(wipeData[0]);
         });
     }
 
@@ -211,7 +215,10 @@ export function WipePanel({
                     <label>Name:</label>
                     <input type="text" />
                     <label>Wipe Data:</label>
-                    <select value={wipeData[0]}>
+                    <select
+                        value={pickedWipeData}
+                        onChange={(e) => setPickedWipeData(e.target.value)}
+                    >
                         {wipeData.map((name) => {
                             return (
                                 <option
