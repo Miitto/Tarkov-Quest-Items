@@ -93,12 +93,15 @@ async fn main() -> Result<(), Error> {
 
             let app_arc = Arc::new(app.app_handle());
             if let Some(main_window) = main_window_opt {
-                main_window.listen("close-requested", move |_| {
-                    println!("Close Requested");
-                    if let Some(settings_window) = app_arc.get_window("settings") {
-                        let res = settings_window.close();
-                        if res.is_err() {
-                            println!("Err: {}", res.unwrap_err());
+                main_window.on_window_event(move |event| {
+                    if let tauri::WindowEvent::CloseRequested { .. } = event {
+                        let app = app_arc.clone();
+                        let settings_window_opt = app.get_window("settings");
+                        if let Some(settings_window) = settings_window_opt {
+                            let res = settings_window.close();
+                            if res.is_err() {
+                                println!("Error closing settings window");
+                            }
                         }
                     }
                 });
