@@ -88,6 +88,23 @@ async fn main() -> Result<(), Error> {
     tauri::Builder::default()
         .setup(|app| {
             app.manage(Mutex::new(Settings::new(app.app_handle())));
+
+            let main_window_opt = app.get_window("main");
+
+            let app_arc = Arc::new(app.app_handle());
+            if let Some(main_window) = main_window_opt {
+                main_window.listen("close-requested", move |_| {
+                    println!("Close Requested");
+                    if let Some(settings_window) = app_arc.get_window("settings") {
+                        let res = settings_window.close();
+                        if res.is_err() {
+                            println!("Err: {}", res.unwrap_err());
+                        }
+                    }
+                });
+                println!("Listener Added");
+            }
+
             Ok(())
         })
         .manage(Arc::new(Mutex::new(db)))
@@ -118,7 +135,9 @@ async fn main() -> Result<(), Error> {
             get_item_image,
             open_settings,
             find_tarkov,
-            get_settings
+            get_settings,
+            save_settings,
+            set_settings
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

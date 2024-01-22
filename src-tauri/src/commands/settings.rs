@@ -40,3 +40,28 @@ pub async fn find_tarkov() -> Result<String, Error> {
 pub fn get_settings(settings: State<Mutex<Settings>>) -> Settings {
     (*settings.lock().unwrap()).clone()
 }
+
+#[tauri::command]
+pub fn save_settings(settings: State<Mutex<Settings>>, app: tauri::AppHandle) -> Result<(), Error> {
+    let set = settings.lock().unwrap().clone();
+    set.save(app.app_handle())
+}
+
+#[tauri::command]
+pub fn set_settings(
+    install_location: Option<String>,
+    watch_logs: Option<bool>,
+    settings: State<Mutex<Settings>>,
+) -> Result<(), Error> {
+    let mut set = settings.lock().unwrap();
+
+    if let Some(loc) = install_location {
+        set.install_location = loc;
+    }
+
+    if let Some(watch) = watch_logs {
+        set.watch_logs = watch;
+    }
+
+    Ok(())
+}
