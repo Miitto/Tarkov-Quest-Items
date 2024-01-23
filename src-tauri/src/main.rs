@@ -9,9 +9,12 @@ use commands::objectives::*;
 use commands::settings::*;
 use commands::tasks::*;
 use commands::wipe::*;
-use tauri::Manager;
+use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayMenu, SystemTrayMenuItem};
 use types::settings::Settings;
+mod db;
+mod sys_tray;
 mod types;
+mod window;
 
 use std::sync::{Arc, Mutex};
 use types::Error;
@@ -20,70 +23,16 @@ use types::Error;
 async fn main() -> Result<(), Error> {
     let db = Connection::open("tarkov.sqlite")?;
 
-    db.execute(
-        "CREATE TABLE IF NOT EXISTS items (
-            id text primary key,
-            name text not null unique,
-            image text
-        )",
-        (),
-    )?;
+    db::create_tables(&db)?;
 
-    db.execute(
-        "CREATE TABLE IF NOT EXISTS wipes (
-        id integer primary key,
-        name text not null unique
-    )",
-        (),
-    )?;
+    let hide = CustomMenuItem::new("hide".to_string(), "Hide");
+    let quit = CustomMenuItem::new("quit".to_string(), "Quit");
 
-    db.execute(
-        "CREATE TABLE IF NOT EXISTS tasks (
-            id text,
-            name text not null,
-            vendor text not null,
-            min_level integer,
-            wipe integer not null references wipes(id) on delete cascade,
-            image text,
-            PRIMARY KEY (id, wipe)
-        )",
-        (),
-    )?;
-
-    db.execute(
-        "CREATE TABLE IF NOT EXISTS objectives (
-            id text,
-            item text references items(id) on delete cascade,
-            task text not null,
-            wipe integer not null,
-            count integer not null,
-            collected integer not null,
-            found_in_raid integer not null,
-            optional integer not null,
-            description text not null,
-            completed integer not null default 0,
-            dogtag_level integer not null default 0,
-            min_durability integer not null default 0,
-            max_durability integer not null default 100,
-            PRIMARY KEY (id, wipe),
-            FOREIGN KEY (task, wipe) REFERENCES tasks(id, wipe) on delete cascade
-        )",
-        (),
-    )?;
-
-    db.execute(
-        "CREATE TABLE IF NOT EXISTS found_items (
-        quantity integer not null,
-        item integer not null references items(id) on delete cascade,
-        wipe integer not null references wipes(id) on delete cascade,
-        found_in_raid integer not null,
-        dogtag_level integer not null default 0,
-        min_durability integer not null default 0,
-        max_durability integer not null default 100,
-        PRIMARY KEY (item, wipe)
-    )",
-        (),
-    )?;
+    let tray_menu = SystemTrayMenu::new()
+        .add_item(hide)
+        .add_native_item(SystemTrayMenuItem::Separator)
+        .add_item(quit);
+    let sys_tray = SystemTray::new().with_menu(tray_menu);
 
     tauri::Builder::default()
         .setup(|app| {
@@ -112,6 +61,8 @@ async fn main() -> Result<(), Error> {
         })
         .manage(Arc::new(Mutex::new(db)))
         .manage(Mutex::new(None as Option<i64>))
+        .system_tray(sys_tray)
+        .on_system_tray_event(sys_tray::on_sys_tray_event)
         .invoke_handler(tauri::generate_handler![
             get_all_wipes,
             create_wipe,
@@ -142,8 +93,14 @@ async fn main() -> Result<(), Error> {
             save_settings,
             set_settings
         ])
-        .run(tauri::generate_context!())
-        .expect("error while running tauri application");
+        .build(tauri::generate_context!())
+        .expect("error while running tauri application")
+        .run(|app_handle, event| {
+            if let tauri::RunEvent::ExitRequested { api, .. } = event {
+                api.prevent_exit();
+                let _ = app_handle.tray_handle().get_item("hide").set_title("Show");
+            }
+        });
 
     Ok(())
 }

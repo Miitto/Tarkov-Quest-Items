@@ -10,6 +10,10 @@
         "version": "0.0.1"
     },
     "tauri": {
+        "systemTray": {
+            "iconPath": "icons/icon.png",
+            "menuOnLeftClick": false
+        },
         "allowlist": {
             "all": false,
             "shell": {
@@ -66,7 +70,7 @@
             {
                 "fullscreen": false,
                 "resizable": true,
-                "title": "Task Items",
+                "title": "Tarkov Wipe Tracker",
                 "width": 800,
                 "height": 600
             }
