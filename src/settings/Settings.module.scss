@@ -3,7 +3,7 @@
     flex-direction: column;
     flex-grow: 1;
 
-    > form {
+    > div:not(:last-child) {
         display: flex;
         flex-direction: row;
         gap: 0.5rem;
@@ -22,7 +22,7 @@
         }
     }
 
-    > div {
+    > div:last-child {
         display: flex;
         flex-direction: row;
         justify-content: flex-end;
@@ -34,5 +34,13 @@
             padding: 0.5rem 1rem;
             border-top-left-radius: 0.5rem;
         }
+    }
+}
+
+.invalid {
+    border: 1px solid red !important;
+
+    &:focus-visible {
+        outline: red solid 1px;
     }
 }

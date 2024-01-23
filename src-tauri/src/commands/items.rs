@@ -1,6 +1,6 @@
 use std::sync::Arc;
 
-use crate::types::{item::Item, Error};
+use crate::types::{Error, Item};
 
 use rusqlite::Connection;
 use std::sync::Mutex;

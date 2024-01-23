@@ -1,23 +1,24 @@
 // Prevents additional console window on Windows in release, DO NOT REMOVE!!
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use rusqlite::Connection;
-
 mod commands;
+mod db;
+mod log_watcher;
+mod sys_tray;
+mod types;
+mod window;
+
 use commands::items::*;
 use commands::objectives::*;
 use commands::settings::*;
 use commands::tasks::*;
 use commands::wipe::*;
-use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayMenu, SystemTrayMenuItem};
-use types::settings::Settings;
-mod db;
-mod sys_tray;
-mod types;
-mod window;
-
+use rusqlite::Connection;
 use std::sync::{Arc, Mutex};
+use tauri::State;
+use tauri::{CustomMenuItem, Manager, SystemTray, SystemTrayMenu, SystemTrayMenuItem};
 use types::Error;
+use types::Settings;
 
 #[tokio::main]
 async fn main() -> Result<(), Error> {
@@ -36,7 +37,7 @@ async fn main() -> Result<(), Error> {
 
     tauri::Builder::default()
         .setup(|app| {
-            app.manage(Mutex::new(Settings::new(app.app_handle())));
+            let settings = Settings::new(app.app_handle());
 
             let main_window_opt = app.get_window("main");
 
@@ -57,6 +58,7 @@ async fn main() -> Result<(), Error> {
                 println!("Listener Added");
             }
 
+            app.manage(Mutex::new(settings));
             Ok(())
         })
         .manage(Arc::new(Mutex::new(db)))
@@ -91,14 +93,22 @@ async fn main() -> Result<(), Error> {
             find_tarkov,
             get_settings,
             save_settings,
-            set_settings
+            set_settings,
+            validate_location
         ])
         .build(tauri::generate_context!())
         .expect("error while running tauri application")
         .run(|app_handle, event| {
             if let tauri::RunEvent::ExitRequested { api, .. } = event {
-                api.prevent_exit();
-                let _ = app_handle.tray_handle().get_item("hide").set_title("Show");
+                let settings: State<Mutex<Settings>> = app_handle.state::<Mutex<Settings>>();
+                let set = settings.lock().unwrap();
+                if set.sendable.close_to_tray {
+                    println!("Preventing Exit");
+                    api.prevent_exit();
+                    let _ = app_handle.tray_handle().get_item("hide").set_title("Show");
+                } else {
+                    println!("Allowing Exit");
+                }
             }
         });
 

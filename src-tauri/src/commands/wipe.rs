@@ -1,4 +1,4 @@
-use crate::types::{wipe::Wipe, Error};
+use crate::types::{Error, Wipe};
 use rusqlite::Connection;
 use std::sync::Arc;
 use std::sync::Mutex;

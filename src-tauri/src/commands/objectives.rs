@@ -1,4 +1,4 @@
-use crate::types::{objective::update::UpdateObjective, objective::Objective, Error};
+use crate::types::{Error, Objective, UpdateObjective};
 use rusqlite::Connection;
 use std::sync::Arc;
 use std::sync::Mutex;

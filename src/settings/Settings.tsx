@@ -1,22 +1,23 @@
 import { open } from "@tauri-apps/api/dialog";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Settings } from "../types";
 import { invoke } from "@tauri-apps/api";
 
 import styles from "./Settings.module.scss";
-import { UnlistenFn, listen } from "@tauri-apps/api/event";
-import { WebviewWindow } from "@tauri-apps/api/window";
 
 export function SettingsPage() {
     const [installLocation, setInstallLocation] = useState<string>("");
     const [watchLogs, setWatchLogs] = useState(false);
-    const [unlisten, setUnlisten] = useState<UnlistenFn | null>(null);
+    const [closeToTray, setCloseToTray] = useState(false);
+    const [installLocationValid, setInstallLocationValid] = useState(false);
 
     useEffect(() => {
         (async () => {
             let settings = await invoke<Settings>("get_settings");
             setInstallLocation(settings.install_location);
             setWatchLogs(settings.watch_logs);
+            setCloseToTray(settings.close_to_tray);
+            setInstallLocationValid(settings.install_location_valid);
         })();
     }, []);
 
@@ -34,28 +35,46 @@ export function SettingsPage() {
         await invoke("set_settings", {
             installLocation: installLocation,
             watchLogs: watchLogs,
+            closeToTray: closeToTray,
         });
         await invoke("save_settings");
     }
 
-    async function verifyPath(e: React.FormEvent<HTMLFormElement>) {
+    async function verifyPath(path: string | null = null) {
+        if (path == null) path = installLocation;
+        let valid = await invoke<boolean>("validate_location", {
+            location: path,
+        });
+        setInstallLocationValid(valid);
+    }
+
+    async function autoDetectPath(e: React.MouseEvent<HTMLButtonElement>) {
         e.preventDefault();
+        let path = await invoke<string>("find_tarkov");
+        console.log("Path: " + path);
+        setInstallLocation(path);
+        setInstallLocationValid(true);
     }
 
     return (
         <main className={styles.main}>
-            <form onSubmit={verifyPath}>
+            <div>
                 <label htmlFor="installLocation">Tarkov Directory</label>
                 <input
+                    className={installLocationValid ? "" : styles.invalid}
                     name="installLocation"
                     type="text"
                     value={installLocation}
-                    onChange={(e) => setInstallLocation(e.target.value)}
+                    autoComplete="off"
+                    onChange={(e) => {
+                        setInstallLocation(e.target.value);
+                        verifyPath(e.target.value);
+                    }}
                 />
                 <button onClick={pickPath}>Pick Path</button>
-                <input type="submit" />
-            </form>
-            <form>
+                <button onClick={autoDetectPath}>Auto Detect</button>
+            </div>
+            <div>
                 <label htmlFor="watchLogs">Watch Logs</label>
                 <input
                     type="checkbox"
@@ -63,7 +82,16 @@ export function SettingsPage() {
                     name="watchLogs"
                     onChange={(e) => setWatchLogs(e.target.checked)}
                 />
-            </form>
+            </div>
+            <div>
+                <label htmlFor="closeToTray">Close To Tray</label>
+                <input
+                    type="checkbox"
+                    checked={closeToTray}
+                    name="closeToTray"
+                    onChange={(e) => setCloseToTray(e.target.checked)}
+                />
+            </div>
             <div>
                 <button onClick={saveSettings}>Save</button>
             </div>

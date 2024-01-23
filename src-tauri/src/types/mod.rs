@@ -1,8 +1,16 @@
-pub mod item;
-pub mod objective;
-pub mod settings;
-pub mod task;
-pub mod wipe;
+mod item;
+mod objective;
+mod settings;
+mod task;
+mod wipe;
+
+pub use self::item::Item;
+pub use self::objective::Objective;
+pub use self::objective::UpdateObjective;
+pub use self::settings::SendableSettings;
+pub use self::settings::Settings;
+pub use self::task::Task;
+pub use self::wipe::Wipe;
 
 #[derive(Debug, thiserror::Error)]
 pub enum Error {
@@ -16,6 +24,8 @@ pub enum Error {
     Serde(#[from] serde_json::Error),
     #[error(transparent)]
     Tauri(#[from] tauri::Error),
+    #[error(transparent)]
+    Notify(#[from] notify::Error),
     #[error("Not found: {message}")]
     NotFound { message: String },
     #[error("No Wipe Selected")]

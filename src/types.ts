@@ -78,5 +78,7 @@ export interface CollatedTask {
 
 export interface Settings {
     install_location: string;
+    install_location_valid: boolean;
     watch_logs: boolean;
+    close_to_tray: boolean;
 }

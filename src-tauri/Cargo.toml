@@ -34,6 +34,8 @@ reqwest = { version = "0.11.23", features = ["json"] }
 tokio = { version = "1.35.1", features = ["macros"] }
 winreg = "0.52.0"
 rust-ini = "0.20.0"
+notify = "6.1.1"
+notify-debouncer-full = "0.3.1"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem

@@ -19,9 +19,16 @@ pub struct Objective {
     pub max_durability: i64,
 }
 
-pub mod all;
-pub mod assign;
-pub mod bulk_create;
-pub mod task_get;
-pub mod unassign;
-pub mod update;
+mod all;
+mod assign;
+mod bulk_create;
+mod task_get;
+mod unassign;
+mod update;
+
+pub use all::*;
+pub use assign::*;
+pub use bulk_create::*;
+pub use task_get::*;
+pub use unassign::*;
+pub use update::*;

@@ -1,4 +1,4 @@
-use crate::types::{task::Task, Error};
+use crate::types::{Error, Task};
 use rusqlite::Connection;
 use std::sync::Arc;
 use std::sync::Mutex;

@@ -7,6 +7,8 @@ import { CollatedItem } from "./types";
 import { getItems } from "./Items/itemUtils";
 
 import { MenuBar } from "./nav/MenuBar";
+import { listen } from "@tauri-apps/api/event";
+import { message } from "@tauri-apps/api/dialog";
 
 function App() {
     const [activePanel, setActivePanel] = useState(0);
@@ -27,6 +29,22 @@ function App() {
             })();
         }
     }, [activeWipe]);
+
+    useEffect(() => {
+        const unlisten = listen(
+            "bad-install-location",
+            async (e: { payload: { message: string; path: string } }) => {
+                await message(`${e.payload.message} at ${e.payload.path}`, {
+                    title: "Bad Install Location",
+                    type: "error",
+                });
+            }
+        );
+
+        return () => {
+            unlisten.then((f) => f());
+        };
+    });
 
     return (
         <>
