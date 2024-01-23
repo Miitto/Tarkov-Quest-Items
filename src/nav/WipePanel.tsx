@@ -151,6 +151,11 @@ export function WipePanel({
             wipeId: activeWipe,
         });
         setWipes(wipes.filter((wipe: Wipe) => activeWipe != wipe.id));
+        if (
+            wipes.filter((wipe: Wipe) => activeWipe == wipe.id).length == 0 &&
+            wipes.length > 0
+        )
+            setActiveWipe(wipes[0].id);
         deleteDialog?.current?.close();
     }
 
