@@ -1,6 +1,9 @@
 use ini::Ini;
 use std::fs;
 use std::path::PathBuf;
+use std::sync::Arc;
+use std::sync::Mutex;
+use tauri::Manager;
 use winreg::enums::*;
 use winreg::RegKey;
 
@@ -94,10 +97,33 @@ impl Settings {
         let found = Settings::validate_location(install_location.clone());
 
         if !found && !install_location.is_empty() {
-            tauri::api::dialog::MessageDialogBuilder::new("Tarkov Install Location Not Found", "The Tarkov install location you have set is not valid. Please update it in the settings.")
+            let reg_loc = Settings::find_tarkov();
+
+            let reg_found = Settings::validate_location(reg_loc.clone());
+
+            if !reg_found {
+                tauri::api::dialog::MessageDialogBuilder::new("Invalid Tarkov Install Location", "The Tarkov install location you have set is not valid. Please update it in the settings.")
                 .buttons(tauri::api::dialog::MessageDialogButtons::Ok)
                 .kind(tauri::api::dialog::MessageDialogKind::Error)
                 .show(|_| {});
+            }
+
+            let app_arc = Arc::new(app);
+            let path = reg_loc.clone();
+
+            tauri::api::dialog::MessageDialogBuilder::new("Invalid Tarkov Install Location", format!("The Tarkov install location you have set is not valid. We have found a suitable location at: {}. Would you like to set the path?", reg_loc))
+                .buttons(tauri::api::dialog::MessageDialogButtons::OkCancelWithLabels("Set Path".to_string(), "Cancel".to_string()))
+                .kind(tauri::api::dialog::MessageDialogKind::Error)
+                .show(|set_path| {
+                    if set_path {
+                        std::thread::spawn(move || {
+                            let settings_mutex = (*app_arc).state::<Mutex<Settings>>();
+                            let mut settings = settings_mutex.lock().unwrap();
+                            settings.sendable.install_location = path.clone();
+                            let _ = settings.save(app_arc.app_handle());
+                        });
+                    }
+                });
         }
 
         let sendable = SendableSettings {

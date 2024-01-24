@@ -1,4 +1,4 @@
-import { open } from "@tauri-apps/api/dialog";
+import { message, open } from "@tauri-apps/api/dialog";
 import { useEffect, useState } from "react";
 import { Settings } from "../types";
 import { invoke } from "@tauri-apps/api";
@@ -22,12 +22,22 @@ export function SettingsPage() {
     }, []);
 
     async function pickPath() {
-        const dir = (await open({
-            directory: true,
+        const file = (await open({
+            title: "Select Tarkov Directory",
+            filters: [
+                {
+                    name: "Tarkov Directory",
+                    extensions: ["exe"],
+                },
+            ],
+            defaultPath: `${installLocation}/EscapeFromTarkov.exe`,
         })) as unknown as string | null; // Since it will not be an array, as multiple is not set
 
-        if (dir) {
+        if (file?.endsWith("EscapeFromTarkov.exe")) {
+            let dir = file.substring(0, file.length - 21);
             setInstallLocation(dir);
+        } else {
+            message("Invalid Path");
         }
     }
 
@@ -93,7 +103,12 @@ export function SettingsPage() {
                 />
             </div>
             <div>
-                <button onClick={saveSettings}>Save</button>
+                <button
+                    onClick={saveSettings}
+                    disabled={!installLocationValid}
+                >
+                    Save
+                </button>
             </div>
         </main>
     );

@@ -33,6 +33,12 @@
         button {
             padding: 0.5rem 1rem;
             border-top-left-radius: 0.5rem;
+
+            &:disabled {
+                background-color: var(--bg-color-alt);
+                color: var(--color);
+                outline: red solid 1px;
+            }
         }
     }
 }
