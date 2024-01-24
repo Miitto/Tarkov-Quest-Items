@@ -94,7 +94,8 @@ async fn main() -> Result<(), Error> {
             save_settings,
             set_settings,
             validate_location,
-            expand_scope
+            expand_scope,
+            complete_task
         ])
         .build(tauri::generate_context!())
         .expect("error while running tauri application")

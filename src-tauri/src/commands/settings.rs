@@ -60,6 +60,7 @@ pub fn set_settings(
     watch_logs: Option<bool>,
     close_to_tray: Option<bool>,
     settings: State<Mutex<Settings>>,
+    app: tauri::AppHandle,
 ) -> Result<Settings, Error> {
     let mut set = settings.lock().unwrap();
 
@@ -74,6 +75,7 @@ pub fn set_settings(
 
     if let Some(watch) = watch_logs {
         set.watch_logs = watch;
+        app.emit_all("watch_logs_change", watch)?;
     }
 
     if let Some(close) = close_to_tray {

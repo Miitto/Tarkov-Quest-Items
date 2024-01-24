@@ -34,7 +34,7 @@ function App() {
     }, [activeWipe]);
 
     useEffect(() => {
-        const unlisten = listen(
+        const unlisten_location = listen(
             "bad-install-location",
             async (e: { payload: { message: string; path: string } }) => {
                 await message(`${e.payload.message} at ${e.payload.path}`, {
@@ -44,17 +44,25 @@ function App() {
             }
         );
 
+        const unlisten_watch_change = listen(
+            "watch_logs_change",
+            async (e: { payload: boolean }) => {
+                watcher?.watch(e.payload);
+            }
+        );
+
         (async () => {
             let settings = await invoke<Settings>("get_settings");
             if (settings.watch_logs && watcher == null) {
-                let watcher = new Watcher("C:\\Users\\Miitto\\Documents");
+                let watcher = new Watcher("C:\\Users\\Miitto\\Documents"); // TODO replace with install_location/logs
                 setWatcher(watcher);
                 watcher.watch();
             }
         })();
 
         return () => {
-            unlisten.then((f) => f());
+            unlisten_location.then((f) => f());
+            unlisten_watch_change.then((f) => f());
         };
     }, []);
 

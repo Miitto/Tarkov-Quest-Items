@@ -1,4 +1,5 @@
 use crate::types::Error;
+use crate::types::Objective;
 use rusqlite::{Connection, ToSql};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -188,5 +189,46 @@ impl Task {
             wipe: row.get(4).unwrap(),
             image: row.get(5).unwrap(),
         })
+    }
+
+    pub async fn complete(id: String, wipe_id: i64, db_lock: Arc<Mutex<Connection>>) {
+        struct ObjectivePart {
+            id: String,
+            count: i64,
+            collected: i64,
+        }
+
+        let rows: Vec<ObjectivePart>;
+
+        {
+            let db = db_lock.lock().unwrap();
+            let mut stmt = db
+                .prepare("SELECT id, count, collected FROM objectives WHERE task = ? AND wipe = ?")
+                .unwrap();
+            rows = stmt
+                .query_map([&id, &wipe_id.to_string()], |r| {
+                    Ok(ObjectivePart {
+                        id: r.get(0).unwrap(),
+                        count: r.get(1).unwrap(),
+                        collected: r.get(2).unwrap(),
+                    })
+                })
+                .unwrap()
+                .map(|x| x.unwrap())
+                .collect();
+        }
+
+        for row in rows {
+            let res = Objective::assign_quantity(
+                row.id,
+                wipe_id,
+                row.count - row.collected,
+                db_lock.clone(),
+            );
+
+            if res.is_err() {
+                println!("Error assigning quantity: {:?}", res.unwrap_err()); // TODO ask if to force complete, or just return error
+            }
+        }
     }
 }

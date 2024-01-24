@@ -68,3 +68,20 @@ pub async fn get_all_tasks(
     let wipes = Task::all(wipe, db_lock.inner().clone()).await;
     Ok(wipes)
 }
+
+#[tauri::command]
+pub async fn complete_task(
+    id: String,
+    wipe_state: State<'_, Mutex<Option<i64>>>,
+    db_lock: State<'_, Arc<Mutex<Connection>>>,
+) -> Result<(), Error> {
+    let wipe_id = *wipe_state.lock().unwrap();
+    if wipe_id.is_none() {
+        return Err(Error::NoWipeSelected);
+    }
+    let wipe = wipe_id.unwrap();
+
+    Task::complete(id, wipe, db_lock.inner().clone()).await;
+
+    Ok(())
+}

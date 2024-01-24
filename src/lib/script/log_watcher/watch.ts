@@ -9,8 +9,9 @@ export class Watcher {
     constructor(path: string) {
         this.path = path;
     }
-    async watch() {
+    async watch(should_watch: boolean = true) {
         if (this.stopWatching) this.stopWatching();
+        if (!should_watch) return;
         await invoke("expand_scope", { folderPath: this.path });
         this.stopWatching = await watch(
             this.path,
@@ -34,6 +35,10 @@ export class Watcher {
         if (!log) return this.logs.push(new Log(path));
 
         log.parseLog();
+    }
+
+    unwatch() {
+        if (this.stopWatching) this.stopWatching();
     }
 }
 
