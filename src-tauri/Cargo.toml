@@ -13,7 +13,8 @@ edition = "2021"
 tauri-build = { version = "1.5", features = [] }
 
 [dependencies]
-tauri = { version = "1.5", features = [ "window-show",
+tauri = { version = "1.5", features = [
+    "window-show",
     "dialog-all",
     "fs-read-file",
     "path-all",
@@ -36,6 +37,8 @@ winreg = "0.52.0"
 rust-ini = "0.20.0"
 notify = "6.1.1"
 notify-debouncer-full = "0.3.1"
+tauri-plugin-fs-watch = { git = "https://github.com/tauri-apps/plugins-workspace", branch = "v1" }
+
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem

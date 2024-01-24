@@ -7,7 +7,6 @@ mod wipe;
 pub use self::item::Item;
 pub use self::objective::Objective;
 pub use self::objective::UpdateObjective;
-pub use self::settings::SendableSettings;
 pub use self::settings::Settings;
 pub use self::task::Task;
 pub use self::wipe::Wipe;

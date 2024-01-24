@@ -2,10 +2,8 @@ use tauri::Manager;
 
 use crate::types::Error;
 
-use crate::types::SendableSettings;
 use crate::types::Settings;
 
-use std::path::PathBuf;
 use std::sync::Mutex;
 use tauri::State;
 
@@ -45,8 +43,8 @@ pub async fn find_tarkov() -> Result<String, Error> {
 }
 
 #[tauri::command]
-pub fn get_settings(settings: State<Mutex<Settings>>) -> SendableSettings {
-    settings.lock().unwrap().sendable.clone()
+pub fn get_settings(settings: State<Mutex<Settings>>) -> Settings {
+    settings.lock().unwrap().clone()
 }
 
 #[tauri::command]
@@ -62,7 +60,7 @@ pub fn set_settings(
     watch_logs: Option<bool>,
     close_to_tray: Option<bool>,
     settings: State<Mutex<Settings>>,
-) -> Result<SendableSettings, Error> {
+) -> Result<Settings, Error> {
     let mut set = settings.lock().unwrap();
 
     if let Some(loc) = install_location {
@@ -71,19 +69,18 @@ pub fn set_settings(
                 message: format!("Invalid Install Location: {}", loc),
             });
         }
-        set.sendable.install_location = loc.clone();
-        set.log_manager.set_path(PathBuf::from(loc))?;
+        set.install_location = loc.clone();
     }
 
     if let Some(watch) = watch_logs {
-        set.sendable.watch_logs = watch;
+        set.watch_logs = watch;
     }
 
     if let Some(close) = close_to_tray {
-        set.sendable.close_to_tray = close;
+        set.close_to_tray = close;
     }
 
-    Ok(set.sendable.clone())
+    Ok(set.clone())
 }
 
 #[tauri::command]
@@ -97,7 +94,7 @@ pub fn validate_location(location: Option<String>, settings: State<Mutex<Setting
 
     let set = settings.lock().unwrap();
 
-    if !Settings::validate_location(set.sendable.install_location.clone()) {
+    if !Settings::validate_location(set.install_location.clone()) {
         return false;
     }
 

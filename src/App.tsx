@@ -3,17 +3,20 @@ import styles from "./App.module.scss";
 import { ItemsPanel } from "./Items/Items";
 import { TasksPanel } from "./Tasks/Tasks";
 import { WipePanel } from "./nav/WipePanel";
-import { CollatedItem } from "./types";
+import { CollatedItem, Settings } from "./types";
 import { getItems } from "./Items/itemUtils";
 
 import { MenuBar } from "./nav/MenuBar";
 import { listen } from "@tauri-apps/api/event";
 import { message } from "@tauri-apps/api/dialog";
+import { Watcher } from "./lib/script/log_watcher/watch";
+import { invoke } from "@tauri-apps/api";
 
 function App() {
     const [activePanel, setActivePanel] = useState(0);
     const [activeWipe, setActiveWipe] = useState(-1);
     const [items, setItems] = useState<CollatedItem[]>([]);
+    const [watcher, setWatcher] = useState<Watcher | null>(null);
 
     function setActiveWipePersist(idx: number) {
         setActiveWipe(idx);
@@ -41,10 +44,19 @@ function App() {
             }
         );
 
+        (async () => {
+            let settings = await invoke<Settings>("get_settings");
+            if (settings.watch_logs && watcher == null) {
+                let watcher = new Watcher("C:\\Users\\Miitto\\Documents");
+                setWatcher(watcher);
+                watcher.watch();
+            }
+        })();
+
         return () => {
             unlisten.then((f) => f());
         };
-    });
+    }, []);
 
     async function setupAppWindow() {
         const appWindow = (await import("@tauri-apps/api/window")).appWindow;

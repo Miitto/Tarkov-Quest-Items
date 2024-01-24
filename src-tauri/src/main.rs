@@ -3,7 +3,6 @@
 
 mod commands;
 mod db;
-mod log_watcher;
 mod sys_tray;
 mod types;
 mod window;
@@ -30,6 +29,7 @@ async fn main() -> Result<(), Error> {
     let sys_tray = SystemTray::new().with_menu(tray_menu);
 
     tauri::Builder::default()
+        .plugin(tauri_plugin_fs_watch::init())
         .setup(|app| {
             let db = Connection::open("tarkov.sqlite")?;
             let mig_res = db::migrate(&db, app.app_handle());
@@ -94,6 +94,7 @@ async fn main() -> Result<(), Error> {
             save_settings,
             set_settings,
             validate_location,
+            expand_scope
         ])
         .build(tauri::generate_context!())
         .expect("error while running tauri application")
@@ -101,7 +102,7 @@ async fn main() -> Result<(), Error> {
             if let tauri::RunEvent::ExitRequested { api, .. } = event {
                 let settings: State<Mutex<Settings>> = app_handle.state::<Mutex<Settings>>();
                 let set = settings.lock().unwrap();
-                if set.sendable.close_to_tray {
+                if set.close_to_tray {
                     println!("Preventing Exit");
                     api.prevent_exit();
                     let _ = app_handle.tray_handle().get_item("hide").set_title("Show");

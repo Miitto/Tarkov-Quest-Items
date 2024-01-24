@@ -1,6 +1,5 @@
 use ini::Ini;
 use std::fs;
-use std::path::PathBuf;
 use std::sync::Arc;
 use std::sync::Mutex;
 use tauri::Manager;
@@ -11,11 +10,9 @@ use serde::{Deserialize, Serialize};
 
 use super::Error;
 
-use crate::log_watcher::LogManager;
-
 #[derive(Clone, Debug, Serialize, Deserialize)]
 
-pub struct SendableSettings {
+pub struct Settings {
     // Tarkov Settings
     pub install_location: String,
 
@@ -26,11 +23,6 @@ pub struct SendableSettings {
 
     // Logs
     pub watch_logs: bool,
-}
-
-pub struct Settings {
-    pub sendable: SendableSettings,
-    pub log_manager: LogManager,
 }
 
 #[derive(Clone, serde::Serialize)]
@@ -47,22 +39,11 @@ impl Settings {
 
         let watch_logs = valid;
 
-        let sendable = SendableSettings {
+        Settings {
             install_location: install_location.clone(),
             install_location_valid: valid,
             watch_logs,
             close_to_tray: true,
-        };
-
-        let log_manager = LogManager::new(if valid {
-            Some(PathBuf::from(install_location))
-        } else {
-            None
-        });
-
-        Settings {
-            sendable,
-            log_manager: log_manager.unwrap(),
         }
     }
 
@@ -125,28 +106,18 @@ impl Settings {
                         std::thread::spawn(move || {
                             let settings_mutex = (*app_arc).state::<Mutex<Settings>>();
                             let mut settings = settings_mutex.lock().unwrap();
-                            settings.sendable.install_location = path.clone();
+                            settings.install_location = path.clone();
                             let _ = settings.save(app_arc.app_handle());
                         });
                     }
                 });
         }
 
-        let sendable = SendableSettings {
+        Settings {
             install_location: install_location.clone(),
             install_location_valid: found,
             watch_logs,
             close_to_tray,
-        };
-
-        Settings {
-            sendable,
-            log_manager: LogManager::new(if found {
-                Some(PathBuf::from(install_location))
-            } else {
-                None
-            })
-            .unwrap(),
         }
     }
 
@@ -213,8 +184,6 @@ impl Settings {
     }
 
     pub fn save(&self, app: tauri::AppHandle) -> Result<(), Error> {
-        let sendable = self.sendable.clone();
-
         let dir = app.path_resolver().app_config_dir().unwrap();
 
         let settings = dir.join("settings.ini");
@@ -231,18 +200,18 @@ impl Settings {
         i.set_to(
             Some("Tarkov"),
             "tarkov_path".to_string(),
-            sendable.install_location,
+            self.install_location.clone(),
         );
         i.set_to(
             Some("Tarkov"),
             "watch_logs".to_string(),
-            sendable.watch_logs.to_string(),
+            self.watch_logs.to_string(),
         );
 
         i.set_to(
             Some("Application"),
             "close_to_tray".to_string(),
-            sendable.close_to_tray.to_string(),
+            self.close_to_tray.to_string(),
         );
 
         i.write_to_file(settings)?;
