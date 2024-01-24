@@ -1,4 +1,7 @@
-struct Log {
+use std::path::PathBuf;
+
+#[derive(Debug, Clone)]
+pub struct Log {
     path: PathBuf,
-    lastLine: u64,
+    last_line: u64,
 }

@@ -5,6 +5,7 @@ use crate::types::Error;
 use crate::types::SendableSettings;
 use crate::types::Settings;
 
+use std::path::PathBuf;
 use std::sync::Mutex;
 use tauri::State;
 
@@ -71,7 +72,7 @@ pub fn set_settings(
             });
         }
         set.sendable.install_location = loc.clone();
-        set.log_watcher.set_path(loc)?;
+        set.log_manager.set_path(PathBuf::from(loc))?;
     }
 
     if let Some(watch) = watch_logs {

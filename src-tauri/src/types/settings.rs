@@ -11,7 +11,7 @@ use serde::{Deserialize, Serialize};
 
 use super::Error;
 
-use crate::log_watcher::LogWatcher;
+use crate::log_watcher::LogManager;
 
 #[derive(Clone, Debug, Serialize, Deserialize)]
 
@@ -30,7 +30,7 @@ pub struct SendableSettings {
 
 pub struct Settings {
     pub sendable: SendableSettings,
-    pub log_watcher: LogWatcher,
+    pub log_manager: LogManager,
 }
 
 #[derive(Clone, serde::Serialize)]
@@ -48,15 +48,21 @@ impl Settings {
         let watch_logs = valid;
 
         let sendable = SendableSettings {
-            install_location,
+            install_location: install_location.clone(),
             install_location_valid: valid,
             watch_logs,
             close_to_tray: true,
         };
 
+        let log_manager = LogManager::new(if valid {
+            Some(PathBuf::from(install_location))
+        } else {
+            None
+        });
+
         Settings {
             sendable,
-            log_watcher: LogWatcher::new(None),
+            log_manager: log_manager.unwrap(),
         }
     }
 
@@ -135,11 +141,12 @@ impl Settings {
 
         Settings {
             sendable,
-            log_watcher: LogWatcher::new(if found {
+            log_manager: LogManager::new(if found {
                 Some(PathBuf::from(install_location))
             } else {
                 None
-            }),
+            })
+            .unwrap(),
         }
     }
 
