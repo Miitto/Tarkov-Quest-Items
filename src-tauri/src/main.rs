@@ -8,11 +8,7 @@ mod sys_tray;
 mod types;
 mod window;
 
-use commands::items::*;
-use commands::objectives::*;
-use commands::settings::*;
-use commands::tasks::*;
-use commands::wipe::*;
+use commands::*;
 use rusqlite::Connection;
 use std::sync::{Arc, Mutex};
 use tauri::State;
@@ -97,7 +93,7 @@ async fn main() -> Result<(), Error> {
             get_settings,
             save_settings,
             set_settings,
-            validate_location
+            validate_location,
         ])
         .build(tauri::generate_context!())
         .expect("error while running tauri application")
