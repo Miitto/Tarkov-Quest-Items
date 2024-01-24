@@ -16,6 +16,9 @@
         },
         "allowlist": {
             "all": false,
+            "window": {
+                "show": true
+            },
             "shell": {
                 "all": false,
                 "open": true
@@ -60,7 +63,8 @@
                 "icons/icon.ico"
             ],
             "resources": [
-                "wipe_data/*"
+                "wipe_data/*",
+                "migrations/*"
             ] 
         },
         "security": {
@@ -72,7 +76,8 @@
                 "resizable": true,
                 "title": "Tarkov Wipe Tracker",
                 "width": 800,
-                "height": 600
+                "height": 600,
+                "visible": false
             }
         ]
     }

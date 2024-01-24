@@ -11,6 +11,14 @@ pub fn on_sys_tray_event(app: &AppHandle, event: SystemTrayEvent) {
                 if res.is_err() {
                     println!("Error showing main window");
                 }
+                let _ = main_window.unminimize();
+                let _ = main_window.set_focus();
+            } else {
+                let res = create_main_window(app);
+                if res.is_err() {
+                    println!("Error creating main window");
+                    app.exit(1);
+                }
             }
         }
 

@@ -5,7 +5,12 @@ use tauri::{AppHandle, Manager};
 
 pub fn create_main_window(app: &AppHandle) -> Result<(), Error> {
     let main_window_res =
-        tauri::WindowBuilder::new(app, "main", tauri::WindowUrl::App("index.html".into())).build();
+        tauri::WindowBuilder::new(app, "main", tauri::WindowUrl::App("index.html".into()))
+            .visible(false)
+            .build();
+
+    let sys_item = app.tray_handle().get_item("hide");
+    let _ = sys_item.set_title("Hide");
 
     let app_arc = Arc::new(app.app_handle());
     if let Ok(main_window) = main_window_res {
