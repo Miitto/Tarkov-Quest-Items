@@ -24,8 +24,6 @@ use types::Settings;
 async fn main() -> Result<(), Error> {
     let db = Connection::open("tarkov.sqlite")?;
 
-    db::create_tables(&db)?;
-
     let hide = CustomMenuItem::new("hide".to_string(), "Hide");
     let quit = CustomMenuItem::new("quit".to_string(), "Quit");
 
@@ -37,6 +35,11 @@ async fn main() -> Result<(), Error> {
 
     tauri::Builder::default()
         .setup(|app| {
+            let db = Connection::open("tarkov.sqlite")?;
+            let mig_res = db::migrate(&db, app.app_handle());
+            if mig_res.is_err() {
+                println!("Error migrating database: {:?}", mig_res);
+            }
             let settings = Settings::new(app.app_handle());
 
             let main_window_opt = app.get_window("main");

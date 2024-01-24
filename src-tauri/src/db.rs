@@ -1,3 +1,5 @@
+use crate::types::Error;
+
 pub fn create_tables(db: &rusqlite::Connection) -> Result<(), rusqlite::Error> {
     db.execute(
         "CREATE TABLE IF NOT EXISTS items (
@@ -11,7 +13,8 @@ pub fn create_tables(db: &rusqlite::Connection) -> Result<(), rusqlite::Error> {
     db.execute(
         "CREATE TABLE IF NOT EXISTS wipes (
         id integer primary key,
-        name text not null unique
+        name text not null unique,
+        date_created TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )",
         (),
     )?;
@@ -63,6 +66,51 @@ pub fn create_tables(db: &rusqlite::Connection) -> Result<(), rusqlite::Error> {
     )",
         (),
     )?;
+
+    Ok(())
+}
+
+pub fn migrate(db: &rusqlite::Connection, app: tauri::AppHandle) -> Result<(), Error> {
+    create_tables(db)?;
+    let resource_dir = app.path_resolver().resource_dir().unwrap();
+
+    let mut migrations = Vec::new();
+
+    for entry in std::fs::read_dir(resource_dir.join("migrations"))? {
+        let entry = entry?;
+        let path = entry.path();
+        if path.is_file() {
+            migrations.push(path);
+        }
+    }
+
+    migrations.sort();
+
+    let version: i64 = db.query_row("SELECT user_version FROM pragma_user_version", [], |row| {
+        row.get(0)
+    })?;
+
+    println!("Current DB Version: {}", version);
+
+    for migration in &migrations {
+        if migration.file_name().unwrap() <= std::ffi::OsStr::new(&format!("{}.sql", version)) {
+            continue;
+        }
+        let sql = std::fs::read_to_string(migration)?;
+        db.execute_batch(&sql)?;
+    }
+
+    let last_migration = migrations.last().unwrap();
+    let last_version = last_migration
+        .file_name()
+        .unwrap()
+        .to_str()
+        .unwrap()
+        .replace(".sql", "");
+
+    println!("Last Migration: {}", last_version);
+
+    db.execute(&format!("PRAGMA user_version = {}", last_version), [])?;
 
     Ok(())
 }
