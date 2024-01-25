@@ -1,5 +1,5 @@
 CREATE TABLE wipes_tmp (
-    id TEXT PRIMARY KEY,
+    id integer PRIMARY KEY,
     name TEXT NOT NULL UNIQUE,
     image TEXT,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
