@@ -4,11 +4,19 @@ import { VariableSizeList as List } from "react-window";
 import { TaskLine } from "./TaskLine";
 import { CollatedTask } from "../types";
 
-const Row = ({ index, style, setSize, tasks, setTaskDialog }: any) => (
+const Row = ({
+    index,
+    style,
+    setSize,
+    tasks,
+    setTaskDialog,
+    setTasksState,
+}: any) => (
     <div style={style}>
         <TaskLine
             tasks={tasks}
             setTaskDialog={setTaskDialog}
+            setTasksState={setTasksState}
             setSize={setSize}
             index={index}
         />
@@ -28,11 +36,15 @@ export class TaskPage extends React.Component<Props> {
             return acc;
         }, {}),
         height: this.props.height,
+        tasks: this.props.tasks,
     };
 
     componentDidUpdate(prevProps: Props) {
         if (this.props.height != prevProps.height) {
             this.setState({ height: this.props.height });
+        }
+        if (this.props.tasks != prevProps.tasks) {
+            this.setState({ tasks: this.props.tasks });
         }
     }
 
@@ -55,7 +67,8 @@ export class TaskPage extends React.Component<Props> {
                 {(props) => (
                     <Row
                         {...props}
-                        tasks={this.props.tasks}
+                        tasks={this.state.tasks}
+                        setTasksState={this.setTasks}
                         setTaskDialog={this.props.setTaskDialog}
                         setSize={this.setSize}
                     />
@@ -74,6 +87,10 @@ export class TaskPage extends React.Component<Props> {
                 [i]: prevState.rowSizes[i] === 34 ? size : 34,
             },
         }));
+    };
+
+    setTasks = (tasks: CollatedTask[]) => {
+        this.setState({ tasks });
     };
 
     getSize = (i: number) => {

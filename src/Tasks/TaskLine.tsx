@@ -8,11 +8,13 @@ export function TaskLine({
     setTaskDialog,
     setSize,
     index,
+    setTasksState,
 }: {
     tasks: CollatedTask[];
     setTaskDialog: (dialog: JSX.Element) => void;
     setSize: (idx: number, size: number) => void;
     index: number;
+    setTasksState: (tasks: CollatedTask[]) => void;
 }) {
     const task = tasks[index] ?? null;
     const [taskState, setTaskState] = useState<CollatedTask | null>(task);
@@ -26,7 +28,18 @@ export function TaskLine({
 
     useEffect(() => {
         setHeight(div.current?.clientHeight ?? 0);
-    });
+    }, []);
+
+    function setTask(task: CollatedTask) {
+        setTaskState(task);
+        setTasksState(
+            (() => {
+                let newTasks = [...tasks];
+                newTasks[index] = task;
+                return newTasks;
+            })()
+        );
+    }
 
     return (
         <span
@@ -56,7 +69,7 @@ export function TaskLine({
                             key={`${objective.id}${objective.completed}${objective.found_in_raid}`}
                             objective={objective}
                             taskState={taskState}
-                            taskStateSetter={setTaskState}
+                            taskStateSetter={setTask}
                             setTaskDialog={setTaskDialog}
                         />
                     );
