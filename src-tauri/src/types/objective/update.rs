@@ -26,6 +26,26 @@ pub struct UpdateObjective {
     pub max_durability: Option<i64>,
 }
 
+impl Default for UpdateObjective {
+    fn default() -> Self {
+        Self {
+            id: "".to_string(),
+            wipe: 0,
+            description: None,
+            optional: None,
+            count: None,
+            collected: None,
+            found_in_raid: None,
+            item: None,
+            task: None,
+            completed: None,
+            dogtag_level: None,
+            min_durability: None,
+            max_durability: None,
+        }
+    }
+}
+
 impl Objective {
     /// Update an objective in the database.
     ///

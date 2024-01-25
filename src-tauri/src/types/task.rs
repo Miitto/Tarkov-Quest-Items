@@ -1,5 +1,6 @@
 use crate::types::Error;
 use crate::types::Objective;
+use crate::types::UpdateObjective;
 use rusqlite::{Connection, ToSql};
 use serde::{Deserialize, Serialize};
 use std::sync::Arc;
@@ -191,11 +192,17 @@ impl Task {
         })
     }
 
-    pub async fn complete(id: String, wipe_id: i64, db_lock: Arc<Mutex<Connection>>) {
+    pub async fn complete(
+        id: String,
+        wipe_id: i64,
+        db_lock: Arc<Mutex<Connection>>,
+    ) -> Result<(), Error> {
+        #[derive(Debug, Clone, Serialize, Deserialize)]
         struct ObjectivePart {
             id: String,
             count: i64,
             collected: i64,
+            item: Option<String>,
         }
 
         let rows: Vec<ObjectivePart>;
@@ -203,7 +210,9 @@ impl Task {
         {
             let db = db_lock.lock().unwrap();
             let mut stmt = db
-                .prepare("SELECT id, count, collected FROM objectives WHERE task = ? AND wipe = ?")
+                .prepare(
+                    "SELECT id, count, collected, item FROM objectives WHERE task = ? AND wipe = ?",
+                )
                 .unwrap();
             rows = stmt
                 .query_map([&id, &wipe_id.to_string()], |r| {
@@ -211,6 +220,7 @@ impl Task {
                         id: r.get(0).unwrap(),
                         count: r.get(1).unwrap(),
                         collected: r.get(2).unwrap(),
+                        item: r.get(3).unwrap(),
                     })
                 })
                 .unwrap()
@@ -218,7 +228,27 @@ impl Task {
                 .collect();
         }
 
+        println!("Rows: {:?}", rows);
+
         for row in rows {
+            if row.item.is_none() {
+                let res = Objective::update(
+                    UpdateObjective {
+                        id: row.id,
+                        wipe: wipe_id,
+                        completed: Some(true),
+                        ..Default::default()
+                    },
+                    db_lock.clone(),
+                );
+                if res.is_err() {
+                    println!("Error completing objective: {:?}", res.unwrap_err()); // TODO ask if to force complete, or just return error
+                    return Err(Error::Other {
+                        message: "Cannot Complete Objective".to_string(),
+                    });
+                }
+                continue;
+            }
             let res = Objective::assign_quantity(
                 row.id,
                 wipe_id,
@@ -228,7 +258,12 @@ impl Task {
 
             if res.is_err() {
                 println!("Error assigning quantity: {:?}", res.unwrap_err()); // TODO ask if to force complete, or just return error
+                return Err(Error::Other {
+                    message: "Cannot Complete Objective".to_string(),
+                });
             }
         }
+
+        Ok(())
     }
 }

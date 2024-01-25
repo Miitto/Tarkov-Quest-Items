@@ -82,3 +82,9 @@ export interface Settings {
     watch_logs: boolean;
     close_to_tray: boolean;
 }
+
+export enum TaskStatus {
+    Started = 10,
+    Failed = 11,
+    Finished = 12,
+}

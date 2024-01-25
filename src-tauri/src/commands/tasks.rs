@@ -81,7 +81,7 @@ pub async fn complete_task(
     }
     let wipe = wipe_id.unwrap();
 
-    Task::complete(id, wipe, db_lock.inner().clone()).await;
+    Task::complete(id, wipe, db_lock.inner().clone()).await?;
 
     Ok(())
 }

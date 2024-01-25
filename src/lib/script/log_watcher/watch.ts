@@ -1,6 +1,7 @@
 import { invoke } from "@tauri-apps/api";
 import { readTextFile } from "@tauri-apps/api/fs";
 import { watch } from "tauri-plugin-fs-watch-api";
+import { TaskStatus } from "../../../types";
 
 export class Watcher {
     path: string;
@@ -53,11 +54,13 @@ export class Log {
     }
 
     async parseLog() {
+        console.log(`Parsing log: ${this.path}`);
         let content = await readTextFile(this.path);
 
         let lines = content.split("\n");
         let newLines = lines.slice(this.lastLine);
-        this.lastLine = lines.length;
+        console.log(newLines.length);
+        // this.lastLine = lines.length; // TODO remove for release
 
         for (let i = 0; i < newLines.length; i++) {
             let line = newLines[i];
@@ -69,7 +72,27 @@ export class Log {
                 }
                 raw += line;
                 let json = JSON.parse(raw);
+                if (
+                    json.type != "new_message" ||
+                    !(json.message.type in TaskStatus)
+                ) {
+                    continue;
+                }
                 console.log(json);
+                let taskId = json.message.templateId.split(" ")[0];
+                let task;
+                try {
+                    task = await invoke("get_task", { taskId });
+                } catch (e) {
+                    console.error(e); // Task not found
+                    return;
+                }
+
+                console.log(task);
+
+                if (json.message.type === 12) {
+                    await invoke("complete_task", { id: taskId });
+                }
             }
         }
     }
